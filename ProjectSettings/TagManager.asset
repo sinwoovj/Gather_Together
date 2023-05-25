@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Marsh1
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Object & NPC
+  - Player
+  - Tile
+  - Conversation
+  - Setting
+  - Main
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ScreenEfect
+    uniqueID: 450837101
+    locked: 0
+  - name: Main
+    uniqueID: 339175235
+    locked: 0
+  - name: Setting
+    uniqueID: 2183912025
+    locked: 0
+  - name: Back Down
+    uniqueID: 3419895313
+    locked: 0
+  - name: Back Up
+    uniqueID: 1979610565
+    locked: 0
+  - name: Block Object
+    uniqueID: 174605263
+    locked: 0
+  - name: Water
+    uniqueID: 2607578161
+    locked: 0
+  - name: flower
+    uniqueID: 90904645
+    locked: 0
+  - name: Player
+    uniqueID: 1337840649
+    locked: 0
+  - name: Conversation
+    uniqueID: 2844766473
+    locked: 0
