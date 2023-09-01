@@ -42,36 +42,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: ScreenEfect
-    uniqueID: 450837101
+  - name: Background
+    uniqueID: 2607578161
     locked: 0
-  - name: Main
-    uniqueID: 339175235
-    locked: 0
-  - name: Setting
-    uniqueID: 2183912025
-    locked: 0
-  - name: Back Down
-    uniqueID: 3419895313
-    locked: 0
-  - name: Back Up
-    uniqueID: 1979610565
+  - name: Tile
+    uniqueID: 1691622153
     locked: 0
   - name: Block Object
     uniqueID: 174605263
     locked: 0
-  - name: River
-    uniqueID: 1691622153
+  - name: NPC
+    uniqueID: 1979610565
     locked: 0
-  - name: Deck
-    uniqueID: 2607578161
+  - name: UI
+    uniqueID: 3419895313
     locked: 0
-  - name: flower
-    uniqueID: 90904645
+  - name: Setting
+    uniqueID: 2183912025
     locked: 0
-  - name: Player
-    uniqueID: 1337840649
+  - name: Main
+    uniqueID: 339175235
     locked: 0
-  - name: Conversation
-    uniqueID: 2844766473
+  - name: ScreenEfect
+    uniqueID: 450837101
     locked: 0
