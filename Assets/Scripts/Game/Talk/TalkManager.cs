@@ -4,10 +4,32 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class NameData
+{
+    public int code;
+
+    public enum NameType
+    {
+        FixObject,
+        Character,
+        Item,
+    }
+
+    public NameType type;
+    public string name;
+
+}
+
+
+
 public class TalkManager : MonoBehaviour
 {
+    [Header("게임메니저")]
     public GameManager gameManager;
     public QuestManager questManager;
+
+    [Range(0,100)]
+    public float range;
 
     //대화 테이터를 저장할 Dictionary 변수 생성
     Dictionary<long, string> nameData; // 이름 데이터를 저장할 Dictionary 변수 생성
@@ -45,38 +67,104 @@ public class TalkManager : MonoBehaviour
         nameData.Add(1000000000, "나무상자");
         nameData.Add(2000000000, "책상");
         nameData.Add(356000000000, "루도의 집열쇠");
-        
-        /*
-            Add 함수를 사용하여 대화 데이터 입력 추가
-            Npc 초상화의 표정을 바꿀 때 사용하는 구분자는 "|"(Vertical Bar 두개)로 하기로 함.
-            구분자와 함께 초상화 Index를 문장 뒤에 추가
 
-            portaitArr <- 초상화 Sprite 배열
-            
-            아무것도 없을 시 >>
-            0 : 투명함
+            /*
+                Add 함수를 사용하여 대화 데이터 입력 추가
+                Npc 초상화의 표정을 바꿀 때 사용하는 구분자는 "|"(Vertical Bar 두개)로 하기로 함.
+                구분자와 함께 초상화 Index를 문장 뒤에 추가
 
-            Luna >>
-            1 : 기본
-            2 : 생각
-            3 : 웃음
-            4 : 화남
+                portaitArr <- 초상화 Sprite 배열
 
-            Ludo >>
-            5 : 기본
-            6 : 생각
-            7 : 웃음
-            8 : 화남
+                아무것도 없을 시 >>
+                0 : 투명함
 
-            나무 상자 >>
-            8 : 기본
+                Luna >>
+                1 : 기본
+                2 : 생각
+                3 : 웃음
+                4 : 화남
 
-            나무 책상 >> 
-            9 : 기본
-        */
+                Ludo >>
+                5 : 기본
+                6 : 생각
+                7 : 웃음
+                8 : 화남
 
-        //  << Default Talk >>
-        talkData.Add(700000000000, new string[] {   "넌 누구지?|5", 
+                나무 상자 >>
+                8 : 기본
+
+                나무 책상 >> 
+                9 : 기본
+            */
+
+            /*
+             code 
+             종류  - 고정오브젝트,Character, Item
+             메인퀘스트 
+              서브퀘스트
+                대화 인덱스
+             */
+
+
+            //현재 상태 
+            // 메인퀘스트 상태
+
+            // 메인퀘스트 상태로 다음 메인퀘스트를 알 수 있다.
+            // 서브퀘스트는 현재의 상태로 체크해서 시작할 수 있는 여부를 체크할 수 있다.
+            //메인퀘스트 시작조건
+            //   열리는조건 이전메인퀘스트가 끝났을 것.
+
+            //게임의 이벤트 
+            //  코드
+            //  이름 
+            //  List<조건> 
+            //  연출 코드
+
+
+            //서브퀘스트 
+            // 열리는 조건 - 메인퀘스트 1번이 완료되어야한다/
+            //   서브퀘스트 X가 몇번이상 수행되어야한다.
+            //   날짜가 몇일 되어야한다.
+            //   아이템이 뭐가있어야한다.
+
+
+            //메인퀘스트 1 번 이벤트이다.
+            // 보상은 뭐다
+            // 이다음은 2번 열린다.
+
+
+            /*
+             * 1번이벤트
+               이벤트 시작 |
+               대사 | 1 번이벤트에 A 라는 사람이  "안녕하세요"   1번이미지로 나타냄
+               대사 | 1 번이벤트에 B 라는 사람이  "안녕하세요"   1번이미지로 나타냄
+               배경일러 변경 |
+               선택지
+                   1번 선택지 - 어쩌고저쩌고
+                        등장조건 -
+                        연결되는 이벤트 코드
+                   2번 선택지 - 어쩌고 저쩌고
+                        등장조건 -
+                        연결되는 이벤트 코드
+               이벤트 끝 |             
+             */
+
+            /*
+             * 
+             * 
+             이벤트 코드
+             대사 하는 주체
+             주체의 상태- 나오는 포트레이트의 감정 등
+                인덱스
+                대사 내용
+
+
+             */
+
+
+
+            //  << Default Talk >>
+            talkData.Add(700000000000, new string[] {"넌 누구지?|5", 
                                     "처음 보는 얼굴인데..|6",
                                     "아무튼 신경쓰이니깐 더이상 볼일이 없다면 저리가 줄래?|8"});
         talkData.Add(701000000000, new string[] {   "안녕?|1",
