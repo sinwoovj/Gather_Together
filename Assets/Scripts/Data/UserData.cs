@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData : MonoBehaviour
+public class UserData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector2 PlayerLoc; // 플레이어 위치
+    public int MainQuestId;
+    public int SubQuestId;
 }

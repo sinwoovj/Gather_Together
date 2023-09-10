@@ -2,9 +2,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DI;
+using UnityEngine.SceneManagement;
 
-public class bugManager : MonoBehaviour
+public class bugManager : DIMono
 {
+    [Inject]
+    public PlayData playData;
+
     [SerializeField] private GameObject objectToSpawn; // Inspector에서 생성할 오브젝트를 지정합니다.
     [SerializeField] private float speed = 1f; // 오브젝트의 이동 속도를 설정합니다.
     [SerializeField] private float curveRadius = 5f; // 곡선의 반지름을 설정합니다.
@@ -25,10 +30,18 @@ public class bugManager : MonoBehaviour
 
     public bool isAtSecondPosition = false;
 
-    void Start()
+    protected override void Initialize()
     {
         GenerateRandomPositions(); // 랜덤한 위치를 생성합니다.
         StartCoroutine(SpawnSequence()); // 스폰 시퀀스 코루틴을 시작합니다.
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            ReturnToMainScene();
+        }
     }
 
     IEnumerator SpawnSequence()
@@ -160,5 +173,13 @@ public class bugManager : MonoBehaviour
             accuracy_text.text = ((score / (miss + score)) * 100).ToString("F2") + "%";
         }
         GenerateRandomPositions(); // 새로운 위치를 생성합니다.
+    }
+
+
+    public void ReturnToMainScene()
+    {
+        playData.miniGameScore = score;
+        playData.fromMiniGame = PlayData.FromMiniGame.BugManager;
+        SceneManager.LoadScene("Main");
     }
 }
