@@ -79,8 +79,8 @@ public class GameManager : MonoBehaviour
         else
         {
             QuestTalkIndex = questManager.GetQuestTalkIndex(id);
-            talkData = talkManager.GetTalk(id + (long)QuestTalkIndex, talkIndex);
-            nameData = talkManager.GetName(id);
+            //talkData = talkManager.GetTalk(id + (long)QuestTalkIndex, talkIndex);
+            //nameData = talkManager.GetName(id);
 
             //Set Name
             Objectname.text = nameData;
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
             // talkData.Split('|')[1]는 string 배열이기에 형변환을 시켜주어야한다.
             // Parse() : 문자열을 해당 타입으로 변환해주는 함수 [속칭 > 파싱한다.]
             // Parse()는 문자열 내용이 타입과 맞지 않으면 오류가 발생한다.
-            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split('|')[1]));
+            //portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split('|')[1]));
 
             //NPC일 때만 Image가 보이도록 작성 (R, G, B, 투명도)
             portraitImg.color = new Color(1, 1, 1, 1);
@@ -193,11 +193,9 @@ public class GameManager : MonoBehaviour
 
         //퀘스트 진행도
 
-        int QuestId = PlayerPrefs.GetInt("QuestId"); ; //Quest Id
-        int QuestActionIndex = PlayerPrefs.GetInt("SubQuestId");; //QUest Action Index
-        int SubQuestId = PlayerPrefs.GetInt("QuestActionIndex");; //sub Quest Id
-
-        
+        int QuestId = PlayerPrefs.GetInt("QuestId"); //Quest Id
+        int QuestActionIndex = PlayerPrefs.GetInt("SubQuestId"); //QUest Action Index
+        int SubQuestId = PlayerPrefs.GetInt("QuestActionIndex"); //sub Quest Id
         
         //세팅 : 불러온 데이터를 게임 오브젝트에 적용
         player.transform.position = new Vector3(x, y, 0);

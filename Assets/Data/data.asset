@@ -1,0 +1,313 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4b83e1e162fed4e979756c93bc7337, type: 3}
+  m_Name: data
+  m_EditorClassIdentifier: 
+  NPC:
+  - Id: 1
+    Type: "\uC5F0\uC778"
+    Sex: 0
+    Name: "\uC544\uCE58 (Archie)"
+  - Id: 2
+    Type: "\uC5F0\uC778"
+    Sex: 1
+    Name: "\uC7AC\uD074\uB9B0 (Jaclyn)"
+  - Id: 3
+    Type: "\uBD80\uBD80"
+    Sex: 0
+    Name: "\uC70C\uC2A8 (Wilson)"
+  - Id: 4
+    Type: "\uBD80\uBD80"
+    Sex: 1
+    Name: "\uC54C\uB809\uC2DC\uC544 (Alexia)"
+  - Id: 5
+    Type: "\uAC00\uC871"
+    Sex: 0
+    Name: "\uBE0C\uB798\uB4DC (Brad)"
+  - Id: 6
+    Type: "\uAC00\uC871"
+    Sex: 1
+    Name: "\uC5D0\uC2A4\uD14C\uD30C\uB2C8 (Estefany)"
+  - Id: 7
+    Type: "\uAC00\uC871"
+    Sex: 0
+    Name: "\uB2E8\uB4DC\uB808 (Dandre)"
+  - Id: 8
+    Type: "\uAC00\uC871"
+    Sex: 1
+    Name: "\uC2E0\uC2DC\uC544 (Cynthia)"
+  - Id: 9
+    Type: "\uD559\uC0DD"
+    Sex: 0
+    Name: "\uBE14\uB808\uC774\uD06C (Blake)"
+  - Id: 10
+    Type: "\uD559\uC0DD"
+    Sex: 1
+    Name: "\uC570\uBC84 (Amber)"
+  - Id: 11
+    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Sex: 1
+    Name: "\uC904\uB9AC\uC544 (Julia)"
+  - Id: 12
+    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Sex: 1
+    Name: "\uADF8\uB780\uB370 (Grande)"
+  - Id: 13
+    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Sex: 1
+    Name: "\uC544\uD5EC (Ahel)"
+  - Id: 14
+    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Sex: 0
+    Name: "\uD5EC\uB9AC\uC6B0\uC2A4 (Hellious)"
+  - Id: 15
+    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Sex: 0
+    Name: "\uBA54\uD2B8 (Matt)"
+  - Id: 16
+    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Sex: 0
+    Name: "\uC81C\uC774\uC2A8 (Jason)"
+  - Id: 17
+    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Sex: 1
+    Name: "\uBA54\uC774 (Mei)"
+  - Id: 18
+    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Sex: 0
+    Name: "\uD06C\uB9AC\uC2A4 (Chris)"
+  - Id: 19
+    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Sex: 1
+    Name: "\uB098\uBE44\uC544 (Navia)"
+  - Id: 20
+    Type: "\uB178\uBD80\uBD80"
+    Sex: 0
+    Name: "\uD37C\uAC70\uC2A8 (Ferguson)"
+  - Id: 21
+    Type: "\uB178\uBD80\uBD80"
+    Sex: 1
+    Name: "\uC5D8\uB9B0 (Elin)"
+  - Id: 22
+    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Sex: 2
+    Name: "\uBE0C\uB77C\uC6B0\uB2C8 (Brownie)"
+  - Id: 23
+    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Sex: 0
+    Name: "\uC0CC\uB35C (Sandle)"
+  - Id: 24
+    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Sex: 1
+    Name: "\uB9AC\uCCBC (Richel)"
+  - Id: 25
+    Type: "\uB300\uD1B5\uB839"
+    Sex: 0
+    Name: "\uC1A1\uC8FC\uC601"
+  MainQuest:
+  - Id: 1
+    Name: "\uC2DC\uC791\uC774\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 2
+    Name: "\uB450\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 3
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 4
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 5
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 6
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 7
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 8
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 9
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 10
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  SubQuest:
+  - Id: 1
+    Name: "\uC11C\uBE0C\uD018\uC2A4\uD2B8 \uC2DC\uC791\uC774\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 2
+    Name: "\uC11C\uBE0C\uD018\uC2A4\uD2B8  \uB450\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 3
+    Name: "\uC11C\uBE0C\uD018\uC2A4\uD2B8 \uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 4
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 5
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 6
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 7
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 8
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 9
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  - Id: 10
+    Name: "\uC138\uBC88\uC9F8\uC57C"
+    Condition: 
+    Content: "\u3147\u3147"
+  GameScene:
+  - code: 1
+    name: "\uD14C\uC2A4\uD2B8\uC774\uBCA4\uD2B8"
+  - code: 2
+    name: "\uD14C\uC2A4\uD2B82"
+  - code: 3
+    name: "\uD14C\uC2A4\uD2B83"
+  - code: 4
+    name: "\uD14C\uC2A4\uD2B84"
+  HostImage:
+  - hostCode: 1
+    clothCode: 0
+    emotion: 0
+    assetPath: 
+  SceneSelection:
+  - code: 1001
+    content: "\uC120\uD0DD\uC9C01"
+    conditionCodes: 
+  - code: 1002
+    content: "\uC120\uD0DD\uC9C02"
+    conditionCodes: 
+  - code: 1003
+    content: "\uC120\uD0DD\uC9C03"
+    conditionCodes: 
+  SceneCondition: []
+  SceneLine:
+  - code: 1
+    index: 0
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "\uC548\uB155\uD558\uC138\uC694"
+    intValues:
+      values: 
+  - code: 1
+    index: 1
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "\uB300\uC0AC1"
+    intValues:
+      values: 
+  - code: 1
+    index: 2
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "\uB300\uC0AC2"
+    intValues:
+      values: 
+  - code: 1
+    index: 3
+    LineType: 1
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: 
+    intValues:
+      values: e9030000ea030000eb030000
+  - code: 2
+    index: 0
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "\uB300\uC0AC\uB300\uC0AC1"
+    intValues:
+      values: 
+  - code: 2
+    index: 1
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "\uB300\uC0AC2"
+    intValues:
+      values: 
+  - code: 3
+    index: 0
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "3\uB300\uC0AC\uB300\uC0AC1"
+    intValues:
+      values: 
+  - code: 3
+    index: 1
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "3\uB300\uC0AC"
+    intValues:
+      values: 
+  - code: 4
+    index: 0
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "4\uB300\uC0AC"
+    intValues:
+      values: 
+  - code: 4
+    index: 1
+    LineType: 0
+    hostCode: 1
+    clothCode: 0
+    hostEmotion: 0
+    content: "4\uB300\uC0AC1"
+    intValues:
+      values: 

@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayData : MonoBehaviour
+public class PlayData 
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public bool isClickSuccess;
+    public float miniGameScore;
+
+    public enum FromMiniGame
     {
-        
+        None,
+        BugManager
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public FromMiniGame fromMiniGame= FromMiniGame.None;
+
 }
