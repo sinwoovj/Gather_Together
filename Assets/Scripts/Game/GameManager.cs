@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // UI 프로그래밍 전에 꼭 먼저 UnityEngine.UI를 넣어야함.
 using UnityEngine.SceneManagement; // 씬 이동
+using static ObjData;
+using DI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : DIMono
 {
     public TalkManager talkManager; //대화 매니저를 변수로 선언 후, 함수 사용
     public QuestManager questManager;
@@ -23,12 +25,34 @@ public class GameManager : MonoBehaviour
     public bool isAction; //상태 저장용 변수
     public int talkIndex;
 
-    void Start()
+
+    [Inject]
+    PlayData playData;
+
+    void CheckSceneFromMiniGame()
     {
+        switch (playData.fromMiniGame)
+        {
+            case PlayData.FromMiniGame.None:
+                break;
+            case PlayData.FromMiniGame.BugManager:
+//                playData.miniGameScore;
+
+                break;
+            case PlayData.FromMiniGame.FishManager:
+                break;
+        }
+    }
+
+
+    protected override void Initialize()
+    {
+
         //데이터 로드
         GameLoad();
         mainQuestText.text = questManager.CheckQuest();
         subQuestText.text = questManager.CheckSubQuest();
+        CheckSceneFromMiniGame();
     }
 
     private void Update()
@@ -54,17 +78,36 @@ public class GameManager : MonoBehaviour
                 
         }
     }
+
+
     public void Action(GameObject scanObj)
     { 
         //Get Current Object
         scanObject = scanObj;
         ObjData objData = scanObj.GetComponent<ObjData>();
-        Talk(objData.id, objData.isNpc);
+
+        var scenarioData= objData.GetCurrentScenarioData();
+        switch (scenarioData.ScenarioActionType)
+        {
+            case ScenarioData.scenarioActionType.ToUnityScene:
+
+                break;
+            case ScenarioData.scenarioActionType.ToStartScene:
+                break;
+            case ScenarioData.scenarioActionType.LikeabilityCondition:
+                break;
+            case ScenarioData.scenarioActionType.StatCondition:
+                break;
+        }
+
+        // switch(cene)
+
+        //Talk(objData.id, objData.kind);
         //Visible Talk for Action
         talkPanel.SetBool("isShow", isAction);
     }
-    
-    void Talk(long id, bool isNpc)
+
+    void Talk(int id,ScenarioData.hostType  kind)
     {
         //Set Talk Data
         string talkData = "";
@@ -122,7 +165,7 @@ public class GameManager : MonoBehaviour
         ++talkIndex; //다음 문장이 나오도록 인덱스를 1 증가
 
         //Continue Talk
-        if (isNpc)
+        if (kind == ScenarioData.hostType.NPC)
         {
             //구분자를 사용해 분리하고 배열로 만들어지면 배열의 0번째인 원래 문장으로 설정
             talk.SetMsg(talkData.Split('|')[0]);

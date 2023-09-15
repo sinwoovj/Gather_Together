@@ -219,7 +219,11 @@ MonoBehaviour:
   - code: 1003
     content: "\uC120\uD0DD\uC9C03"
     conditionCodes: 
-  SceneCondition: []
+  SceneCondition:
+  - code: 1
+    kind: 0
+    value: 0
+    count: 0
   SceneLine:
   - code: 1
     index: 0

@@ -30,6 +30,9 @@ public class PlayerAction : MonoBehaviour
             saveSettingValues = GameObject.Find("SaveSettingValues").GetComponent<SaveSettingValues>();
     }
 
+
+  
+
     void Update()
     {
         //#Move Setting Value
@@ -105,7 +108,7 @@ public class PlayerAction : MonoBehaviour
 
         //Ray 
         Debug.DrawRay(rb.position,dirVec * 0.7f, new Color(0,1,0)); // DrawRay(기준 위치, 쏘는 방향 * 길이, 색상)
-        RaycastHit2D rayHit = Physics2D.Raycast(rb.position, dirVec, 0.7f, ObjectLayer); // Raycast(기준 위치, 쏘는 방향, 길이, 인식할 레이어)
+        RaycastHit2D rayHit = Physics2D.Raycast(rb.position, dirVec, 0.01f, ObjectLayer); // Raycast(기준 위치, 쏘는 방향, 길이, 인식할 레이어)
 
         if(rayHit.collider != null) //collider 값이 null이 아닐때 >> 즉, 뭔가 있을 때
         {

@@ -5,13 +5,14 @@ using static UnityEditor.Progress;
 
 public class GameData : ScriptableObject
 {
-    public List<NPC> NPC = new List<NPC>();
-    public List<MainQuest> MainQuest = new List<MainQuest>();
-    public List<SubQuest> SubQuest = new List<SubQuest>();
-    public List<GameScene> GameScene = new List<GameScene>();
-    public List<HostImage> HostImage = new List<HostImage>();
-    public List<SceneSelection> SceneSelection = new List<SceneSelection>();
-    public List<SceneCondition> SceneCondition = new List<SceneCondition>();
-    public List<SceneLine> SceneLine = new List<SceneLine>();
-
+    public List<NPC> NPC;
+    public List<MainQuest> MainQuest;
+    public List<SubQuest> SubQuest;
+    public List<GameScene> GameScene;
+    public List<HostImage> HostImage;
+    public List<SceneSelection> SceneSelection;
+    public List<SceneCondition> SceneCondition;
+    public List<SceneLine> SceneLine;
+    public List<ScenarioData> ScenarioData;
+    public List<LikeabilityCondition> LikeabilityConditions;
 }
