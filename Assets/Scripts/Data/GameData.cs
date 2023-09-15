@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
-public class GameData : MonoBehaviour
+public class GameData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<NPC> NPC;
+    public List<MainQuest> MainQuest;
+    public List<SubQuest> SubQuest;
+    public List<GameScene> GameScene;
+    public List<HostImage> HostImage;
+    public List<SceneSelection> SceneSelection;
+    public List<SceneCondition> SceneCondition;
+    public List<SceneLine> SceneLine;
+    public List<ScenarioData> ScenarioData;
+    public List<LikeabilityCondition> LikeabilityConditions;
 }
