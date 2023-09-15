@@ -1,5 +1,7 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class GameScene
@@ -109,4 +111,46 @@ public class SceneLine
 
     public string content;
     public IntArr intValues;
+}
+[System.Serializable]
+public class ScenarioData
+{
+    public int MainQuestId;
+    public int SubQuestId;
+    public enum hostType
+    {
+        None,
+        NPC,
+        Item,
+        Object,
+        Tower,
+    }
+    public hostType HostType;
+    public int Id;
+    public enum scenarioActionType
+    { //어떤 행동을 할것인가?
+        /*
+        ToUnityScne 유니티의 씬을 이동 (ActionValStr)
+        ToStartScne 게임씬을 시작 SceneLine으로 표기된 씬
+        LikeabilityCondition 호감도에 따라 바뀜
+        StatCondition 현재 스탯에 따라 바뀜
+         */
+        ToUnityScene,
+        ToStartScene,
+        LikeabilityCondition,
+        StatCondition,
+    }
+    public scenarioActionType ScenarioActionType;
+    public string ActionValStr;
+    public int IntVal;
+}
+
+[System.Serializable]
+public class LikeabilityCondition
+{
+    public int code;
+    public string condition;   
+    public int targetNPC;
+    public int likeability;
+    public int SceneLine;
 }

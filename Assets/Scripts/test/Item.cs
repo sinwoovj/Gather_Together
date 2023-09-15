@@ -9,7 +9,7 @@ public class Item : ScriptableObject {
     [Header("Only gameplay")]
     public TileBase tile;
     public ItemType type;
-    public ActionType actionType;
+    public ItemActionType actionType;
     public Vector2Int range = new Vector2Int(5, 4);
 
     [Header("Only UI")]
@@ -25,7 +25,7 @@ public enum ItemType {
     Tool
 }
 
-public enum ActionType {
+public enum ItemActionType {
     Dig,
     Mine
 }

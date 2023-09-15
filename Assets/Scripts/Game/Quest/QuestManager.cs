@@ -1,3 +1,4 @@
+using DI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,10 @@ public class QuestManager : MonoBehaviour
     public int QuestActionIndex; //퀘스트 대화 순서 변수 생성
     public GameObject[] questObject; //퀘스트 오브젝트를 저장할 변수 생성
 
-    Dictionary<long, MainQuestData> mainQuestList;
-    Dictionary<long, SubQuestData> subQuestList;
+    [Inject]
+    GameData gameData;
 
-    void Awake()
-    {
-        mainQuestList = new Dictionary<long, MainQuestData>();
+    void Awake() 
         subQuestList = new Dictionary<long, SubQuestData>();
         GenerateData();
     }
