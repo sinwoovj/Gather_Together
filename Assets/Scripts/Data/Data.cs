@@ -42,7 +42,7 @@ public class NPC
     public string Type;
     public SEX Sex;
     public string Name;
-
+    public string Age;
 
     public enum SEX
     {
@@ -51,6 +51,25 @@ public class NPC
         D
     }
 }
+
+[System.Serializable]
+public class Member
+{
+    public int Id;
+    public string Type;
+    public SEX Sex;
+    public string Name;
+    public int Age;
+    public string Birth;
+    public int Height;
+
+    public enum SEX
+    {
+        M,
+        F
+    }
+}
+
 [System.Serializable]
 public class MainQuest
 {

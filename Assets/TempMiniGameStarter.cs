@@ -26,17 +26,4 @@ public class TempMiniGameStarter : DIMono
         Debug.Log("From " + playData.fromMiniGame + " Score :"+playData.miniGameScore);
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        //if (Input.GetKeyUp(KeyCode.A))
-        //{
-         //   SceneManager.LoadScene("bug");
-        //}
-        
-        
-
-    }
 }
