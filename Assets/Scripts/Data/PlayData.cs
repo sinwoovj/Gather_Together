@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayData 
 {
-
+    public bool actionBlock;
     public bool isClickSuccess;
     public float miniGameScore;
     public float score;
@@ -16,6 +16,6 @@ public class PlayData
         FishManager
     }
 
-    public FromMiniGame fromMiniGame= FromMiniGame.None;
+    public FromMiniGame fromMiniGame = FromMiniGame.None;
 
 }

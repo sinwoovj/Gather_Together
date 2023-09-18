@@ -70,24 +70,19 @@ public class Member
     }
 }
 
-[System.Serializable]
-public class MainQuest
-{
-    public int Id;
-    public string Name;
-    public string Condition;
-    public string Content;
-}
 
 [System.Serializable]
-public class SubQuest
+public class QuestCondition
 {
-    public int Id;
-    public string Name;
-    public string Condition;
-    public string Content;
+    public int code;
+    public QuestConditionType Type;
+
+    public enum QuestConditionType
+    {
+        XYPosition,
+        GoldHave
+    }
+
+    public float val1;
+    public float val2;
 }
-
-
-
-

@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    
-    [SerializeField] public float moveSpeed = 5f;
-    [Inject]
 
-    public GameManager Manager; // 플레이어에서 맨저 함수를 호출 할 수 있게 변수 생성
+    [SerializeField] 
+    public float moveSpeed = 5f;
+
+    [Inject]
+    PlayData playData;
+
+    [Inject]
+    GameManager Manager;
 
     private Vector3 moveDirection = Vector3.zero;
     Rigidbody2D rb;
@@ -29,19 +33,21 @@ public class PlayerAction : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        if(Start.isSaving)
+        if(StartGame.isSaving)
             saveSettingValues = GameObject.Find("SaveSettingValues").GetComponent<SaveSettingValues>();
     }
 
-
-  
+    private void Start()
+    {
+        DIContainer.Inject(this);   
+    }
 
     void Update()
     {
         //#Move Setting Value
         //Main Scene에서 받아온 Setting 값
 
-        if (Start.isSaving){
+        if (StartGame.isSaving){
             string Up = saveSettingValues.UpKeySettingValue;
             string Down = saveSettingValues.DownKeySettingValue;
             string Left = saveSettingValues.LeftKeySettingValue;
@@ -96,7 +102,7 @@ public class PlayerAction : MonoBehaviour
             dirVec = Vector3.left;
         string a = Input.inputString;
         //Scan Object
-        if (Input.GetButtonDown("Interaction") && scanObject != null)
+        if (Input.GetButtonDown("Interaction") && scanObject != null && !playData.actionBlock)
             Manager.Action(scanObject);
 
         if (Input.GetButtonDown("Jump") && scanObject != null) //보통 Jump는 Space바를 의미 && 오브젝트가 인식될 때

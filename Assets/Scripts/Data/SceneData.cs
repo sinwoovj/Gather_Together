@@ -87,13 +87,15 @@ public class IntArr : IEnumerable<int>, IFillFromStr
         return GetEnumerator();
     }
 }
-
-public enum LineType
+public enum lineType
 {
     Chat,
+    SetMainQuest,
+    SetSubQuest,
     Selection,
     NextEvent,
 }
+
 [System.Serializable]
 public class SceneLine
 {
@@ -101,16 +103,16 @@ public class SceneLine
 
     public int index;
 
-    public LineType LineType;
+    public lineType LineType;
 
 
-    public int hostCode;
+    public int hostCode; // 1. 주인공 2~6. 멤버 ... 기타
     public int clothCode;
     public int hostEmotion;
 
 
-    public string content;
     public IntArr intValues;
+    public string content;
 }
 [System.Serializable]
 public class ScenarioData
@@ -127,6 +129,7 @@ public class ScenarioData
     }
     public hostType HostType;
     public int Id;
+
     public enum scenarioActionType
     { //어떤 행동을 할것인가?
         /*
@@ -135,6 +138,7 @@ public class ScenarioData
         LikeabilityCondition 호감도에 따라 바뀜
         StatCondition 현재 스탯에 따라 바뀜
          */
+        Talk,
         ToUnityScene,
         ToStartScene,
         LikeabilityCondition,
@@ -152,5 +156,19 @@ public class LikeabilityCondition
     public string condition;   
     public int targetNPC;
     public int likeability;
+    public int SceneLine;
+}
+[System.Serializable]
+public class StatCondition
+{
+    public int code;
+    public string condition;
+    public StatType statType;
+    public enum StatType
+    {
+        HP,
+        Stamina
+    }
+    public int Value;
     public int SceneLine;
 }

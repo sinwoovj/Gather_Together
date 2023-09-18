@@ -14,170 +14,178 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPC:
   - Id: 1
-    Type: "\uC5F0\uC778"
+    Type: Lovers
     Sex: 0
     Name: "\uC544\uCE58 (Archie)"
-    Age: 
+    Age: Adults
   - Id: 2
-    Type: "\uC5F0\uC778"
+    Type: Lovers
     Sex: 1
     Name: "\uC7AC\uD074\uB9B0 (Jaclyn)"
-    Age: 
+    Age: Adults
   - Id: 3
-    Type: "\uBD80\uBD80"
+    Type: Married
     Sex: 0
     Name: "\uC70C\uC2A8 (Wilson)"
-    Age: 
+    Age: Adults
   - Id: 4
-    Type: "\uBD80\uBD80"
+    Type: Married
     Sex: 1
     Name: "\uC54C\uB809\uC2DC\uC544 (Alexia)"
-    Age: 
+    Age: Adults
   - Id: 5
-    Type: "\uAC00\uC871"
+    Type: Family
     Sex: 0
     Name: "\uBE0C\uB798\uB4DC (Brad)"
-    Age: 
+    Age: Adults
   - Id: 6
-    Type: "\uAC00\uC871"
+    Type: Family
     Sex: 1
     Name: "\uC5D0\uC2A4\uD14C\uD30C\uB2C8 (Estefany)"
-    Age: 
+    Age: Adults
   - Id: 7
-    Type: "\uAC00\uC871"
+    Type: Family
     Sex: 0
     Name: "\uB2E8\uB4DC\uB808 (Dandre)"
-    Age: 
+    Age: Children
   - Id: 8
-    Type: "\uAC00\uC871"
+    Type: Family
     Sex: 1
     Name: "\uC2E0\uC2DC\uC544 (Cynthia)"
-    Age: 
+    Age: Children
   - Id: 9
-    Type: "\uD559\uC0DD"
+    Type: Student
     Sex: 0
     Name: "\uBE14\uB808\uC774\uD06C (Blake)"
-    Age: 
+    Age: Student
   - Id: 10
-    Type: "\uD559\uC0DD"
+    Type: Student
     Sex: 1
     Name: "\uC570\uBC84 (Amber)"
-    Age: 
+    Age: Student
   - Id: 11
-    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Type: Woman
     Sex: 1
     Name: "\uC904\uB9AC\uC544 (Julia)"
-    Age: 
+    Age: Adults
   - Id: 12
-    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Type: Woman
     Sex: 1
     Name: "\uADF8\uB780\uB370 (Grande)"
-    Age: 
+    Age: Adults
   - Id: 13
-    Type: "\uC5EC\uC790\uBB34\uB9AC"
+    Type: Woman
     Sex: 1
     Name: "\uC544\uD5EC (Ahel)"
-    Age: 
+    Age: Adults
   - Id: 14
-    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Type: Man
     Sex: 0
     Name: "\uD5EC\uB9AC\uC6B0\uC2A4 (Hellious)"
-    Age: 
+    Age: Adults
   - Id: 15
-    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Type: Man
     Sex: 0
     Name: "\uBA54\uD2B8 (Matt)"
-    Age: 
+    Age: Adults
   - Id: 16
-    Type: "\uB0A8\uC790\uBB34\uB9AC"
+    Type: Man
     Sex: 0
     Name: "\uC81C\uC774\uC2A8 (Jason)"
-    Age: 
+    Age: Adults
   - Id: 17
-    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Type: Mixed
     Sex: 1
     Name: "\uBA54\uC774 (Mei)"
-    Age: 
+    Age: Adults
   - Id: 18
-    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Type: Mixed
     Sex: 0
     Name: "\uD06C\uB9AC\uC2A4 (Chris)"
-    Age: 
+    Age: Adults
   - Id: 19
-    Type: "\uD63C\uC131\uBB34\uB9AC"
+    Type: Mixed
     Sex: 1
     Name: "\uB098\uBE44\uC544 (Navia)"
-    Age: 
+    Age: Adults
   - Id: 20
-    Type: "\uB178\uBD80\uBD80"
+    Type: Older Couple
     Sex: 0
     Name: "\uD37C\uAC70\uC2A8 (Ferguson)"
-    Age: 
+    Age: 'Seniors '
   - Id: 21
-    Type: "\uB178\uBD80\uBD80"
+    Type: Older Couple
     Sex: 1
     Name: "\uC5D8\uB9B0 (Elin)"
-    Age: 
+    Age: 'Seniors '
   - Id: 22
-    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Type: With Pet
     Sex: 2
     Name: "\uBE0C\uB77C\uC6B0\uB2C8 (Brownie)"
-    Age: 
+    Age: Pet
   - Id: 23
-    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Type: With Pet
     Sex: 0
     Name: "\uC0CC\uB35C (Sandle)"
-    Age: 
+    Age: Adults
   - Id: 24
-    Type: "\uBC18\uB824\uB3D9\uBB3C\uB3D9\uBC18"
+    Type: With Pet
     Sex: 1
     Name: "\uB9AC\uCCBC (Richel)"
-    Age: 
-  - Id: 25
-    Type: "\uB300\uD1B5\uB839"
-    Sex: 0
-    Name: "\uC1A1\uC8FC\uC601"
-    Age: 
+    Age: Adults
   MainQuest:
-  - Id: 1
-    Name: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758 \uC815\uBCF4\uB97C
-      \uC218\uC9D1\uD558\uC790!)"
-    Condition: 
-    Content: "\uACF5\uC778\uC911\uAC1C\uC0AC\uB97C \uB530\uB77C \uAD00\uB9AC\uC0AC\uBB34\uC18C\uB85C
+  - MainQuestId: 0
+    MainQuestName: Prepare to start
+    MainQuestCondition: 0
+    MainQuestContent: "\uAC8C\uC784 \uC2DC\uC791."
+  - MainQuestId: 1
+    MainQuestName: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758
+      \uC815\uBCF4\uB97C \uC218\uC9D1\uD558\uC790!)"
+    MainQuestCondition: 1
+    MainQuestContent: "\uACF5\uC778\uC911\uAC1C\uC0AC\uB97C \uB530\uB77C \uAD00\uB9AC\uC0AC\uBB34\uC18C\uB85C
       \uC774\uB3D9\uD558\uAE30."
-  - Id: 1
-    Name: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758 \uC815\uBCF4\uB97C
-      \uC218\uC9D1\uD558\uC790!)"
-    Condition: 
-    Content: "\uACBD\uBE44\uC2E4\uC744\uB85C \uC774\uB3D9\uD574 \uC8FC\uCC28 \uAD00\uB9AC
-      \uC2DC\uC2A4\uD15C\uC5D0 \uB300\uD55C \uC815\uBCF4\uB97C \uC2B5\uB4DD\uD558\uAE30."
-  - Id: 1
-    Name: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758 \uC815\uBCF4\uB97C
-      \uC218\uC9D1\uD558\uC790!)"
-    Condition: 
-    Content: "\uC544\uBB34 \uAC00\uAD6C\uB97C \uAD6C\uC785\uD574 \uAD00\uB9AC\uC0AC\uBB34\uC18C\uC5D0
+  - MainQuestId: 2
+    MainQuestName: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758
+      \uC815\uBCF4\uB97C \uC218\uC9D1\uD558\uC790!)"
+    MainQuestCondition: 2
+    MainQuestContent: "\uACBD\uBE44\uC2E4\uC744\uB85C \uC774\uB3D9\uD574 \uC8FC\uCC28
+      \uAD00\uB9AC \uC2DC\uC2A4\uD15C\uC5D0 \uB300\uD55C \uC815\uBCF4\uB97C \uC2B5\uB4DD\uD558\uAE30."
+  - MainQuestId: 3
+    MainQuestName: "Gather information of camping site! (\uCEA0\uD551\uC7A5\uC758
+      \uC815\uBCF4\uB97C \uC218\uC9D1\uD558\uC790!)"
+    MainQuestCondition: 3
+    MainQuestContent: "\uC544\uBB34 \uAC00\uAD6C\uB97C \uAD6C\uC785\uD574 \uAD00\uB9AC\uC0AC\uBB34\uC18C\uC5D0
       \uBC30\uCE58\uD558\uAE30."
-  - Id: 2
-    Name: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
-    Condition: 
-    Content: "\uC190\uB2D8 3\uBA85 \uC774\uC0C1 \uBC1B\uAE30."
-  - Id: 2
-    Name: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
-    Condition: 
-    Content: "\uCEA0\uD551\uC7A5 \uAD6C\uC5ED 3 \uCE78 \uC774\uC0C1\uC73C\uB85C \uB113\uD788\uAE30."
-  - Id: 2
-    Name: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
-    Condition: 
-    Content: "\uD074\uB808\uBC84 \uC601\uC785\uD558\uAE30."
+  - MainQuestId: 4
+    MainQuestName: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
+    MainQuestCondition: 4
+    MainQuestContent: "\uC190\uB2D8 3\uBA85 \uC774\uC0C1 \uBC1B\uAE30."
+  - MainQuestId: 5
+    MainQuestName: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
+    MainQuestCondition: 5
+    MainQuestContent: "\uCEA0\uD551\uC7A5 \uAD6C\uC5ED 3 \uCE78 \uC774\uC0C1\uC73C\uB85C
+      \uB113\uD788\uAE30."
+  - MainQuestId: 6
+    MainQuestName: "Open for the camp site! (\uCEA0\uD551\uC7A5 \uC601\uC5C5 \uAC1C\uC2DC!)"
+    MainQuestCondition: 6
+    MainQuestContent: "\uD074\uB808\uBC84 \uC601\uC785\uD558\uAE30."
   SubQuest:
-  - Id: 1
-    Name: "\uD3B8\uB9AC\uD55C \uC8FC\uCC28 \uC2DC\uC124!"
-    Condition: 
-    Content: "\uC790\uB3D9 \uC8FC\uCC28 \uAD00\uB9AC \uC2DC\uC2A4\uD15C \uAD6C\uCD95\uD558\uAE30."
-  - Id: 2
-    Name: "\uC544\uB984\uB2E4\uC6B4 \uC8FC\uCC28\uC7A5!"
-    Condition: 
-    Content: "\uC8FC\uCC28\uC7A5 \uD654\uB2E8 \uAC00\uAFB8\uAE30."
+  - SubQuestId: 0
+    SubQuestName: Prepare to start
+    SubQuestCondition: 0
+    SubQuestContent: "\uAC8C\uC784 \uC2DC\uC791."
+  - SubQuestId: 1
+    SubQuestName: "\uD3B8\uB9AC\uD55C \uC8FC\uCC28 \uC2DC\uC124!"
+    SubQuestCondition: 1
+    SubQuestContent: "\uC790\uB3D9 \uC8FC\uCC28 \uAD00\uB9AC \uC2DC\uC2A4\uD15C \uAD6C\uCD95\uD558\uAE30."
+  - SubQuestId: 2
+    SubQuestName: "\uC544\uB984\uB2E4\uC6B4 \uC8FC\uCC28\uC7A5!"
+    SubQuestCondition: 2
+    SubQuestContent: "\uC8FC\uCC28\uC7A5 \uD654\uB2E8 \uAC00\uAFB8\uAE30."
+  - SubQuestId: 3
+    SubQuestName: "\uBC24\uD558\uB298\uC758 \uAF43"
+    SubQuestCondition: 3
+    SubQuestContent: "\uBD88\uAF43\uB180\uC774\uD558\uAE30."
   GameScene:
   - code: 1
     name: "\uD14C\uC2A4\uD2B8\uC774\uBCA4\uD2B8"
@@ -189,19 +197,47 @@ MonoBehaviour:
     name: "\uD14C\uC2A4\uD2B84"
   HostImage:
   - hostCode: 1
-    clothCode: 0
-    emotion: 0
-    assetPath: 
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Hera_ Sad
+  - hostCode: 1
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Hera_Angry
+  - hostCode: 1
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Hera_Default
+  - hostCode: 1
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Hera_Fear
+  - hostCode: 1
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Hera_Happy
+  - hostCode: 1
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Hera_Ridiculous
+  - hostCode: 1
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Hera_Shy
+  - hostCode: 1
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Hera_Surprised
   SceneSelection:
   - code: 1001
     content: "\uC120\uD0DD\uC9C01"
-    conditionCodes: 
+    conditionCodes: 1
   - code: 1002
     content: "\uC120\uD0DD\uC9C02"
-    conditionCodes: 
+    conditionCodes: 2
   - code: 1003
     content: "\uC120\uD0DD\uC9C03"
-    conditionCodes: 
+    conditionCodes: 3
   SceneCondition:
   - code: 1
     kind: 0
@@ -212,91 +248,115 @@ MonoBehaviour:
     index: 0
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "\uC548\uB155\uD558\uC138\uC694"
+    clothCode: 1
+    hostEmotion: 1
     intValues:
       values: 
+    content: "\uC548\uB155\uD558\uC138\uC694"
   - code: 1
     index: 1
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "\uB300\uC0AC1"
+    clothCode: 1
+    hostEmotion: 2
     intValues:
       values: 
+    content: "\uB300\uC0AC1"
   - code: 1
     index: 2
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "\uB300\uC0AC2"
+    clothCode: 1
+    hostEmotion: 3
     intValues:
       values: 
+    content: "\uB300\uC0AC2"
   - code: 1
     index: 3
     LineType: 1
-    hostCode: 1
+    hostCode: 0
     clothCode: 0
     hostEmotion: 0
+    intValues:
+      values: 
     content: 
-    intValues:
-      values: e9030000ea030000eb030000
   - code: 2
     index: 0
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
+    clothCode: 1
+    hostEmotion: 4
+    intValues:
+      values: 
     content: "\uB300\uC0AC\uB300\uC0AC1"
-    intValues:
-      values: 
   - code: 2
     index: 1
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
+    clothCode: 1
+    hostEmotion: 5
+    intValues:
+      values: 
     content: "\uB300\uC0AC2"
-    intValues:
-      values: 
   - code: 3
     index: 0
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
+    clothCode: 1
+    hostEmotion: 6
+    intValues:
+      values: 
     content: "3\uB300\uC0AC\uB300\uC0AC1"
-    intValues:
-      values: 
   - code: 3
     index: 1
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "3\uB300\uC0AC"
+    clothCode: 1
+    hostEmotion: 6
     intValues:
       values: 
+    content: "3\uB300\uC0AC"
   - code: 4
     index: 0
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "4\uB300\uC0AC"
+    clothCode: 1
+    hostEmotion: 1
     intValues:
       values: 
+    content: "4\uB300\uC0AC"
   - code: 4
     index: 1
     LineType: 0
     hostCode: 1
-    clothCode: 0
-    hostEmotion: 0
-    content: "4\uB300\uC0AC1"
+    clothCode: 1
+    hostEmotion: 7
     intValues:
       values: 
-  ScenarioData: []
-  LikeabilityConditions: []
+    content: "4\uB300\uC0AC1"
+  ScenarioData:
+  - MainQuestId: 0
+    SubQuestId: 0
+    HostType: 4
+    Id: 1
+    ScenarioActionType: 0
+    ActionValStr: Rei
+    IntVal: 1
+  - MainQuestId: 1
+    SubQuestId: 0
+    HostType: 4
+    Id: 1
+    ScenarioActionType: 0
+    ActionValStr: Rei
+    IntVal: 2
+  StatCondition: []
+  LikeabilityCondition: []
+  QuestCondition:
+  - code: 1
+    Type: 0
+    val1: 1
+    val2: 1
+  - code: 1
+    Type: 1
+    val1: 1000
+    val2: 0

@@ -1,7 +1,10 @@
+using DI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class NameData
@@ -22,37 +25,84 @@ public class NameData
 
 
 
-public class TalkManager : MonoBehaviour
+public class TalkManager : DIMono
 {
-    public GameManager gameManager;
+    [Inject]
+    GameManager gameManager;
+
+    [Inject]
+    PlayData playData;
+
+    [Inject]
+    GameData gameData;
+
     public QuestManager questManager;
 
-
-    //대화 테이터를 저장할 Dictionary 변수 생성
-    Dictionary<long, string> nameData; // 이름 데이터를 저장할 Dictionary 변수 생성
-    public Dictionary<long, string[]> talkData;
-    Dictionary<long, Sprite> portraitData; // 초상화 데이터를 저장할 Dictionary 변수 생성
-
-    public Sprite[] portaitArr;
-    public int LudoTalkCount = 0;
-
-    void Awake()
+    bool isFKeyPressed = false;
+    private void Update()
     {
-        nameData = new Dictionary<long, string>();
-        talkData = new Dictionary<long, string[]>();
-        portraitData = new Dictionary<long, Sprite>();      
-        GenerateData();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isFKeyPressed = true;
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            isFKeyPressed = false;
+        }
     }
 
-    void GenerateData()
+    public IEnumerator StartScene(int sceneLineCode)
     {
+        playData.actionBlock = true;
+        var sceneLines = gameData.SceneLine.Where(l => l.code == sceneLineCode).OrderBy(l => l.index);
+
+
+        foreach (var line in sceneLines)
+        {
+            switch (line.LineType)
+            {
+                case lineType.Chat:
+
+                    //채팅 화면에보여주기
+
+
+                    while (true)
+                    {
+                        yield return null;
+                        if (isFKeyPressed)
+                        {
+                            isFKeyPressed = false;
+                            break;
+                        }
+                    }
+
+                    break;
+                case lineType.Selection:
+
+                    break;
+                case lineType.NextEvent:
+
+                    break;
+                case lineType.SetSubQuest:
+
+                    break;
+                case lineType.SetMainQuest:
+
+                    break;
+            }
+
+
+        }
+        playData.actionBlock = false;
+        UnityEngine.Debug.Log("SceneDone " + sceneLineCode);
+    }
+
     /*
     code 
     종류  - 고정오브젝트,Character, Item
     메인퀘스트 
     서브퀘스트
     대화 인덱스
-    */
 
     // 현재 상태 
     // 메인퀘스트 상태
@@ -78,7 +128,6 @@ public class TalkManager : MonoBehaviour
     // 보상은 뭐다
     // 이다음은 2번 열린다.
 
-    /*
     1번이벤트
     이벤트 시작 |
     대사 | 1 번이벤트에 A 라는 사람이  "안녕하세요"   1번이미지로 나타냄
@@ -91,15 +140,13 @@ public class TalkManager : MonoBehaviour
         2번 선택지 - 어쩌고 저쩌고
             등장조건 -
             연결되는 이벤트 코드
-    이벤트 끝 |             
-    */
+    이벤트 끝 |       
 
-    /*
+
     이벤트 코드
     대사 하는 주체
     주체의 상태 - 나오는 포트레이트의 감정 등
     인덱스
     대사 내용
     */
-    }
 }

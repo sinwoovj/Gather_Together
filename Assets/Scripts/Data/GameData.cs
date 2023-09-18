@@ -14,5 +14,7 @@ public class GameData : ScriptableObject
     public List<SceneCondition> SceneCondition;
     public List<SceneLine> SceneLine;
     public List<ScenarioData> ScenarioData;
-    public List<LikeabilityCondition> LikeabilityConditions;
+    public List<StatCondition> StatCondition;
+    public List<LikeabilityCondition> LikeabilityCondition;
+    public List<QuestCondition> QuestCondition;
 }

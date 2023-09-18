@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Start : MonoBehaviour
+public class StartGame : MonoBehaviour
 {
     public static bool isSaving;
     public GameObject SaveSettingValues;
@@ -13,12 +13,14 @@ public class Start : MonoBehaviour
     }
     public void Gamestart()
     {
-        Invoke("GameStart", 1.0f);
-        GameObject.Find("FadeIn").GetComponent<FadeIn>().FadeInOn = true;
+        StartCoroutine(GameStartIE());
     }
-    public void GameStart()
+
+    IEnumerator GameStartIE()
     {
-        isSaving = true;
+        GameObject.Find("FadeIn").GetComponent<FadeIn>().FadeInOn = true;
+        yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene("Game");
         DontDestroyOnLoad(SaveSettingValues);
     }

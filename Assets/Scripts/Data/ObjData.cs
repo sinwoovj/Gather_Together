@@ -17,7 +17,7 @@ public class ObjData : DIMono
     public ScenarioData.hostType hostType;
 
 
-    public ScenarioData GetCurrentScenarioData()
+    public ScenarioData  GetCurrentScenarioData()
     {
         var scenarioData= gameData.ScenarioData.Where(l => l.Id == id && l.HostType == hostType);
 

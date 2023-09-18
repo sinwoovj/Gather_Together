@@ -48,13 +48,13 @@ public class DataConverter
         var dmi = dtype.GetMethod("MakeListFromDataset", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
         foreach (var f in gfis)
         {
-            var type = f.FieldType;
-            if (type.IsGenericType == false || type.GetGenericTypeDefinition() != typeof(List<>))
+            var ftype = f.FieldType;
+            if (ftype.IsGenericType == false || ftype.GetGenericTypeDefinition() != typeof(List<>))
             {
                 continue;
             }
-            var nmi = dmi.MakeGenericMethod(type.GenericTypeArguments[0]);
             Debug.Log(f.Name);
+            var nmi = dmi.MakeGenericMethod(ftype.GenericTypeArguments[0]);
             var res = nmi.Invoke(null, new object[] { dataset, f.Name });
             f.SetValue(gameData, res);
         }
@@ -82,7 +82,7 @@ public class DataConverter
                 var fi = itemType.GetField(Fieldname);
                 if (fi == null)
                 {
-                    Debug.LogError($"{Fieldname}이 {itemType.Name}에 없습니다.");
+                    Debug.LogError($"{itemType.Name}에 {Fieldname}이(가) 없습니다.");
                 }
                 var value = table.Rows[row][col];
                 var fieldType = fi.FieldType;

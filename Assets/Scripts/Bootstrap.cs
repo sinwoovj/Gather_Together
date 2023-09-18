@@ -16,7 +16,6 @@ public class Bootstrap
         DIContainer.Global.Regist(gameData);
         DIContainer.Global.Regist(new PlayData());
         DIContainer.Global.Regist(new UserData());
-
        // DIContainer.Global.Regist(new PlayData());
     }
 }

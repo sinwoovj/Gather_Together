@@ -21,6 +21,38 @@ MonoBehaviour:
     m_Address: data.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8c301c944b4b77a46bf217e592505339
+    m_Address: Casual_Hera_Default
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4aeb56d7562f0534285e53afb3472bcc
+    m_Address: Casual_Hera_ Sad
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9600c5dbf25675945bb6c21eb50cc777
+    m_Address: Casual_Hera_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 580b9c8c220e32f43a8fd5d50a4f2fd6
+    m_Address: Casual_Hera_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d761b3d43d44fb47ba63700a70da8bd
+    m_Address: Casual_Hera_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50a3b19eebcb1b54498066a04b5fc146
+    m_Address: Casual_Hera_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1cc73c52183bad642837d81161968549
+    m_Address: Casual_Hera_Shy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 34a334bc71670d242b9f5a5f1110f560
+    m_Address: Casual_Hera_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2829bd8c3a7c30e46878b80277b28fa9, type: 2}
   m_SchemaSet:
