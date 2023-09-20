@@ -99,8 +99,12 @@ public class DataConverter
                 }
                 else
                 {
-                    fi.SetValue(item, Convert.ChangeType(value, fi.FieldType));
-
+                    try{
+                        fi.SetValue(item, Convert.ChangeType(value, fi.FieldType));
+                    }catch
+                    {
+                        Debug.Log($"item : {item} // FieldType : {fi.FieldType.Name} // FI : {fi.Name}");
+                    }
                 }
 
             }

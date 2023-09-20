@@ -8,7 +8,8 @@ public class PlayerAction : MonoBehaviour
 {
 
     [SerializeField] 
-    public float moveSpeed = 5f;
+    public float moveSpeed = 1f;
+    public float runSpeed = 1.5f;
 
     [Inject]
     PlayData playData;
@@ -16,7 +17,6 @@ public class PlayerAction : MonoBehaviour
     [Inject]
     GameManager Manager;
 
-    private Vector3 moveDirection = Vector3.zero;
     Rigidbody2D rb;
     Animator anim;
     SaveSettingValues saveSettingValues;
@@ -56,15 +56,15 @@ public class PlayerAction : MonoBehaviour
         }
         //#Move Value
 
-        h = Manager.isAction ? 0 : Input.GetAxisRaw("Horizontal"); //isAction이라는 플래그 값을 활용함.
-        v = Manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
+        h = playData.isAction ? 0 : Input.GetAxisRaw("Horizontal"); //isAction이라는 플래그 값을 활용함.
+        v = playData.isAction ? 0 : Input.GetAxisRaw("Vertical");
         // KeySettingValue.keys[1]
         //#수평, 수직 이동 버튼이벤트를 변수로 저장
         //상태 변수를 사용하여 플레이어 이동을 제한함. 
-        bool hDown = Manager.isAction ? false : Input.GetButtonDown("Horizontal"); 
-        bool vDown = Manager.isAction ? false : Input.GetButtonDown("Vertical");
-        bool hUp = Manager.isAction ? false : Input.GetButtonUp("Horizontal");
-        bool vUp = Manager.isAction ? false : Input.GetButtonUp("Vertical");
+        bool hDown = playData.isAction ? false : Input.GetButtonDown("Horizontal"); 
+        bool vDown = playData.isAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = playData.isAction ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = playData.isAction ? false : Input.GetButtonUp("Vertical");
 
         //#수평 이동 체크
 
@@ -99,21 +99,21 @@ public class PlayerAction : MonoBehaviour
         else if (hDown && h == 1)
             dirVec = Vector3.right;
         else if (hDown && h == -1)
-            dirVec = Vector3.left;
-        string a = Input.inputString;
-        //Scan Object
-        if (Input.GetButtonDown("Interaction") && scanObject != null && !playData.actionBlock)
-            Manager.Action(scanObject);
+            dirVec = Vector3.left;  
 
-        if (Input.GetButtonDown("Jump") && scanObject != null) //보통 Jump는 Space바를 의미 && 오브젝트가 인식될 때
+        //Scan Object
+        if ((Input.GetButtonUp("Interaction") && scanObject != null && !playData.isAction) || 
+            (Input.GetButtonUp("Jump") && scanObject != null && !playData.isAction)){
             Manager.Action(scanObject);
+        }
+            
     }
 
     private void FixedUpdate()
     {
         //#Move
         Vector2 moveVec = isHorizonMove ? new Vector3(h, 0, 0) : new Vector3(0, v, 0); //플래그 변수(isHorizonMove) 하나로 수평, 수직이동을 결정 [삼항 연산자 사용]
-        rb.velocity = moveVec * moveSpeed; //부드러운 움직임
+        rb.velocity = moveVec * (Input.GetKey("left shift") ? runSpeed : moveSpeed); //부드러운 움직임
 
         Vector2 dirOfRaycast = rb.position;
         dirOfRaycast.y -= (float)0.2;
@@ -126,6 +126,8 @@ public class PlayerAction : MonoBehaviour
             scanObject = rayHit.collider.gameObject; //RatCast 된 오브젝트를 변수로 저장하여 활용!
         }
         else
-            scanObject = null; //없다면 그냥 null
+        {
+            scanObject = null;
+        }
     }
 }

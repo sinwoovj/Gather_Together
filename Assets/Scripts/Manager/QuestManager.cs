@@ -27,7 +27,6 @@ public class QuestManager : DIMono
             Debug.LogError($"{userData.MainQuestId}에 해당하는 메인 퀘스트 데이터가 없다.");
             return null;
         }
-        Debug.Log(temp.ToString());
         return temp;
     }
     public SubQuest CheckSubQuestData()
@@ -38,15 +37,16 @@ public class QuestManager : DIMono
             Debug.LogError($"{userData.SubQuestId}에 해당하는 서브 퀘스트 데이터가 없다.");
             return null;
         }
-        Debug.Log(temp.ToString());
         return temp;
     }
-    public void NextToMainQuest()
+    public void NextMainQuest()
     {
         userData.MainQuestId++;
+        playData.questDetective = true;
     }
-    public void NextToSubQuest()
+    public void NextSubQuest()
     {
         userData.SubQuestId++;
+        playData.questDetective = true;
     }
 }

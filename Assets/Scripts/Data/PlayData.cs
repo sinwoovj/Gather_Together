@@ -5,7 +5,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayData 
 {
-    public bool actionBlock;
+    public bool questDetective;
+    public bool isAction;
     public bool isClickSuccess;
     public float miniGameScore;
     public float score;
@@ -17,5 +18,5 @@ public class PlayData
     }
 
     public FromMiniGame fromMiniGame = FromMiniGame.None;
-
+    public bool NeedSkip;
 }

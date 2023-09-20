@@ -6,6 +6,7 @@ using static UnityEditor.Progress;
 public class GameData : ScriptableObject
 {
     public List<NPC> NPC;
+    public List<Member> Member;
     public List<MainQuest> MainQuest;
     public List<SubQuest> SubQuest;
     public List<GameScene> GameScene;

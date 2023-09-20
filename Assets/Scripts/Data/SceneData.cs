@@ -15,7 +15,7 @@ public class HostImage
 {
     public int hostCode;
     public int clothCode;
-    public int emotion;
+    public int hostEmotion;
     public string assetPath;
 }
 
@@ -90,10 +90,13 @@ public class IntArr : IEnumerable<int>, IFillFromStr
 public enum lineType
 {
     Chat,
-    SetMainQuest,
-    SetSubQuest,
+    CloseChat,
+    Wait,
+    NextMainQuest,
+    NextSubQuest,
     Selection,
     NextEvent,
+    LoadScene,
 }
 
 [System.Serializable]

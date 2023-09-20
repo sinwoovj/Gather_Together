@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameSceneInstaller : MonoBehaviour
 {
     public GameManager GameManager;
+    public DataManager DataManager;
+    public GameObject Player;
+    public QuestManager QuestManager;
 
     private void Awake()
     {
@@ -13,6 +16,9 @@ public class GameSceneInstaller : MonoBehaviour
         DIContainer.Local = container;
 
         container.Regist(GameManager);
+        container.Regist(DataManager);
+        container.Regist(Player);
+        container.Regist(QuestManager);
     }
 
 }

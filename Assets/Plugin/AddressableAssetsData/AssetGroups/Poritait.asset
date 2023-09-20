@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Poritait
+  m_EditorClassIdentifier: 
+  m_GroupName: Poritait
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 33d11bfbacbdcfe4baa55ac0aea470dd
+  m_SerializeEntries:
+  - m_GUID: 8c301c944b4b77a46bf217e592505339
+    m_Address: Casual_Hera_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 4aeb56d7562f0534285e53afb3472bcc
+    m_Address: Casual_Hera_ Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 9600c5dbf25675945bb6c21eb50cc777
+    m_Address: Casual_Hera_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 580b9c8c220e32f43a8fd5d50a4f2fd6
+    m_Address: Casual_Hera_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 6d761b3d43d44fb47ba63700a70da8bd
+    m_Address: Casual_Hera_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 50a3b19eebcb1b54498066a04b5fc146
+    m_Address: Casual_Hera_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 1cc73c52183bad642837d81161968549
+    m_Address: Casual_Hera_Shy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 34a334bc71670d242b9f5a5f1110f560
+    m_Address: Casual_Hera_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e1555239281ceb3439b7160926b9f2e7
+    m_Address: Casual_Carlos_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 15017e688ab51524aa0fca032e363650
+    m_Address: Casual_Carlos_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f2cf353d74546b64abdec900717b8f96
+    m_Address: Casual_Carlos_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 1279282474a6c6c47bec642356ec2744
+    m_Address: Casual_Carlos_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: d978d1b043af4414cb5b2f80e0c4d6eb
+    m_Address: Casual_Carlos_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: c7ff823f60d3f9e4dab3b920e96898ef
+    m_Address: Casual_Carlos_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 866c4d40198da4548be5a4f721c9b137
+    m_Address: Casual_Carlos_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 81e1131a2deda4a44abff9fc3774f8a2
+    m_Address: Work_Carlos_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 5085adadc48d64941a6d0d68f7033173
+    m_Address: Work_Carlos_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 204ebf7a9478a3e4cbac788e79155386
+    m_Address: Work_Carlos_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: cb8115a455bbd5e46b8565ab0bf4bed5
+    m_Address: Work_Carlos_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 5174f71b0fa868647ba1ac2f4714d741
+    m_Address: Work_Carlos_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e23fc5c3b754c004b8ccafc5966a6849
+    m_Address: Work_Carlos_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 2f0bce0fdc9ca764eb07f00d952f1316
+    m_Address: Work_Carlos_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 961d30b5da7b9e64c9c8abf6277eec21
+    m_Address: Casual_Pillion_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e1541525308d4bc42b9784b2d23a02f2
+    m_Address: Casual_Pillion_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 620e9bd1f9b7ea04f99cf03581831c09
+    m_Address: Casual_Pillion_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: d618672b21efa6c4c90c771e3e480d03
+    m_Address: Casual_Pillion_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f9cb08a47db7ded4d856daa569c50c86
+    m_Address: Casual_Pillion_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: a1f52f8309e84504eb109ad336c11f51
+    m_Address: Casual_Pillion_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f9c66c063a56b834e95a0c62ef31f8dc
+    m_Address: Casual_Pillion_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 313e28c247808ca418bd3623a5123e7c
+    m_Address: Work_Pillion_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 75c59411b528d524e801e82306347a42
+    m_Address: Work_Pillion_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 6e2b90cda93d9dc4bb75e79fafb6b45c
+    m_Address: Work_Pillion_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 54d6fd56f77bb214d81a3caa3934f269
+    m_Address: Work_Pillion_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 689c0f083e13b9d43bea9e2d9612ce66
+    m_Address: Work_Pillion_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 09332278bdcb5e249b62b71a0c15b012
+    m_Address: Work_Pillion_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 1d8a69efe9166b748a2e520da7817588
+    m_Address: Work_Pillion_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 415380981ec36a040882016a22c3b7d0
+    m_Address: Work_Rena_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f297fe26077c24846876217ca82d4a2a
+    m_Address: Work_Rena_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 3de281d6ff3697d4f901c4a407e0d117
+    m_Address: Work_Rena_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e6b85b342edb15248b27f5980bb64f45
+    m_Address: Work_Rena_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 3ec5de09aa1853742930c0746da84c59
+    m_Address: Work_Rena_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 6973a8635e616f6409d036d7f511313c
+    m_Address: Work_Rena_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 3ad107243fde19444af70b9c19baf163
+    m_Address: Work_Rena_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f3dad161309f4b541b792aafea23796e
+    m_Address: Casual_Rena_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f3c64c1c0b6108848bd9d062786af636
+    m_Address: Casual_Rena_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 39898e2faa5d9a64bb795f3f89b38ab3
+    m_Address: Casual_Rena_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 2d7f423622aa85846876fca5ef340f58
+    m_Address: Casual_Rena_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 80bb6846b1beef547a98fd9073997c85
+    m_Address: Casual_Rena_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 0d89a07fe126d874f80a12abe10aad2c
+    m_Address: Casual_Rena_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 1ed56483743bcd3438fcf53c42809566
+    m_Address: Casual_Rena_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 8a7116a17c0dacb40804dcd03ab62700
+    m_Address: Transparent
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2829bd8c3a7c30e46878b80277b28fa9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 40fc9b711ab3bcd4083c1c17d080db23, type: 2}
+    - {fileID: 11400000, guid: ff79f33b878c5cf4896618b4b4c65415, type: 2}

@@ -1,11 +1,12 @@
 using DI;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.SceneManagement;
 
 public class NameData
 {
@@ -31,51 +32,96 @@ public class TalkManager : DIMono
     GameManager gameManager;
 
     [Inject]
+    QuestManager questManager;
+
+    [Inject]
     PlayData playData;
 
     [Inject]
     GameData gameData;
 
-    public QuestManager questManager;
+    public GameObject TextPanel;
+    public Texture2D Portait;
+    public string Portait_Address;
 
-    bool isFKeyPressed = false;
-    private void Update()
+  
+    private void Handle_Completed(AsyncOperationHandle<Texture2D> operation)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if(operation.Status == AsyncOperationStatus.Succeeded)
         {
-            isFKeyPressed = true;
+            Portait = operation.Result;
         }
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            isFKeyPressed = false;
-        }
+        else Debug.LogError($"Asset For {Portait_Address} failed to load.");
     }
+
+    public List<SceneLine> sceneLines;
 
     public IEnumerator StartScene(int sceneLineCode)
     {
-        playData.actionBlock = true;
-        var sceneLines = gameData.SceneLine.Where(l => l.code == sceneLineCode).OrderBy(l => l.index);
+        yield return null;
 
+        playData.isAction = true;
+        IEnumerable<SceneLine> sceneLines = gameData.SceneLine.Where(l => l.code == sceneLineCode);
+
+       
 
         foreach (var line in sceneLines)
         {
+            if (playData.NeedSkip && line.LineType!= lineType.Chat)
+            {
+                playData.NeedSkip = false;
+            }
+
             switch (line.LineType)
             {
                 case lineType.Chat:
 
-                    //채팅 화면에보여주기
+                    // 채팅 화면에보여주기
+                    TextPanel.GetComponent<Animator>().SetBool("isShow", true);
+                    // 초상화 설정
+                    Transform TalkPanel_Portrait = TextPanel.transform.Find("Portrait");
 
 
-                    while (true)
+                    Portait_Address = gameData.HostImage.Single(
+                       l => l.hostCode == sceneLines.FirstOrDefault().hostCode 
+                    && l.clothCode == sceneLines.FirstOrDefault().clothCode 
+                    && l.hostEmotion == sceneLines.FirstOrDefault().hostEmotion).assetPath;
+                    Debug.Log(Portait_Address);
+               
+                    var porait= Addressables.LoadAssetAsync<Texture2D>(Portait_Address).WaitForCompletion();
+                    var rawImage = TalkPanel_Portrait.GetComponent<RawImage>();
+                    
+
+                    rawImage.texture = porait;
+                    // 이름 설정
+                    Transform TalkPanel_Name = TextPanel.transform.Find("Name");
+                    Member interlocutor = gameData.Member.FirstOrDefault(l => l.Id == line.hostCode);
+          
+                    if (interlocutor != null)
                     {
-                        yield return null;
-                        if (isFKeyPressed)
+                        TalkPanel_Name.GetComponent<Text>().text = interlocutor.Name;
+                    }
+                    // 대화 설정
+                    Transform TalkPanel_Script = TextPanel.transform.Find("Script");
+                
+
+                    TalkPanel_Script.GetComponent<Text>().text = line.content;
+                    Debug.Log(" line.content " + line.content + " isFKeyPressed]" );
+
+                    while (Input.GetKeyUp(KeyCode.F) == false )
+                    {
+                        if (playData.NeedSkip)
                         {
-                            isFKeyPressed = false;
+                            yield return new WaitForSeconds(0.1f);
                             break;
                         }
-                    }
 
+                        yield return null;
+                    }
+                    yield return null;
+                    break;
+                case lineType.CloseChat:
+                    TextPanel.GetComponent<Animator>().SetBool("isShow", false);
                     break;
                 case lineType.Selection:
 
@@ -83,18 +129,27 @@ public class TalkManager : DIMono
                 case lineType.NextEvent:
 
                     break;
-                case lineType.SetSubQuest:
+                case lineType.Wait:
 
                     break;
-                case lineType.SetMainQuest:
-
+                case lineType.LoadScene:
+                    SceneManager.LoadScene(line.content);
                     break;
+                case lineType.NextSubQuest:
+                    questManager.NextSubQuest();
+                    break;
+                case lineType.NextMainQuest:
+                    questManager.NextMainQuest();
+                    break;
+                
             }
 
 
         }
-        playData.actionBlock = false;
-        UnityEngine.Debug.Log("SceneDone " + sceneLineCode);
+
+
+        playData.isAction = false;
+        Debug.Log("SceneDone " + sceneLineCode);
     }
 
     /*

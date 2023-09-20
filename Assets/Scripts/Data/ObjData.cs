@@ -11,6 +11,7 @@ public class ObjData : DIMono
 
     [Inject]
     GameData gameData;
+
     public int id; //오브젝트의 ID
 
 
