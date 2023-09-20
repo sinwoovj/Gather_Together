@@ -228,6 +228,358 @@ MonoBehaviour:
     clothCode: 1
     emotion: 8
     assetPath: Casual_Hera_Surprised
+  - hostCode: 1
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Hera_ Sad
+  - hostCode: 1
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Hera_Angry
+  - hostCode: 1
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Hera_Default
+  - hostCode: 1
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Hera_Fear
+  - hostCode: 1
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Hera_Happy
+  - hostCode: 1
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Hera_Ridiculous
+  - hostCode: 1
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Hera_Shy
+  - hostCode: 1
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Hera_Surprised
+  - hostCode: 2
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Clever_ Sad
+  - hostCode: 2
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Clever_Angry
+  - hostCode: 2
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Clever_Default
+  - hostCode: 2
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Clever_Fear
+  - hostCode: 2
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Clever_Happy
+  - hostCode: 2
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Clever_Ridiculous
+  - hostCode: 2
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Clever_Shy
+  - hostCode: 2
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Clever_Surprised
+  - hostCode: 2
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Clever_ Sad
+  - hostCode: 2
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Clever_Angry
+  - hostCode: 2
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Clever_Default
+  - hostCode: 2
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Clever_Fear
+  - hostCode: 2
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Clever_Happy
+  - hostCode: 2
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Clever_Ridiculous
+  - hostCode: 2
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Clever_Shy
+  - hostCode: 2
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Clever_Surprised
+  - hostCode: 3
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Rena_ Sad
+  - hostCode: 3
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Rena_Angry
+  - hostCode: 3
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Rena_Default
+  - hostCode: 3
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Rena_Fear
+  - hostCode: 3
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Rena_Happy
+  - hostCode: 3
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Rena_Ridiculous
+  - hostCode: 3
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Rena_Shy
+  - hostCode: 3
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Rena_Surprised
+  - hostCode: 3
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Rena_ Sad
+  - hostCode: 3
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Rena_Angry
+  - hostCode: 3
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Rena_Default
+  - hostCode: 3
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Rena_Fear
+  - hostCode: 3
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Rena_Happy
+  - hostCode: 3
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Rena_Ridiculous
+  - hostCode: 3
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Rena_Shy
+  - hostCode: 3
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Rena_Surprised
+  - hostCode: 4
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Rei_ Sad
+  - hostCode: 4
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Rei_Angry
+  - hostCode: 4
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Rei_Default
+  - hostCode: 4
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Rei_Fear
+  - hostCode: 4
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Rei_Happy
+  - hostCode: 4
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Rei_Ridiculous
+  - hostCode: 4
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Rei_Shy
+  - hostCode: 4
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Rei_Surprised
+  - hostCode: 4
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Rei_ Sad
+  - hostCode: 4
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Rei_Angry
+  - hostCode: 4
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Rei_Default
+  - hostCode: 4
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Rei_Fear
+  - hostCode: 4
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Rei_Happy
+  - hostCode: 4
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Rei_Ridiculous
+  - hostCode: 4
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Rei_Shy
+  - hostCode: 4
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Rei_Surprised
+  - hostCode: 5
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Pillion_ Sad
+  - hostCode: 5
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Pillion_Angry
+  - hostCode: 5
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Pillion_Default
+  - hostCode: 5
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Pillion_Fear
+  - hostCode: 5
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Pillion_Happy
+  - hostCode: 5
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Pillion_Ridiculous
+  - hostCode: 5
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Pillion_Shy
+  - hostCode: 5
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Pillion_Surprised
+  - hostCode: 5
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Pillion_ Sad
+  - hostCode: 5
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Pillion_Angry
+  - hostCode: 5
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Pillion_Default
+  - hostCode: 5
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Pillion_Fear
+  - hostCode: 5
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Pillion_Happy
+  - hostCode: 5
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Pillion_Ridiculous
+  - hostCode: 5
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Pillion_Shy
+  - hostCode: 5
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Pillion_Surprised
+  - hostCode: 6
+    clothCode: 1
+    emotion: 1
+    assetPath: Casual_Carlos_ Sad
+  - hostCode: 6
+    clothCode: 1
+    emotion: 2
+    assetPath: Casual_Carlos_Angry
+  - hostCode: 6
+    clothCode: 1
+    emotion: 3
+    assetPath: Casual_Carlos_Default
+  - hostCode: 6
+    clothCode: 1
+    emotion: 4
+    assetPath: Casual_Carlos_Fear
+  - hostCode: 6
+    clothCode: 1
+    emotion: 5
+    assetPath: Casual_Carlos_Happy
+  - hostCode: 6
+    clothCode: 1
+    emotion: 6
+    assetPath: Casual_Carlos_Ridiculous
+  - hostCode: 6
+    clothCode: 1
+    emotion: 7
+    assetPath: Casual_Carlos_Shy
+  - hostCode: 6
+    clothCode: 1
+    emotion: 8
+    assetPath: Casual_Carlos_Surprised
+  - hostCode: 6
+    clothCode: 2
+    emotion: 1
+    assetPath: Work_Carlos_ Sad
+  - hostCode: 6
+    clothCode: 2
+    emotion: 2
+    assetPath: Work_Carlos_Angry
+  - hostCode: 6
+    clothCode: 2
+    emotion: 3
+    assetPath: Work_Carlos_Default
+  - hostCode: 6
+    clothCode: 2
+    emotion: 4
+    assetPath: Work_Carlos_Fear
+  - hostCode: 6
+    clothCode: 2
+    emotion: 5
+    assetPath: Work_Carlos_Happy
+  - hostCode: 6
+    clothCode: 2
+    emotion: 6
+    assetPath: Work_Carlos_Ridiculous
+  - hostCode: 6
+    clothCode: 2
+    emotion: 7
+    assetPath: Work_Carlos_Shy
+  - hostCode: 6
+    clothCode: 2
+    emotion: 8
+    assetPath: Work_Carlos_Surprised
   SceneSelection:
   - code: 1001
     content: "\uC120\uD0DD\uC9C01"
@@ -252,7 +604,7 @@ MonoBehaviour:
     hostEmotion: 1
     intValues:
       values: 
-    content: "\uC548\uB155\uD558\uC138\uC694"
+    content: "\uC548\uB155."
   - code: 1
     index: 1
     LineType: 0
@@ -261,7 +613,7 @@ MonoBehaviour:
     hostEmotion: 2
     intValues:
       values: 
-    content: "\uB300\uC0AC1"
+    content: "\uB09C \uB808\uB098\uB77C\uACE0 \uD574."
   - code: 1
     index: 2
     LineType: 0
@@ -270,7 +622,7 @@ MonoBehaviour:
     hostEmotion: 3
     intValues:
       values: 
-    content: "\uB300\uC0AC2"
+    content: "\uC798 \uBD80\uD0C1\uD574."
   - code: 1
     index: 3
     LineType: 1
@@ -283,12 +635,12 @@ MonoBehaviour:
   - code: 2
     index: 0
     LineType: 0
-    hostCode: 1
-    clothCode: 1
-    hostEmotion: 4
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
     intValues:
       values: 
-    content: "\uB300\uC0AC\uB300\uC0AC1"
+    content: "\uC544\uC9C1 \uBB38\uC744 \uC5F4\uC9C0 \uC54A\uC740 \uB4EF \uD558\uB2E4."
   - code: 2
     index: 1
     LineType: 0
@@ -337,17 +689,17 @@ MonoBehaviour:
   ScenarioData:
   - MainQuestId: 0
     SubQuestId: 0
-    HostType: 4
+    HostType: 2
     Id: 1
     ScenarioActionType: 0
-    ActionValStr: Rei
+    ActionValStr: 
     IntVal: 1
   - MainQuestId: 1
     SubQuestId: 0
-    HostType: 4
+    HostType: 5
     Id: 1
     ScenarioActionType: 0
-    ActionValStr: Rei
+    ActionValStr: 
     IntVal: 2
   StatCondition: []
   LikeabilityCondition: []

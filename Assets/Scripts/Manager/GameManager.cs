@@ -101,7 +101,7 @@ public class GameManager : DIMono
             case ScenarioData.scenarioActionType.StatCondition:
                 break;
             case ScenarioData.scenarioActionType.Talk:
-
+                StartCoroutine(talkManager.StartScene(scenarioData.IntVal));
                 break;
 
         }

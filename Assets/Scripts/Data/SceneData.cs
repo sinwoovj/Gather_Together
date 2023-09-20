@@ -123,6 +123,7 @@ public class ScenarioData
     {
         None,
         NPC,
+        Member,
         Item,
         Object,
         Tower,
