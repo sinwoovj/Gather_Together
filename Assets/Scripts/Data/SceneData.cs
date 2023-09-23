@@ -80,7 +80,11 @@ public class IntArr : IEnumerable<int>, IFillFromStr
             yield return value;
         }
     }
-
+    
+    public int SelectCount()
+    {
+        return values.Count;
+    }
 
 
     System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()

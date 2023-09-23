@@ -63,8 +63,14 @@ public class TalkManager : DIMono
                 case lineType.Selection:
                     selectManager.SelectSetActive(true);
                     selectManager.Select(line.intValues);
-                    while (playData.isSelect == true)
+                    while (true)
                     {
+                        if (playData.selectNumber != -1)
+                        {
+                            selectManager.SelectResultProcess(line.intValues,playData.selectNumber);
+                            playData.selectNumber = -1;
+                            break;
+                        }
                         yield return null;
                     }
                     selectManager.SelectSetActive(false);
@@ -87,7 +93,6 @@ public class TalkManager : DIMono
             }
         }
         playData.isAction = false;
-        Debug.Log("SceneDone " + sceneLineCode);
     }
 
     /*

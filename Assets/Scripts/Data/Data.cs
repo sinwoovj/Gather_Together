@@ -46,6 +46,7 @@ public class NPC
 
     public enum SEX
     {
+        None,
         M,
         F,
         D
@@ -56,7 +57,6 @@ public class NPC
 public class Member
 {
     public int Id;
-    public string Type;
     public SEX Sex;
     public string Name;
     public int Age;
@@ -65,6 +65,7 @@ public class Member
 
     public enum SEX
     {
+        None,
         M,
         F
     }

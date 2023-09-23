@@ -7,10 +7,12 @@ public class PlayData
 {
     public bool questDetective;
     public bool isAction;
-    public bool isSelect;
     public bool isClickSuccess;
+    public int selectNumber;
     public float miniGameScore;
     public float score;
+
+
     public enum FromMiniGame
     {
         None,

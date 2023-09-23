@@ -25,6 +25,7 @@ public class GameManager : DIMono
         //데이터 로드
         dataManager.GameLoad();
         playData.isAction = false;
+        playData.selectNumber = -1;
         questManager.SetQuestText();
     }
 

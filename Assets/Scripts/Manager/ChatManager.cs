@@ -27,13 +27,12 @@ public class ChatManager : DIMono
            l => l.hostCode == sceneLines.FirstOrDefault().hostCode
         && l.clothCode == sceneLines.FirstOrDefault().clothCode
         && l.hostEmotion == sceneLines.FirstOrDefault().hostEmotion).assetPath;
-        Debug.Log(Portait_Address);
 
-        var porait = Addressables.LoadAssetAsync<Texture2D>(Portait_Address).WaitForCompletion();
+        var portait = Addressables.LoadAssetAsync<Texture2D>(Portait_Address).WaitForCompletion();
         var rawImage = TalkPanel_Portrait.GetComponent<RawImage>();
 
 
-        rawImage.texture = porait;
+        rawImage.texture = portait;
         // 이름 설정
         Transform TalkPanel_Name = TalkPanel.transform.Find("Name");
         Member interlocutor = gameData.Member.FirstOrDefault(l => l.Id == line.hostCode);

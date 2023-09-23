@@ -15,163 +15,163 @@ MonoBehaviour:
   NPC:
   - Id: 1
     Type: Lovers
-    Sex: 0
+    Sex: 1
     Name: "\uC544\uCE58 (Archie)"
     Age: Adults
   - Id: 2
     Type: Lovers
-    Sex: 1
+    Sex: 2
     Name: "\uC7AC\uD074\uB9B0 (Jaclyn)"
     Age: Adults
   - Id: 3
     Type: Married
-    Sex: 0
+    Sex: 1
     Name: "\uC70C\uC2A8 (Wilson)"
     Age: Adults
   - Id: 4
     Type: Married
-    Sex: 1
+    Sex: 2
     Name: "\uC54C\uB809\uC2DC\uC544 (Alexia)"
     Age: Adults
   - Id: 5
     Type: Family
-    Sex: 0
+    Sex: 1
     Name: "\uBE0C\uB798\uB4DC (Brad)"
     Age: Adults
   - Id: 6
     Type: Family
-    Sex: 1
+    Sex: 2
     Name: "\uC5D0\uC2A4\uD14C\uD30C\uB2C8 (Estefany)"
     Age: Adults
   - Id: 7
     Type: Family
-    Sex: 0
+    Sex: 1
     Name: "\uB2E8\uB4DC\uB808 (Dandre)"
     Age: Children
   - Id: 8
     Type: Family
-    Sex: 1
+    Sex: 2
     Name: "\uC2E0\uC2DC\uC544 (Cynthia)"
     Age: Children
   - Id: 9
     Type: Student
-    Sex: 0
+    Sex: 1
     Name: "\uBE14\uB808\uC774\uD06C (Blake)"
     Age: Student
   - Id: 10
     Type: Student
-    Sex: 1
+    Sex: 2
     Name: "\uC570\uBC84 (Amber)"
     Age: Student
   - Id: 11
     Type: Woman
-    Sex: 1
+    Sex: 2
     Name: "\uC904\uB9AC\uC544 (Julia)"
     Age: Adults
   - Id: 12
     Type: Woman
-    Sex: 1
+    Sex: 2
     Name: "\uADF8\uB780\uB370 (Grande)"
     Age: Adults
   - Id: 13
     Type: Woman
-    Sex: 1
+    Sex: 2
     Name: "\uC544\uD5EC (Ahel)"
     Age: Adults
   - Id: 14
     Type: Man
-    Sex: 0
+    Sex: 1
     Name: "\uD5EC\uB9AC\uC6B0\uC2A4 (Hellious)"
     Age: Adults
   - Id: 15
     Type: Man
-    Sex: 0
+    Sex: 1
     Name: "\uBA54\uD2B8 (Matt)"
     Age: Adults
   - Id: 16
     Type: Man
-    Sex: 0
+    Sex: 1
     Name: "\uC81C\uC774\uC2A8 (Jason)"
     Age: Adults
   - Id: 17
     Type: Mixed
-    Sex: 1
+    Sex: 2
     Name: "\uBA54\uC774 (Mei)"
     Age: Adults
   - Id: 18
     Type: Mixed
-    Sex: 0
+    Sex: 1
     Name: "\uD06C\uB9AC\uC2A4 (Chris)"
     Age: Adults
   - Id: 19
     Type: Mixed
-    Sex: 1
+    Sex: 2
     Name: "\uB098\uBE44\uC544 (Navia)"
     Age: Adults
   - Id: 20
     Type: Older Couple
-    Sex: 0
+    Sex: 1
     Name: "\uD37C\uAC70\uC2A8 (Ferguson)"
     Age: 'Seniors '
   - Id: 21
     Type: Older Couple
-    Sex: 1
+    Sex: 2
     Name: "\uC5D8\uB9B0 (Elin)"
     Age: 'Seniors '
   - Id: 22
     Type: With Pet
-    Sex: 2
+    Sex: 3
     Name: "\uBE0C\uB77C\uC6B0\uB2C8 (Brownie)"
     Age: Pet
   - Id: 23
     Type: With Pet
-    Sex: 0
+    Sex: 1
     Name: "\uC0CC\uB35C (Sandle)"
     Age: Adults
   - Id: 24
     Type: With Pet
-    Sex: 1
+    Sex: 2
     Name: "\uB9AC\uCCBC (Richel)"
     Age: Adults
   Member:
+  - Id: 0
+    Sex: 0
+    Name: 
+    Age: 0
+    Birth: 00-00
+    Height: 0
   - Id: 1
-    Type: Member
-    Sex: 1
+    Sex: 2
     Name: "\uD5E4\uB77C (Hera)"
     Age: 27
     Birth: 08-18
     Height: 166
   - Id: 2
-    Type: Member
-    Sex: 0
+    Sex: 1
     Name: "\uD074\uB808\uBC84 (Clever)"
     Age: 29
     Birth: 02-14
     Height: 188
   - Id: 3
-    Type: Member
-    Sex: 1
+    Sex: 2
     Name: "\uB808\uB098 (Rena)"
     Age: 25
     Birth: 11-06
     Height: 155
   - Id: 4
-    Type: Member
-    Sex: 1
+    Sex: 2
     Name: "\uB808\uC774 (Rei)"
     Age: 27
     Birth: 08-03
     Height: 168
   - Id: 5
-    Type: Member
-    Sex: 0
+    Sex: 1
     Name: "\uD544\uB9AC\uC628 (Pillion)"
     Age: 27
     Birth: 01-19
     Height: 185
   - Id: 6
-    Type: Member
-    Sex: 0
+    Sex: 1
     Name: "\uCE74\uB97C\uB85C\uC2A4 (Carlos)"
     Age: 25
     Birth: 07-07
@@ -629,11 +629,11 @@ MonoBehaviour:
     assetPath: Work_Carlos_Surprised
   SceneSelection:
   - code: 1001
-    content: "\uB4E4\uC5B4\uAC04\uB2E4."
+    content: "\uC544\uB2C8\uB2E4, \uB3CC\uC544\uAC04\uB2E4."
     conditionCodes: 
     sceneLineCode: 8
   - code: 1002
-    content: "\uC544\uB2C8\uB2E4, \uB3CC\uC544\uAC04\uB2E4."
+    content: "\uB4E4\uC5B4\uAC04\uB2E4."
     conditionCodes: 
     sceneLineCode: 9
   SceneCondition:
@@ -696,7 +696,7 @@ MonoBehaviour:
     LineType: 0
     hostCode: 3
     clothCode: 1
-    hostEmotion: 3
+    hostEmotion: 5
     intValues:
       values: 
     content: "\uB09C \uB808\uB098\uB77C\uACE0 \uD574."
@@ -705,7 +705,7 @@ MonoBehaviour:
     LineType: 0
     hostCode: 3
     clothCode: 1
-    hostEmotion: 5
+    hostEmotion: 3
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
@@ -874,6 +874,15 @@ MonoBehaviour:
       \uB4E4\uC5B4\uAC08\uAE4C?"
   - code: 7
     index: 1
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 7
+    index: 2
     LineType: 5
     hostCode: 0
     clothCode: 0
@@ -889,7 +898,7 @@ MonoBehaviour:
     hostEmotion: 0
     intValues:
       values: 
-    content: "\uB098\uB294 \uCC9C\uCC9C\uD788 \uBB38\uC744 \uC5F4\uACE0 \uB4E4\uC5B4\uC130\uB2E4."
+    content: "\uB4A4\uB3CC\uC544\uAC14\uB2E4."
   - code: 8
     index: 1
     LineType: 1
@@ -899,7 +908,25 @@ MonoBehaviour:
     intValues:
       values: 
     content: 
-  - code: 8
+  - code: 9
+    index: 0
+    LineType: 0
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: "\uB098\uB294 \uCC9C\uCC9C\uD788 \uBB38\uC744 \uC5F4\uACE0 \uB4E4\uC5B4\uC130\uB2E4."
+  - code: 9
+    index: 1
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 9
     index: 2
     LineType: 7
     hostCode: 0
@@ -908,28 +935,10 @@ MonoBehaviour:
     intValues:
       values: 
     content: FishingShop
-  - code: 9
-    index: 0
-    LineType: 0
-    hostCode: 0
-    clothCode: 0
-    hostEmotion: 0
-    intValues:
-      values: 
-    content: "\uB4A4\uB3CC\uC544\uAC14\uB2E4."
-  - code: 9
-    index: 1
-    LineType: 1
-    hostCode: 0
-    clothCode: 0
-    hostEmotion: 0
-    intValues:
-      values: 
-    content: 
   - code: 10
     index: 0
     LineType: 0
-    hostCode: 4
+    hostCode: 2
     clothCode: 1
     hostEmotion: 3
     intValues:
@@ -938,13 +947,85 @@ MonoBehaviour:
   - code: 10
     index: 1
     LineType: 0
+    hostCode: 2
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB0B4 \uC774\uB984 \uAE30\uC5B5\uD558\uC9C0? \uD074\uB808\uBC84."
+  - code: 10
+    index: 2
+    LineType: 0
+    hostCode: 2
+    clothCode: 1
+    hostEmotion: 5
+    intValues:
+      values: 
+    content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 10
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 11
+    index: 0
+    LineType: 0
+    hostCode: 3
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB610 \uB9CC\uB0AC\uB124."
+  - code: 11
+    index: 1
+    LineType: 0
+    hostCode: 3
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB0B4 \uC774\uB984 \uAE30\uC5B5\uD558\uC9C0? \uB808\uB098."
+  - code: 11
+    index: 2
+    LineType: 0
+    hostCode: 3
+    clothCode: 1
+    hostEmotion: 5
+    intValues:
+      values: 
+    content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 11
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 12
+    index: 0
+    LineType: 0
     hostCode: 4
     clothCode: 1
     hostEmotion: 3
     intValues:
       values: 
-    content: "\uB09C \uB808\uC774\uB77C\uACE0 \uD574."
-  - code: 10
+    content: "\uB610 \uB9CC\uB0AC\uB124."
+  - code: 12
+    index: 1
+    LineType: 0
+    hostCode: 4
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB0B4 \uC774\uB984 \uAE30\uC5B5\uD558\uC9C0? \uB808\uC774."
+  - code: 12
     index: 2
     LineType: 0
     hostCode: 4
@@ -953,8 +1034,80 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
-  - code: 10
+  - code: 12
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 13
+    index: 0
+    LineType: 0
+    hostCode: 5
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB610 \uB9CC\uB0AC\uB124."
+  - code: 13
     index: 1
+    LineType: 0
+    hostCode: 5
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB0B4 \uC774\uB984 \uAE30\uC5B5\uD558\uC9C0? \uD544\uB9AC\uC628."
+  - code: 13
+    index: 2
+    LineType: 0
+    hostCode: 5
+    clothCode: 1
+    hostEmotion: 5
+    intValues:
+      values: 
+    content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 13
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 14
+    index: 0
+    LineType: 0
+    hostCode: 6
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB610 \uB9CC\uB0AC\uB124."
+  - code: 14
+    index: 1
+    LineType: 0
+    hostCode: 6
+    clothCode: 1
+    hostEmotion: 3
+    intValues:
+      values: 
+    content: "\uB0B4 \uC774\uB984 \uAE30\uC5B5\uD558\uC9C0? \uCE74\uB97C\uB85C\uC2A4."
+  - code: 14
+    index: 2
+    LineType: 0
+    hostCode: 6
+    clothCode: 1
+    hostEmotion: 5
+    intValues:
+      values: 
+    content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 14
+    index: 3
     LineType: 1
     hostCode: 0
     clothCode: 0
@@ -1018,7 +1171,35 @@ MonoBehaviour:
     Id: 2
     ScenarioActionType: 0
     ActionValStr: 
-    IntVal: 10
+    IntVal: 11
+  - MainQuestId: 1
+    SubQuestId: 1
+    HostType: 2
+    Id: 3
+    ScenarioActionType: 0
+    ActionValStr: 
+    IntVal: 12
+  - MainQuestId: 1
+    SubQuestId: 1
+    HostType: 2
+    Id: 4
+    ScenarioActionType: 0
+    ActionValStr: 
+    IntVal: 13
+  - MainQuestId: 1
+    SubQuestId: 1
+    HostType: 2
+    Id: 5
+    ScenarioActionType: 0
+    ActionValStr: 
+    IntVal: 14
+  - MainQuestId: 1
+    SubQuestId: 1
+    HostType: 2
+    Id: 6
+    ScenarioActionType: 0
+    ActionValStr: 
+    IntVal: 15
   StatCondition: []
   LikeabilityCondition: []
   QuestCondition:

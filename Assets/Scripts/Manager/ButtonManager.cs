@@ -1,5 +1,8 @@
 using DI;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : DIMono
@@ -25,6 +28,9 @@ public class ButtonManager : DIMono
     }
     public void SelectionButton()
     {
-         
+        GameObject clickObject =
+            EventSystem.current.currentSelectedGameObject;
+        playData.selectNumber = int.Parse(clickObject.name[9].ToString());
+        Debug.Log(playData.selectNumber);
     }
 }
