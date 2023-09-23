@@ -4,11 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestManager : DIMono
 {
-    public GameObject[] questObject; //퀘스트 오브젝트를 저장할 변수 생성
-
     [Inject]
     GameData gameData;
 
@@ -17,6 +16,10 @@ public class QuestManager : DIMono
 
     [Inject]
     UserData userData;
+
+    public GameObject[] questObject; //퀘스트 오브젝트를 저장할 변수 생성
+    public Text mainQuestText;
+    public Text subQuestText;
 
     // userData 안에 있는 현재 QuestId로 퀘스트 이름과 내용을 알아낸다.
     public MainQuest CheckMainQuestData()
@@ -39,14 +42,19 @@ public class QuestManager : DIMono
         }
         return temp;
     }
-    public void NextMainQuest()
+    public void SetQuestText()
     {
-        userData.MainQuestId++;
+        mainQuestText.text = CheckMainQuestData() == null ? "" : CheckMainQuestData().MainQuestName;
+        subQuestText.text = CheckSubQuestData() == null ? "" : CheckSubQuestData().SubQuestName;
+    }
+    public void SetMainQuest(int id)
+    {
+        userData.MainQuestId = id;
         playData.questDetective = true;
     }
-    public void NextSubQuest()
+    public void SetSubQuest(int id)
     {
-        userData.SubQuestId++;
+        userData.SubQuestId = id;
         playData.questDetective = true;
     }
 }

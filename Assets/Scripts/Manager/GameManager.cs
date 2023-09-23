@@ -5,48 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : DIMono
 {
-    public TalkManager talkManager; //대화 매니저를 변수로 선언 후, 함수 사용
-    public QuestManager questManager;
-    public Text mainQuestText;
-    public Text subQuestText;
-    public GameObject SubQuestPanel;
-    public GameObject menuSet;
-    public Text Objectname;
-    
-
+    [Inject]
+    TalkManager TalkManager; //대화 매니저를 변수로 선언 후, 함수 사용
 
     [Inject]
     PlayData playData;
 
     [Inject]
-    GameData gameData;
-
-    [Inject]
-    UserData userData;
+    QuestManager questManager;
 
     [Inject]
     DataManager dataManager;
 
-    void CheckSceneFromMiniGame()
-    {
-        switch (playData.fromMiniGame)
-        {
-            case PlayData.FromMiniGame.None:
-                break;
-            case PlayData.FromMiniGame.BugManager:
-                break;
-            case PlayData.FromMiniGame.FishManager:
-                break;
-        }
-    }
+    public GameObject SubQuestPanel;
+    public GameObject menuSet;
 
     protected override void Initialize()
     {
         //데이터 로드
         dataManager.GameLoad();
         playData.isAction = false;
-        mainQuestText.text = questManager.CheckMainQuestData() == null ? "" : questManager.CheckMainQuestData().MainQuestName;
-        subQuestText.text = questManager.CheckSubQuestData() == null ? "" : questManager.CheckSubQuestData().SubQuestName;
+        questManager.SetQuestText();
     }
 
     private void Update()
@@ -67,8 +46,7 @@ public class GameManager : DIMono
         }
         if (playData.questDetective)
         {
-            mainQuestText.text = questManager.CheckMainQuestData() == null ? "" : questManager.CheckMainQuestData().MainQuestName;
-            subQuestText.text = questManager.CheckSubQuestData() == null ? "" : questManager.CheckSubQuestData().SubQuestName;
+            questManager.SetQuestText();
             playData.questDetective = false;
         }
     }
@@ -80,17 +58,33 @@ public class GameManager : DIMono
         switch (scenarioData.ScenarioActionType)
         {
             case ScenarioData.scenarioActionType.ToUnityScene:
+                SceneManager.LoadScene(scenarioData.ActionValStr);
                 break;
             case ScenarioData.scenarioActionType.ToStartScene:
+                //애니메이션 같은 거나 연출
                 break;
             case ScenarioData.scenarioActionType.LikeabilityCondition:
                 break;
             case ScenarioData.scenarioActionType.StatCondition:
                 break;
             case ScenarioData.scenarioActionType.Talk:
-                StartCoroutine(talkManager.StartScene(scenarioData.IntVal));
+                StartCoroutine(TalkManager.StartScene(scenarioData.IntVal));
                 break;
 
         }
     }
+
+    void CheckSceneFromMiniGame()
+    {
+        switch (playData.fromMiniGame)
+        {
+            case PlayData.FromMiniGame.None:
+                break;
+            case PlayData.FromMiniGame.BugManager:
+                break;
+            case PlayData.FromMiniGame.FishManager:
+                break;
+        }
+    }
+
 }

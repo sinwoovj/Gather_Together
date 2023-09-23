@@ -630,10 +630,12 @@ MonoBehaviour:
   SceneSelection:
   - code: 1001
     content: "\uB4E4\uC5B4\uAC04\uB2E4."
-    conditionCodes: 1
+    conditionCodes: 
+    sceneLineCode: 8
   - code: 1002
     content: "\uC544\uB2C8\uB2E4, \uB3CC\uC544\uAC04\uB2E4."
-    conditionCodes: 2
+    conditionCodes: 
+    sceneLineCode: 9
   SceneCondition:
   - code: 1
     kind: 0
@@ -671,6 +673,15 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 1
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
   - code: 2
     index: 0
     LineType: 0
@@ -709,13 +720,13 @@ MonoBehaviour:
     content: 
   - code: 2
     index: 4
-    LineType: 2
+    LineType: 3
     hostCode: 0
     clothCode: 0
     hostEmotion: 0
     intValues:
       values: 
-    content: 
+    content: 1
   - code: 3
     index: 0
     LineType: 0
@@ -743,6 +754,15 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 3
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
   - code: 4
     index: 0
     LineType: 0
@@ -770,6 +790,15 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 4
+    index: 3
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
   - code: 5
     index: 0
     LineType: 0
@@ -799,7 +828,16 @@ MonoBehaviour:
     content: "\uC798 \uBD80\uD0C1\uD574."
   - code: 5
     index: 3
-    LineType: 3
+    LineType: 4
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 1
+  - code: 5
+    index: 3
+    LineType: 1
     hostCode: 0
     clothCode: 0
     hostEmotion: 0
@@ -815,6 +853,15 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC544\uC9C1 \uBB38\uC744 \uC5F4\uC9C0 \uC54A\uC740 \uB4EF \uD558\uB2E4."
+  - code: 6
+    index: 0
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
   - code: 7
     index: 0
     LineType: 0
@@ -827,7 +874,7 @@ MonoBehaviour:
       \uB4E4\uC5B4\uAC08\uAE4C?"
   - code: 7
     index: 1
-    LineType: 4
+    LineType: 5
     hostCode: 0
     clothCode: 0
     hostEmotion: 0
@@ -837,13 +884,58 @@ MonoBehaviour:
   - code: 8
     index: 0
     LineType: 0
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: "\uB098\uB294 \uCC9C\uCC9C\uD788 \uBB38\uC744 \uC5F4\uACE0 \uB4E4\uC5B4\uC130\uB2E4."
+  - code: 8
+    index: 1
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 8
+    index: 2
+    LineType: 7
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: FishingShop
+  - code: 9
+    index: 0
+    LineType: 0
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: "\uB4A4\uB3CC\uC544\uAC14\uB2E4."
+  - code: 9
+    index: 1
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
+  - code: 10
+    index: 0
+    LineType: 0
     hostCode: 4
     clothCode: 1
     hostEmotion: 3
     intValues:
       values: 
     content: "\uB610 \uB9CC\uB0AC\uB124."
-  - code: 8
+  - code: 10
     index: 1
     LineType: 0
     hostCode: 4
@@ -852,7 +944,7 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uB09C \uB808\uC774\uB77C\uACE0 \uD574."
-  - code: 8
+  - code: 10
     index: 2
     LineType: 0
     hostCode: 4
@@ -861,6 +953,15 @@ MonoBehaviour:
     intValues:
       values: 
     content: "\uC798 \uBD80\uD0C1\uD574."
+  - code: 10
+    index: 1
+    LineType: 1
+    hostCode: 0
+    clothCode: 0
+    hostEmotion: 0
+    intValues:
+      values: 
+    content: 
   ScenarioData:
   - MainQuestId: 0
     SubQuestId: 0
@@ -905,19 +1006,19 @@ MonoBehaviour:
     ActionValStr: 
     IntVal: 6
   - MainQuestId: 1
-    SubQuestId: 0
+    SubQuestId: 1
     HostType: 5
     Id: 1
     ScenarioActionType: 0
     ActionValStr: 
     IntVal: 7
   - MainQuestId: 1
-    SubQuestId: 0
+    SubQuestId: 1
     HostType: 2
     Id: 2
     ScenarioActionType: 0
     ActionValStr: 
-    IntVal: 8
+    IntVal: 10
   StatCondition: []
   LikeabilityCondition: []
   QuestCondition:

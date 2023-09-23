@@ -79,7 +79,7 @@ namespace DI
 
         public object GetValue(Type type,string key = null)
         {
-            var strKey= GetKey(type, key);
+            var strKey = GetKey(type, key);
             if (containerDic.ContainsKey(strKey) == false)
                 return null;
             return containerDic[strKey];
@@ -113,8 +113,9 @@ namespace DI
             return type.Name;
         }
 
-        public void Regist<T>(T t){
-            containerDic.Add(GetKey(typeof(T)),t);
+        public void Regist<T>(T t)
+        {
+            containerDic.Add(GetKey(typeof(T)), t);
         }
         public void Regist<T>(T t, string key)
         {

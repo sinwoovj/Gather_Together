@@ -26,6 +26,7 @@ public class SceneSelection
     public int code;
     public string content;
     public string conditionCodes;
+    public int sceneLineCode;
 }
 
 [System.Serializable]
@@ -92,8 +93,8 @@ public enum lineType
     Chat,
     CloseChat,
     Wait,
-    NextMainQuest,
-    NextSubQuest,
+    SetMainQuest,
+    SetSubQuest,
     Selection,
     NextEvent,
     LoadScene,

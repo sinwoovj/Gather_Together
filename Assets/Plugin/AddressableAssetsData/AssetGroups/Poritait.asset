@@ -271,6 +271,146 @@ MonoBehaviour:
     m_Address: Transparent
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 370a36a5921403348897bc20c3dc0fbb
+    m_Address: Casual_Rei_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: a6a1e889e8f06fb489568409fb941a9e
+    m_Address: Casual_Rei_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: cf5cdf191b36eec46a837d3c78b8d556
+    m_Address: Casual_Rei_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 5d9d285e69908bb4b93c1d604ea06399
+    m_Address: Casual_Rei_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 51ae848536f95c44eb017da9e1f57ba2
+    m_Address: Casual_Rei_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 528219262faadd94b80d3582473a22b9
+    m_Address: Casual_Rei_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: dcf73ca24c3e1814ea605faeeb9c26ed
+    m_Address: Casual_Rei_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 32b463ecd73edec43ba5c192323833f2
+    m_Address: Work_Rei_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e5ce3cab81af15945b818b982d08c88d
+    m_Address: Work_Rei_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 316ecb3b4b642ff458934640a8b85335
+    m_Address: Work_Rei_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: cee62c3a9855f504d859c9d0cd71197c
+    m_Address: Work_Rei_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 8813fbe0bdd4c714886bb00ed2643fce
+    m_Address: Work_Rei_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 07fbd302b066ecd46aa94edfb0ed82d5
+    m_Address: Work_Rei_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 480620a260afc034796d5dcfa69ded86
+    m_Address: Work_Rei_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 0a62b2841e2d58a47a7d9e3ea854b440
+    m_Address: Casual_Clever_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 142039799ee852741ab2d3d1d981f46d
+    m_Address: Casual_Clever_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 3b86501ce11ef254ab52d41239bfb09b
+    m_Address: Casual_Clever_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: fc897ce039f0e964c8c3a791e07efe6c
+    m_Address: Casual_Clever_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 76f5056a875daf049ae995a6a5495017
+    m_Address: Casual_Clever_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: ff2beb74ae89caa4586159c726cfde6f
+    m_Address: Casual_Clever_Sad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 2a4a8ff5a649a4c428e64268f6390641
+    m_Address: Casual_Clever_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: e930c6dc2cfceaf419d62b93d1ec64b4
+    m_Address: Work_Clever_Angry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: f4f1c3609a88442468eb22203467c90b
+    m_Address: Work_Clever_Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: b9832ace5237245418bbd63fc6f32f2b
+    m_Address: Work_Clever_Fear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 7106932de5ee8c045b7f38cf17e6041b
+    m_Address: Work_Clever_Happy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: c47482fed4f6c524eb9c66a549460b2b
+    m_Address: Work_Clever_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 7333db323310fb94a9f2bb7feaac7c01
+    m_Address: Work_Clever_Ridiculous
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
+  - m_GUID: 79797019a90631c489780e0180efeb69
+    m_Address: Work_Clever_Surprised
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Member_Poritait
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2829bd8c3a7c30e46878b80277b28fa9, type: 2}
   m_SchemaSet:

@@ -3,56 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
-
-public class NameData
-{
-    public int code;
-
-    public enum NameType
-    {
-        FixObject,
-        Character,
-        Item,
-    }
-
-    public NameType type;
-    public string name;
-
-}
-
-
+using System;
+using UnityEditor;
 
 public class TalkManager : DIMono
 {
     [Inject]
-    GameManager gameManager;
+    QuestManager questManager;
 
     [Inject]
-    QuestManager questManager;
+    ChatManager chatManager;
+
+    [Inject]
+    SelectManager selectManager;
 
     [Inject]
     PlayData playData;
 
     [Inject]
     GameData gameData;
-
-    public GameObject TextPanel;
-    public Texture2D Portait;
-    public string Portait_Address;
-
-  
-    private void Handle_Completed(AsyncOperationHandle<Texture2D> operation)
-    {
-        if(operation.Status == AsyncOperationStatus.Succeeded)
-        {
-            Portait = operation.Result;
-        }
-        else Debug.LogError($"Asset For {Portait_Address} failed to load.");
-    }
 
     public List<SceneLine> sceneLines;
 
@@ -75,39 +45,7 @@ public class TalkManager : DIMono
             switch (line.LineType)
             {
                 case lineType.Chat:
-
-                    // 채팅 화면에보여주기
-                    TextPanel.GetComponent<Animator>().SetBool("isShow", true);
-                    // 초상화 설정
-                    Transform TalkPanel_Portrait = TextPanel.transform.Find("Portrait");
-
-
-                    Portait_Address = gameData.HostImage.Single(
-                       l => l.hostCode == sceneLines.FirstOrDefault().hostCode 
-                    && l.clothCode == sceneLines.FirstOrDefault().clothCode 
-                    && l.hostEmotion == sceneLines.FirstOrDefault().hostEmotion).assetPath;
-                    Debug.Log(Portait_Address);
-               
-                    var porait= Addressables.LoadAssetAsync<Texture2D>(Portait_Address).WaitForCompletion();
-                    var rawImage = TalkPanel_Portrait.GetComponent<RawImage>();
-                    
-
-                    rawImage.texture = porait;
-                    // 이름 설정
-                    Transform TalkPanel_Name = TextPanel.transform.Find("Name");
-                    Member interlocutor = gameData.Member.FirstOrDefault(l => l.Id == line.hostCode);
-          
-                    if (interlocutor != null)
-                    {
-                        TalkPanel_Name.GetComponent<Text>().text = interlocutor.Name;
-                    }
-                    // 대화 설정
-                    Transform TalkPanel_Script = TextPanel.transform.Find("Script");
-                
-
-                    TalkPanel_Script.GetComponent<Text>().text = line.content;
-                    Debug.Log(" line.content " + line.content + " isFKeyPressed]" );
-
+                    chatManager.Chat(sceneLines, line);
                     while (Input.GetKeyUp(KeyCode.F) == false )
                     {
                         if (playData.NeedSkip)
@@ -115,39 +53,39 @@ public class TalkManager : DIMono
                             yield return new WaitForSeconds(0.1f);
                             break;
                         }
-
                         yield return null;
                     }
                     yield return null;
                     break;
                 case lineType.CloseChat:
-                    TextPanel.GetComponent<Animator>().SetBool("isShow", false);
+                    chatManager.CloseChat();
                     break;
                 case lineType.Selection:
-
+                    selectManager.SelectSetActive(true);
+                    selectManager.Select(line.intValues);
+                    while (playData.isSelect == true)
+                    {
+                        yield return null;
+                    }
+                    selectManager.SelectSetActive(false);
                     break;
                 case lineType.NextEvent:
 
                     break;
                 case lineType.Wait:
-
+                    yield return new WaitForSeconds(float.Parse(line.content));
                     break;
                 case lineType.LoadScene:
                     SceneManager.LoadScene(line.content);
                     break;
-                case lineType.NextSubQuest:
-                    questManager.NextSubQuest();
+                case lineType.SetSubQuest:
+                    questManager.SetSubQuest(Int32.Parse(line.content));
                     break;
-                case lineType.NextMainQuest:
-                    questManager.NextMainQuest();
+                case lineType.SetMainQuest:
+                    questManager.SetMainQuest(Int32.Parse(line.content));
                     break;
-                
             }
-
-
         }
-
-
         playData.isAction = false;
         Debug.Log("SceneDone " + sceneLineCode);
     }
