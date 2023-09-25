@@ -24,9 +24,10 @@ public class ChatManager : DIMono
 
 
         Portait_Address = gameData.HostImage.Single(
-           l => l.hostCode == sceneLines.FirstOrDefault().hostCode
-        && l.clothCode == sceneLines.FirstOrDefault().clothCode
-        && l.hostEmotion == sceneLines.FirstOrDefault().hostEmotion).assetPath;
+           l => l.hostCode == line.hostCode
+        && l.clothCode == line.clothCode
+        && l.hostEmotion == line.hostEmotion).assetPath;
+     
 
         var portait = Addressables.LoadAssetAsync<Texture2D>(Portait_Address).WaitForCompletion();
         var rawImage = TalkPanel_Portrait.GetComponent<RawImage>();

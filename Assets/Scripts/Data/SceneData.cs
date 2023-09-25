@@ -144,14 +144,14 @@ public class ScenarioData
         /*
         ToUnityScne 유니티의 씬을 이동 (ActionValStr)
         ToStartScne 게임씬을 시작 SceneLine으로 표기된 씬
-        LikeabilityCondition 호감도에 따라 바뀜
-        StatCondition 현재 스탯에 따라 바뀜
+        SetLikeability 현재 특정 Member/NPC에 대한 호감도를 설정함.
+        SetStat 현재 스탯을 바꿈
          */
         Talk,
         ToUnityScene,
         ToStartScene,
-        LikeabilityCondition,
-        StatCondition,
+        SetLikeability,
+        SetStat,
     }
     public scenarioActionType ScenarioActionType;
     public string ActionValStr;

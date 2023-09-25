@@ -44,6 +44,15 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
+        if (this.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Static)
+        {
+            this.GetComponent<Animator>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<Animator>().enabled = true;
+        }
+
         //#Move Setting Value
         //Main Scene에서 받아온 Setting 값
 
@@ -113,7 +122,7 @@ public class PlayerAction : MonoBehaviour
     {
         //#Move
         Vector2 moveVec = isHorizonMove ? new Vector3(h, 0, 0) : new Vector3(0, v, 0); //플래그 변수(isHorizonMove) 하나로 수평, 수직이동을 결정 [삼항 연산자 사용]
-        rb.velocity = moveVec * (Input.GetKey("left shift") ? runSpeed : moveSpeed); //부드러운 움직임
+        rb.velocity = moveVec * (this.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Static ? 0 : (Input.GetKey("left shift") ? runSpeed : moveSpeed)); //부드러운 움직임
 
         Vector2 dirOfRaycast = rb.position;
         dirOfRaycast.y -= (float)0.2;

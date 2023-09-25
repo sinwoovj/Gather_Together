@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ab453b83a0f24d745867a5c5591217b8, type: 3}
+    - {fileID: 102900000, guid: 20c324398c3223e458327e06abd326fc, type: 3}
+    - {fileID: 102900000, guid: 7a23fcb3513f9f64cbe9b8fa2de45ce6, type: 3}
+    - {fileID: 102900000, guid: 00a6a811061190b4eb4f452f059596d3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 12547f10e0349ac41b862c15c7e251c4, type: 3}
+  - {fileID: 21300000, guid: 5c693c9010269b841a80bbf8c2fcc679, type: 3}
+  - {fileID: 21300000, guid: d3c49d1318ac3054db6e5da34cdd4c64, type: 3}
+  - {fileID: 21300000, guid: c5e5ed43a1892fc4d94b37e05c78068a, type: 3}
+  - {fileID: 21300000, guid: 772a2e73f8ccddc4498d6a137c3b11fe, type: 3}
+  - {fileID: 21300000, guid: 5b0125653c5ddd64bafa8cebd258d21c, type: 3}
+  - {fileID: 21300000, guid: 74e2d5f500025424683c7ff670b356ec, type: 3}
+  - {fileID: 21300000, guid: 36432ad6a2fdf9c438a0655d6ab10d3c, type: 3}
+  - {fileID: 21300000, guid: 65267ef6a8a0d1948991cee9e6727710, type: 3}
+  - {fileID: 21300000, guid: 8125edb897ef2d34f96c864eac8c64d6, type: 3}
+  - {fileID: 21300000, guid: 8b36b33a60bc0e64daddf53784c81102, type: 3}
+  - {fileID: 21300000, guid: 91f87eea87acc394f86880104a38e707, type: 3}
+  - {fileID: 21300000, guid: 614525fb62f26854b802a87a524a1c78, type: 3}
+  - {fileID: 21300000, guid: ed65d66ce88bc004e9d6ff8b8584769c, type: 3}
+  - {fileID: 21300000, guid: fd46ea3d6e3b24e49ac89d7d39492f5d, type: 3}
+  - {fileID: 21300000, guid: d13cbb4d285f3bf439452ee4d4f4ecf7, type: 3}
+  - {fileID: 21300000, guid: 3255e0cda425a63469b35d16c3005db8, type: 3}
+  - {fileID: 21300000, guid: d7b2849f6b8a2a34781ac36742d65a0a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Mashmello2
+  - Setting_Background
+  - TalkCursor
+  - TalkPanel
+  - Controller_Button
+  - Sound_Button(O)
+  - Data_Button
+  - X_Close_Button
+  - Check_Sign
+  - CheckBox(X)
+  - CheckBox(O)
+  - GoBack_Button
+  - Mashmello3
+  - Sound_Button(X)
+  - Default_Button
+  - Mashmello1
+  - Mashmello_Branch
+  - Graphic_Button
+  m_RenderDataMap: {}
+  m_Tag: UI
+  m_IsVariant: 0

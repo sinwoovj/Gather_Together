@@ -54,6 +54,9 @@ TagManager:
   - name: NPC
     uniqueID: 1979610565
     locked: 0
+  - name: Accessory
+    uniqueID: 1295547745
+    locked: 0
   - name: Player
     uniqueID: 1060698577
     locked: 0

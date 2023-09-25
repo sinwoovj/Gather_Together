@@ -26,6 +26,7 @@ public class GameManager : DIMono
         dataManager.GameLoad();
         playData.isAction = false;
         playData.selectNumber = -1;
+        playData.presentChar = 1;
         questManager.SetQuestText();
     }
 
@@ -64,9 +65,9 @@ public class GameManager : DIMono
             case ScenarioData.scenarioActionType.ToStartScene:
                 //애니메이션 같은 거나 연출
                 break;
-            case ScenarioData.scenarioActionType.LikeabilityCondition:
+            case ScenarioData.scenarioActionType.SetStat:
                 break;
-            case ScenarioData.scenarioActionType.StatCondition:
+            case ScenarioData.scenarioActionType.SetLikeability:
                 break;
             case ScenarioData.scenarioActionType.Talk:
                 StartCoroutine(TalkManager.StartScene(scenarioData.IntVal));

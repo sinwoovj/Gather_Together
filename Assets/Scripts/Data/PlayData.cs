@@ -5,6 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayData 
 {
+    public int presentChar;
     public bool questDetective;
     public bool isAction;
     public bool isClickSuccess;
