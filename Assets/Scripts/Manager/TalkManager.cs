@@ -5,7 +5,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
-using UnityEditor;
 
 public class TalkManager : DIMono
 {

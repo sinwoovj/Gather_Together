@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-
 public class PlayData 
 {
     public int presentChar;
@@ -12,7 +7,7 @@ public class PlayData
     public int selectNumber;
     public float miniGameScore;
     public float score;
-
+    public int cummutableMemberCount;
 
     public enum FromMiniGame
     {

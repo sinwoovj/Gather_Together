@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI; // UI 프로그래밍 전에 꼭 먼저 UnityEngine.UI를 넣어야함.
 using DI;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +26,7 @@ public class GameManager : DIMono
         playData.isAction = false;
         playData.selectNumber = -1;
         playData.presentChar = 1;
+        playData.cummutableMemberCount = 1;
         questManager.SetQuestText();
     }
 

@@ -1,10 +1,6 @@
 using Cinemachine;
 using DI;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class CharacterManager : DIMono
@@ -19,9 +15,8 @@ public class CharacterManager : DIMono
     public GameObject Member;
     public void Update()
     {
-        int res;
-        Int32.TryParse(Input.inputString, out res);
-        if (res >= 1 && res < gameData.Member.Count)
+        int.TryParse(Input.inputString, out int res);
+        if (res >= 1 && res < playData.cummutableMemberCount)
         {
             CharacterChange(res);
         }

@@ -1,7 +1,5 @@
-using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Networking;
 
 [System.Serializable]
 public class GameScene

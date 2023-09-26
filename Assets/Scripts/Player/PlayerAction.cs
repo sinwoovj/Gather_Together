@@ -44,14 +44,6 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        if (this.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Static)
-        {
-            this.GetComponent<Animator>().enabled = false;
-        }
-        else
-        {
-            this.GetComponent<Animator>().enabled = true;
-        }
 
         //#Move Setting Value
         //Main Scene에서 받아온 Setting 값
