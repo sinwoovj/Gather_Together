@@ -45,7 +45,11 @@ public class TalkManager : DIMono
             {
                 case lineType.Chat:
                     chatManager.Chat(sceneLines, line);
-                    while (Input.GetKeyUp(KeyCode.F) == false )
+                    while (playData.isTypeEffectAnim)
+                    {
+                        yield return null;
+                    }
+                    while (Input.GetKeyUp(KeyCode.F) == false)
                     {
                         if (playData.NeedSkip)
                         {

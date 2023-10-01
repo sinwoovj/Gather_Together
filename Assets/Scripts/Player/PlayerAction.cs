@@ -24,7 +24,7 @@ public class PlayerAction : MonoBehaviour
     public float h, v; //수직, 수평
     bool isHorizonMove; //수평이동인지 아닌지 플래그
 
-    Vector3 dirVec; //현재 바라보고 있는 방향 값을 가진 변수가 필요
+    Vector2 dirVec; //현재 바라보고 있는 방향 값을 가진 변수가 필요
     GameObject scanObject; //스캔된 오브젝트
 
     public LayerMask ObjectLayer; //선택한 레이어에 속한 객체들에 대해서만 레이캐스팅 검사를 진행하게 된다.
@@ -94,13 +94,13 @@ public class PlayerAction : MonoBehaviour
 
         //Direction
         if (vDown && v == 1) //수직이동 키를 눌렀을 때, v값이 1이 될때이므로 상단 이동 키를 눌렀을 때
-            dirVec = Vector3.up; //현재 바라보고 있는 방향의 값을 위로 설정
+            dirVec = Vector2.up; //현재 바라보고 있는 방향의 값을 위로 설정
         else if (vDown && v == -1)
-            dirVec = Vector3.down;
+            dirVec = Vector2.down;
         else if (hDown && h == 1)
-            dirVec = Vector3.right;
+            dirVec = Vector2.right;
         else if (hDown && h == -1)
-            dirVec = Vector3.left;  
+            dirVec = Vector2.left;  
 
         //Scan Object
         if ((Input.GetButtonUp("Interaction") && scanObject != null && !playData.isAction) || 

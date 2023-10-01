@@ -50,14 +50,19 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 74e2d5f500025424683c7ff670b356ec, type: 3}
   - {fileID: 21300000, guid: 36432ad6a2fdf9c438a0655d6ab10d3c, type: 3}
   - {fileID: 21300000, guid: 65267ef6a8a0d1948991cee9e6727710, type: 3}
+  - {fileID: 21300000, guid: 47f46a37493cd994ab0247cbe041326a, type: 3}
   - {fileID: 21300000, guid: 8125edb897ef2d34f96c864eac8c64d6, type: 3}
   - {fileID: 21300000, guid: 8b36b33a60bc0e64daddf53784c81102, type: 3}
   - {fileID: 21300000, guid: 91f87eea87acc394f86880104a38e707, type: 3}
+  - {fileID: 21300000, guid: 6ae6db4b1933fd7439e6eb2a6ff93df6, type: 3}
+  - {fileID: 21300000, guid: c3af2f6b7ece97c488396c79fc0d40fa, type: 3}
   - {fileID: 21300000, guid: 614525fb62f26854b802a87a524a1c78, type: 3}
+  - {fileID: 21300000, guid: 9c86646c7496dd54b9ebfe77f593d5aa, type: 3}
   - {fileID: 21300000, guid: ed65d66ce88bc004e9d6ff8b8584769c, type: 3}
   - {fileID: 21300000, guid: fd46ea3d6e3b24e49ac89d7d39492f5d, type: 3}
   - {fileID: 21300000, guid: d13cbb4d285f3bf439452ee4d4f4ecf7, type: 3}
   - {fileID: 21300000, guid: 3255e0cda425a63469b35d16c3005db8, type: 3}
+  - {fileID: 21300000, guid: 0cc17acd4cc944542bd1419364a3d228, type: 3}
   - {fileID: 21300000, guid: d7b2849f6b8a2a34781ac36742d65a0a, type: 3}
   m_PackedSpriteNamesToIndex:
   - Mashmello2
@@ -69,14 +74,19 @@ SpriteAtlas:
   - Data_Button
   - X_Close_Button
   - Check_Sign
+  - Quest_Button
   - CheckBox(X)
   - CheckBox(O)
   - GoBack_Button
+  - Setting_Button
+  - Button_Field
   - Mashmello3
+  - Dictionary_Button
   - Sound_Button(X)
   - Default_Button
   - Mashmello1
   - Mashmello_Branch
+  - Inventory_Button
   - Graphic_Button
   m_RenderDataMap: {}
   m_Tag: UI

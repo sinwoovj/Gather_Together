@@ -26,7 +26,7 @@ public class GameManager : DIMono
         playData.isAction = false;
         playData.selectNumber = -1;
         playData.presentChar = 1;
-        playData.cummutableMemberCount = 1;
+        playData.cummutableMemberCount = 6;
         questManager.SetQuestText();
     }
 

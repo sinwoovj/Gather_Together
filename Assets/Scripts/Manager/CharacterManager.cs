@@ -1,6 +1,7 @@
 using Cinemachine;
 using DI;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterManager : DIMono
@@ -8,7 +9,7 @@ public class CharacterManager : DIMono
     [Inject]
     PlayData playData;
 
-    [Inject]
+    [Inject]    
     GameData gameData;
 
     public GameObject VCam;
@@ -16,6 +17,10 @@ public class CharacterManager : DIMono
     public void Update()
     {
         int.TryParse(Input.inputString, out int res);
+        if (res == playData.presentChar)
+        {
+            Debug.Log(res+res.GetType().ToString());
+        }
         if (res >= 1 && res < playData.cummutableMemberCount)
         {
             CharacterChange(res);

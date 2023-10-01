@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ChatManager : DIMono
 {
+    public TypeEffect talk;
     public Texture2D Portait;
     private string Portait_Address;
 
@@ -41,11 +42,11 @@ public class ChatManager : DIMono
         {
             TalkPanel_Name.GetComponent<Text>().text = interlocutor.Name;
         }
-        // 대화 설정
-        Transform TalkPanel_Script = TalkPanel.transform.Find("Script");
-
-
-        TalkPanel_Script.GetComponent<Text>().text = line.content;
+        // 대화 설정 (Type Effect 추가)
+        //Transform TalkPanel_Script = TalkPanel.transform.Find("Script");
+        //TalkPanel_Script.GetComponent<Text>().text = line.content;
+        talk.SetMsg(line.content);
+        
     }
 
     internal void CloseChat()

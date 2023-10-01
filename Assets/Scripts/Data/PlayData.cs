@@ -3,6 +3,7 @@ public class PlayData
     public int presentChar;
     public bool questDetective;
     public bool isAction;
+    public bool isTypeEffectAnim;
     public bool isClickSuccess;
     public int selectNumber;
     public float miniGameScore;

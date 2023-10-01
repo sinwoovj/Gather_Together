@@ -31,4 +31,8 @@ public class ButtonManager : DIMono
         playData.selectNumber = int.Parse(clickObject.name[9].ToString());
         Debug.Log(playData.selectNumber);
     }
+    public void OpenQuestList()
+    {
+
+    }
 }
