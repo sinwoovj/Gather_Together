@@ -27,10 +27,6 @@ Unity를 이용해 개발 중이며 역할은 도트 디자인 및 기타 디자
 
 # Document
 
-## Project 001
-
-[[ ShuRub ] PROJECT 001](https://www.notion.so/ShuRub-PROJECT-001-dda949b24328496eaf379dea5aa0b756) 
-
 ## 기획서
 
 [[ ShuRub ] PROJECT 001 기획서](https://www.notion.so/ShuRub-PROJECT-001-5c85fc93429a49048ce1be81b4bfeebf) 
