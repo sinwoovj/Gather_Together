@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class UserData
 {
     public Vector2 PlayerLoc; // 플레이어 위치

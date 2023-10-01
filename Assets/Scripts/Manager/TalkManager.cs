@@ -23,6 +23,9 @@ public class TalkManager : DIMono
     [Inject]
     GameData gameData;
 
+    [Inject]
+    SceneChanger sceneChanger;
+
     public List<SceneLine> sceneLines;
 
     public IEnumerator StartScene(int sceneLineCode)
@@ -85,7 +88,7 @@ public class TalkManager : DIMono
                     yield return new WaitForSeconds(float.Parse(line.content));
                     break;
                 case lineType.LoadScene:
-                    SceneManager.LoadScene(line.content);
+                    sceneChanger.ChangeScene(line.content, SceneChanger.LoadingScene.FadeInOut);
                     break;
                 case lineType.SetSubQuest:
                     questManager.SetSubQuest(Int32.Parse(line.content));

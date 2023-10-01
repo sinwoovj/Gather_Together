@@ -16,6 +16,9 @@ public class GameManager : DIMono
     [Inject]
     DataManager dataManager;
 
+    [Inject]
+    SceneChanger changer;
+
     public GameObject SubQuestPanel;
     public GameObject menuSet;
 
@@ -32,6 +35,16 @@ public class GameManager : DIMono
 
     private void Update()
     {
+
+        /// Test용
+        /// 
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            changer.ChangeScene("bug", SceneChanger.LoadingScene.FadeInOut);
+        }
+
+        ///
+
         //ESC키를 누르면 메뉴가 나오도록 작성
         if (Input.GetButtonDown("Cancel")){
             //ESC키로 켜고 끄기 가능하도록 작성
