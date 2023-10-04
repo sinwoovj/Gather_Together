@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public List<NPC> NPC;
+    public List<Tower> Tower;
+    public List<Item> Item;
     public List<Member> Member;
     public List<MainQuest> MainQuest;
     public List<SubQuest> SubQuest;
@@ -16,4 +18,5 @@ public class GameData : ScriptableObject
     public List<StatCondition> StatCondition;
     public List<LikeabilityCondition> LikeabilityCondition;
     public List<QuestCondition> QuestCondition;
+   
 }

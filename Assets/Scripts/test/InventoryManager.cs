@@ -8,7 +8,6 @@ public class InventoryManager : MonoBehaviour
 {
     [Header("UI")]
     public GameObject imagePrefab;  // 이미지 프리팹
-    public int maxStackedItems = 4;  // 최대 쌓을 수 있는 아이템 수
     public InventorySlot[] inventorySlots;  // 인벤토리 슬롯 배열
     public GameObject inventoryItemPrefab;  // 인벤토리 아이템 프리팹
     public GameObject currentContextMenu;  // 아이템 메뉴 on 확인
@@ -100,7 +99,7 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null &&
                 itemInSlot.item == item &&
-                itemInSlot.count < maxStackedItems &&
+                itemInSlot.count < item.maxStackedItems &&
                 itemInSlot.item.stackable == true)
             {
 
