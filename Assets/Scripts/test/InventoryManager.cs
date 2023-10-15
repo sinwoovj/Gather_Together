@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DI;
+using Unity.VisualScripting;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : DIMono
 {
     [Header("UI")]
     public GameObject imagePrefab;  // 이미지 프리팹
@@ -15,23 +17,78 @@ public class InventoryManager : MonoBehaviour
     public EventSystem m_EventSystem;  // 이벤트 시스템
 
     int selectedSlot = -1;  // 선택된 슬롯 (기본값: -1)
+    int value = 0;
+    int minValue = 0;
+    int maxValue = 9;
+    [Inject]
+    UserData userData;
 
-    private void Start()
+
+
+
+    void SettingUserData()
     {
-        ChangeSelectedSlot(0);  // 시작 시 첫 번째 슬롯을 선택합니다.
+        userData.Inventory.Clear();
+        userData.Inventory.Add(new InvenSlot()
+        {
+            index = 0,
+            itemCode = 1,
+            count = 1
+        });
+        userData.Inventory.Add(new InvenSlot()
+        {
+            index = 1,
+            itemCode = 2,
+            count = 1
+        });
+        userData.Inventory.Add(new InvenSlot()
+        {
+            index = 2,
+            itemCode = 3,
+            count = 1
+        });
+        Debug.Log("SettingUserData");
+    }
+
+    protected override void Initialize()
+    {
+        SettingUserData();
+        LoadItems();
+        //UserData를 바탕으로 인벤토리를 열 때 UI 업데이트
+        ChangeSelectedSlot(value);  // 시작 시 첫 번째 슬롯을 선택합니다.
+
+
+    }
+
+    private void LoadItems()
+    {
+        Debug.Log("LoadItems " + userData.Inventory.Count);
+        foreach (var inven in userData.Inventory)
+        {
+            GameObject LoadItem = Instantiate(inventoryItemPrefab, inventorySlots[inven.index].transform);
+            InventoryItem inventoryitem = LoadItem.GetComponent<InventoryItem>();
+            inventoryitem.InitialiseItem(inven);
+        }
     }
 
     private void Update()
     {
-        // 숫자 키 입력을 통한 슬롯 선택 구현
-        if (Input.inputString != null)
+        // 마우스 휠을 통한 슬롯 선택 구현
+        float mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
+        if(mouseWheelInput != 0)
         {
-            bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 8)
+
+            if (mouseWheelInput > 0 && value < maxValue)
             {
-                ChangeSelectedSlot(number - 1);
+                ChangeSelectedSlot(++value);
             }
+            else if (mouseWheelInput < 0 && value > minValue)
+            {
+                ChangeSelectedSlot(--value);
+            }
+
         }
+        
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             PointerEventData pointerData = new PointerEventData(EventSystem.current)
@@ -83,7 +140,6 @@ public class InventoryManager : MonoBehaviour
         {
             inventorySlots[selectedSlot].Deselect();  // 이전 슬롯의 선택 해제
         }
-
         inventorySlots[newValue].Select();  // 새로운 슬롯 선택
         selectedSlot = newValue;
     }
@@ -99,11 +155,11 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null &&
                 itemInSlot.item == item &&
-                itemInSlot.count < item.maxStackedItems &&
+                itemInSlot.Count < item.maxStackedItems &&
                 itemInSlot.item.stackable == true)
             {
 
-                itemInSlot.count++;
+                itemInSlot.Count++;
                 itemInSlot.RefreshCount();
                 return true;
             }
@@ -113,6 +169,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
+            slot.index = i;
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
@@ -124,12 +181,22 @@ public class InventoryManager : MonoBehaviour
         return false;  // 슬롯에 추가할 수 없으면 false를 반환합니다.
     }
 
+ 
     // 새 아이템 생성
     void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.InitialiseItem(item);  // 아이템 초기화
+
+        InvenSlot invenSlot = new InvenSlot()
+        {
+            itemCode=item.id,
+            count=1,
+            index=slot.index
+        };
+        userData.Inventory.Add(invenSlot);
+
+        inventoryItem.InitialiseItem(invenSlot);  // 아이템 초기화
     }
 
     // 선택된 아이템 얻기
@@ -142,9 +209,11 @@ public class InventoryManager : MonoBehaviour
             Item item = itemInSlot.item;
             if (use == true)
             {
-                itemInSlot.count--;  // 아이템을 사용하면 카운트를 줄입니다.
-                if (itemInSlot.count <= 0)
+                itemInSlot.Count--;  // 아이템을 사용하면 카운트를 줄입니다.
+                if (itemInSlot.Count <= 0)
                 {
+                    userData.Inventory.Remove(itemInSlot.invenSlot);
+
                     Destroy(itemInSlot.gameObject);  // 아이템이 더 이상 없으면 아이템을 파괴합니다.
                 }
                 else
@@ -165,9 +234,14 @@ public class InventoryManager : MonoBehaviour
         int lastSlotIndex = inventorySlots.Length - 1;
         InventorySlot endSlot = inventorySlots[lastSlotIndex];
         InventoryItem itemInEndSlot = endSlot.GetComponentInChildren<InventoryItem>();
+        Debug.Log($"Before Count {userData.Inventory.Count}");
         if (itemInEndSlot != null)
-        {
+        {         
             Destroy(itemInEndSlot.gameObject);  // 마지막 슬롯에 아이템이 있으면 제거합니다.
+        }
+        foreach (var inven in userData.Inventory)
+        {
+            Debug.Log($"{inven.index} : {inven.itemCode} : {inven.count}");
         }
     }
 }

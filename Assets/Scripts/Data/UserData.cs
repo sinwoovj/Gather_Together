@@ -3,6 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[Serializable]
+public class InvenSlot
+{
+    public int index;
+    public int itemCode;
+    public int count;
+}
+
 [Serializable]
 public class UserData
 {
@@ -11,6 +20,8 @@ public class UserData
     public int SubQuestId;
     public int gold;
     public int stmina;
+
+    public List<InvenSlot> Inventory = new List<InvenSlot>();
 
     internal void CopyFrom(UserData userData)
     {

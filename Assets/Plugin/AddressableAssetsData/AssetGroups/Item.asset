@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Item
+  m_EditorClassIdentifier: 
+  m_GroupName: Item
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a73f5d3c7f2c2084983a0e505f2ff136
+  m_SerializeEntries:
+  - m_GUID: 4683e64797a364ad1adde74cc69b1ec9
+    m_Address: Item_Image_Pickaxe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item_Image
+  - m_GUID: b3a67fc6bd9f6405ba5785b99c7d830a
+    m_Address: Item_Image_Shovel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item_Image
+  - m_GUID: ccc82898767e50a48918b70d82e4719e
+    m_Address: Item_Image_Saw
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item_Image
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2829bd8c3a7c30e46878b80277b28fa9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: df152a018098fbe40b418b536a275468, type: 2}
+    - {fileID: 11400000, guid: 62902b38a97db3d498be8b20a5cbcc28, type: 2}

@@ -1540,8 +1540,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 288212709373240533, guid: 3fb131bc5e3afe045babba4981002d68, type: 3}
   countText: {fileID: 0}
-  item: {fileID: 0}
-  count: 1
+  item:
+    id: 0
+    name: 
+    description: 
+    tilePath: 
+    type: 0
+    actionType: 0
+    maxStackedItems: 0
+    stackable: 1
+    imagePath: 
   parentAfterDrag: {fileID: 0}
 --- !u!224 &500782012 stripped
 RectTransform:
@@ -2586,9 +2594,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 1692830163}
   itemsToPickup:
-  - {fileID: 11400000, guid: 2b45c8be126614da6a8815e42a135aa7, type: 2}
-  - {fileID: 11400000, guid: 4323db82c7c6941cf8a6148d78f8a0b9, type: 2}
-  - {fileID: 11400000, guid: eb008c39ef323498b89fcfbc03feacb3, type: 2}
+  - id: 1
+    name: 
+    description: 
+    tilePath: 
+    type: 1
+    actionType: 1
+    maxStackedItems: 0
+    stackable: 1
+    imagePath: 
+  - id: 2
+    name: 
+    description: 
+    tilePath: 
+    type: 1
+    actionType: 0
+    maxStackedItems: 0
+    stackable: 1
+    imagePath: 
+  - id: 3
+    name: 
+    description: 
+    tilePath: 
+    type: 1
+    actionType: 2
+    maxStackedItems: 0
+    stackable: 1
+    imagePath: 
 --- !u!114 &1029534286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,7 +4337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagePrefab: {fileID: 8799604830199209092, guid: 3fb131bc5e3afe045babba4981002d68, type: 3}
-  maxStackedItems: 4
   inventorySlots:
   - {fileID: 166511210}
   - {fileID: 211838691}

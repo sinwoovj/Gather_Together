@@ -7,7 +7,7 @@ public class DIMono: MonoBehaviour
 
 
     public void CheckInjection()
-    {
+    {   
         InjectObj.CheckAndInject(this);
     }
 

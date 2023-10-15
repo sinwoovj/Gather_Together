@@ -133,6 +133,39 @@ MonoBehaviour:
     Sex: 2
     Name: "\uB9AC\uCCBC (Richel)"
     Age: Adults
+  Tower:
+  - id: 1
+    name: "\uB09A\uC2DC\uC6A9\uD488\uC810"
+    ToScene: "\uB09A\uC2DC\uC6A9\uD488\uC810"
+    isOpen: 1
+  Item:
+  - id: 1
+    name: "\uACE1\uAD2D\uC774"
+    description: "\uB3CC\uC744 \uCE94\uB2E4"
+    tilePath: Item_Image_Pickaxe
+    type: 1
+    actionType: 1
+    maxStackedItems: 1
+    stackable: 0
+    imagePath: Item_Image_Pickaxe
+  - id: 2
+    name: "\uC0BD"
+    description: "\uB545\uC744 \uD310\uB2E4"
+    tilePath: Item_Image_Shovel
+    type: 1
+    actionType: 0
+    maxStackedItems: 1
+    stackable: 0
+    imagePath: Item_Image_Shovel
+  - id: 3
+    name: "\uD1B1 "
+    description: "\uB098\uBB34\uB97C \uBCA4\uB2E4"
+    tilePath: Item_Image_Saw
+    type: 1
+    actionType: 2
+    maxStackedItems: 1
+    stackable: 0
+    imagePath: Item_Image_Saw
   Member:
   - Id: 0
     Sex: 0

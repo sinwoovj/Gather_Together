@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : DIMono, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
     [Header("UI")]
@@ -12,9 +13,24 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Text countText;  // 아이템 개수 텍스트
 
     [HideInInspector] public Item item;  // 아이템
-    [HideInInspector] public int count = 1;  // 아이템 수 (기본값: 1)
+    [HideInInspector] public int Count {
+        get {
+            if (invenSlot == null)
+            {
+                return 0;
+            }
+            return invenSlot.count;
+        }
+        set { invenSlot.count = value; }
+    }
     [HideInInspector] public Transform parentAfterDrag;  // 드래그 후 부모
 
+
+    [Inject]
+    GameData gameData;
+
+    public InvenSlot invenSlot;
+    /*
     // 아이템 초기화
     public void InitialiseItem(Item newItem)
     {
@@ -22,12 +38,23 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.sprite = newItem.Image;  // 아이템 이미지 설정
         RefreshCount();  // 아이템 개수 갱신
     }
+    */
+    public void InitialiseItem(InvenSlot invenSlot)
+    {
+        CheckInjection();
+
+        this.invenSlot = invenSlot;
+        item = gameData.Item.Find(l=>l.id== invenSlot.itemCode);
+   
+        image.sprite = item.Image;  // 아이템 이미지 설정
+        RefreshCount();  // 아이템 개수 갱신
+    }
 
     // 아이템 개수 갱신
     public void RefreshCount()
     {
-        countText.text = count.ToString();  // 개수를 문자열로 변환
-        bool textActive = count > 1;  // 개수가 1보다 큰지 확인
+        countText.text = Count.ToString();  // 개수를 문자열로 변환
+        bool textActive = Count > 1;  // 개수가 1보다 큰지 확인
         countText.gameObject.SetActive(textActive);  // 개수가 1보다 크면 텍스트 활성화
     }
 
@@ -50,11 +77,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = true;  // 이미지에 대한 레이캐스팅 활성화
         transform.SetParent(parentAfterDrag);  // 드래그 종료 후 부모를 원래의 부모로 복귀
-
+        invenSlot.index = parentAfterDrag.GetComponent<InventorySlot>().index;
+        Debug.Log(invenSlot.index);
         // InventoryManager 가져오기
         InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
         // 마지막 슬롯의 아이템 확인 및 제거
         inventoryManager.CheckAndRemoveItemAtEndSlot();
+
     }
 
 }

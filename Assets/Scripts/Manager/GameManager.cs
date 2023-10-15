@@ -19,8 +19,10 @@ public class GameManager : DIMono
     [Inject]
     SceneChanger changer;
 
+    public GameObject mainInventoryGroup;
     public GameObject SubQuestPanel;
     public GameObject menuSet;
+    public GameObject show_Quest;
 
     protected override void Initialize()
     {
@@ -29,21 +31,39 @@ public class GameManager : DIMono
         playData.isAction = false;
         playData.selectNumber = -1;
         playData.presentChar = 1;
-        playData.cummutableMemberCount = 6;
+        playData.cummutableMemberCount = 7;
         questManager.SetQuestText();
     }
 
     private void Update()
     {
 
-        /// Test용
-        /// 
-        if (Input.GetKeyUp(KeyCode.W))
+        ///// Test용
+        ///// 
+        //if (Input.GetKeyUp(KeyCode.W))
+        //{
+        //    changer.ChangeScene("bug", SceneChanger.LoadingScene.FadeInOut);
+        //}
+
+        //Tab키를 누르면 퀘스트 리스트가 나오도록 작성
+        if (Input.GetKeyUp(KeyCode.Tab))
         {
-            changer.ChangeScene("bug", SceneChanger.LoadingScene.FadeInOut);
+            show_Quest.GetComponent<Slide>().SlidePanelFunc();
         }
 
-        ///
+        //E키를 누르면 인벤토리가 나오도록 작성
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            //E키로 켜고 끄기 가능하도록 작성
+            if (mainInventoryGroup.activeSelf)
+            {
+                mainInventoryGroup.SetActive(false);
+            }
+            else
+            {
+                mainInventoryGroup.SetActive(true);
+            }
+        }
 
         //ESC키를 누르면 메뉴가 나오도록 작성
         if (Input.GetButtonDown("Cancel")){

@@ -1,15 +1,34 @@
+using DI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemoScript : MonoBehaviour
+
+public class DemoScript : DIMono
 {
     public InventoryManager inventoryManager;
-    public Item[] itemsToPickup;
+
+    [Inject]
+    GameData gameData;
+
+    [Inject]
+    UserData userdata;
+
+
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+    }
 
 
     public void PickupItem(int id) {
-        bool result = inventoryManager.AddItem(itemsToPickup[id]);
+        CheckInjection();
+        var item = gameData.Item.Find(l => l.id == id);
+
+
+
+        bool result = inventoryManager.AddItem(item);
         if (result == true) {
             Debug.Log("Item added");
         } else {

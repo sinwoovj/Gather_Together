@@ -44,6 +44,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4a9a3fb8e2b1964780c9d9b133642da, type: 2}
   - {fileID: 11400000, guid: 48c267bbc3936b24c9fc7353852df053, type: 2}
   - {fileID: 11400000, guid: 2fa5f8de392e7484aaca564eb288041a, type: 2}
+  - {fileID: 11400000, guid: 46ad93c567b6a81469d5dd8a9d6762cd, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -86,6 +87,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Member_Poritait
+    - Item_Image
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: c57514d30d29b724fb50a06edf0a6607, type: 2}
@@ -104,4 +106,5 @@ MonoBehaviour:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
     m_NextInstanceId: 0
-    m_RegisteredServiceTypeRefs: []
+    m_RegisteredServiceTypeRefs:
+    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor

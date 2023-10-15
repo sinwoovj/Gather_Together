@@ -90,10 +90,10 @@ public class QuestCondition
 [System.Serializable]
 public class Tower
 {
-    int id;
-    string name;
-    string ToScene;
-    bool isOpen;
+    public int id;
+    public string name;
+    public string ToScene;
+    public bool isOpen;
 }
 
 [System.Serializable]
