@@ -20,7 +20,7 @@ public class UserData
     public int SubQuestId;
     public int gold;
     public int stmina;
-
+    public DateTime currentTime;
     public List<InvenSlot> Inventory = new List<InvenSlot>();
 
     internal void CopyFrom(UserData userData)
@@ -30,6 +30,7 @@ public class UserData
         SubQuestId = userData.SubQuestId;
         gold = userData.gold;
         stmina = userData.stmina;
+        Inventory= userData.Inventory;
 
     }
     internal void InitialValue(UserData userData)

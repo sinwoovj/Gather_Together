@@ -1,65 +1,135 @@
+using DI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum KeyAction{ UP, DOWN, LEFT, RIGHT, INTERACTION, KEYCOUNT}
-public enum StandByKeyAction { UP, DOWN, LEFT, RIGHT, INTERACTION, KEYCOUNT }
 
 //열거형의 실제 사용하는 값의 개수와 같음.
-public static class KeySettingValue { 
-    public static Dictionary<StandByKeyAction, KeyCode> keys = new Dictionary<StandByKeyAction, KeyCode>(); 
-}
 
-public static class StandByKeySettingValue
+public class KeyManager : DIMono
 {
-    public static Dictionary<KeyAction, KeyCode> StandBykeys = new Dictionary<KeyAction, KeyCode>();
-}
-//StandByKeyAction과 KeyCode를 key값과 value값으로 한 딕셔너리 생성
-public class KeyManager : MonoBehaviour
-{
-    public static int a = 0;
-    public KeyCode[] defaultKeys = new KeyCode[] {KeyCode.W,KeyCode.S,KeyCode.A,KeyCode.D,KeyCode.F}; 
-    //WASDF 키값을 defaultKeys에 배열로 저장, 사용자가 다른 키로 바꾸지 않는 이상 위의 키로 유지됨.
-    private void Awake()
+
+    [Inject]
+    SettingData settingData;
+
+    public Text[] txt; //Text 변수를 배열로 선언
+    public GameObject overlapText;
+
+    protected override void Initialize()
     {
-        FExcute(a);
-        a++;
+        UpdateKeyUI();
+        Color overlapTextAlpha = overlapText.GetComponent<Text>().color;
+        overlapTextAlpha.a = 0f;
+        overlapText.GetComponent<Text>().color = overlapTextAlpha;
     }
-  
-    private void FExcute(int a)
+
+    public void UpdateKeyUI()
     {
-        if(a == 0)
+        txt[0].text = settingData.UpKeySettingValue.ToString();
+        txt[1].text = settingData.DownKeySettingValue.ToString();
+        txt[2].text = settingData.LeftKeySettingValue.ToString();
+        txt[3].text = settingData.RightKeySettingValue.ToString();
+        txt[4].text = settingData.InteractionKeySettingValue.ToString();
+    }
+
+    private KeyCode GetPressedKey()
+    {
+        foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
         {
-            for (int i = 0; i < (int)StandByKeyAction.KEYCOUNT; i++)
+            if (Input.GetKeyDown(key))
             {
-                KeySettingValue.keys.Add((StandByKeyAction)i, defaultKeys[i]);
-                //for문을 통해서 defaultKeys에 저장된 배열을 순서대로 StandByKeyAction에 값 추가
-            }
-            for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
-            {
-                StandByKeySettingValue.StandBykeys.Add((KeyAction)i, defaultKeys[i]);
-                //for문을 통해서 defaultKeys에 저장된 배열을 순서대로 StandByKeyAction에 값 추가
+                return key;
             }
         }
+        return KeyCode.None;
     }
 
-
-    private void OnGUI() 
-    //OnGUI()는 GUI, 키  입력 등의 이벤트가 발생할 때 호출됩니다.
+    IEnumerator ChageKeyIE(KeyAction action)
     {
-        Event keyEvent = Event.current; 
-        //Event 클래스로 현재 실해되는 Event를 불러옵니다.
-        if(keyEvent.isKey)//키가 눌렸을 때만 실행.
-        { 
-            //이벤트의 keyCode로 현재 눌린 키보드의 값을 알 수 있습니다.
-            KeySettingValue.keys[(StandByKeyAction)key] = keyEvent.keyCode; //변수 key는 int형이므로 StandByKeyAction으로 캐스팅.
-            key = -1; //keys를 바꾼뒤에도 key를 다시 -1로 만듦.
+        while (Input.anyKeyDown==false)
+        {
+            yield return null;
         }
+
+        var keyCode = GetPressedKey();
+        bool isKeyInSetting = false;
+        KeyAction overlapAction= KeyAction.UP;
+        foreach(var p in settingData.EachKey())
+        {
+            if(p.Item1== keyCode)
+            {
+                overlapAction = p.Item2;
+                isKeyInSetting = true;
+                break;
+
+            }
+        }
+
+        if (isKeyInSetting)
+        {
+            overlapText.GetComponent<Text>().text = $"이 키는 \"{overlapAction.ToString()}\"와 중복됩니다.";
+            ShowOverlapText();
+            yield break;
+        }
+
+        switch (action)
+        {
+            case KeyAction.UP:
+                settingData.UpKeySettingValue = keyCode;
+                break;
+            case KeyAction.DOWN:
+                settingData.DownKeySettingValue = keyCode;
+                break;
+            case KeyAction.LEFT:
+                settingData.LeftKeySettingValue = keyCode;
+                break;
+            case KeyAction.RIGHT:
+                settingData.RightKeySettingValue = keyCode;
+                break;
+            case KeyAction.INTERACTION:
+                settingData.InteractionKeySettingValue = keyCode;
+                break;
+        }
+        UpdateKeyUI();
     }
-    public int key = -1; // key 변수를 -1로 초기화.
+    public float visableTime = 3f;
+    float disappearTime = 1f;
+    float currentTime = 0;
+    IEnumerator currentCoroutine;
+
+    public void ShowOverlapText()
+    {
+        if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+        currentTime = 0;
+        currentCoroutine = OverlapTextIE();
+        StartCoroutine(currentCoroutine);
+    }
+
+    private IEnumerator OverlapTextIE()
+    {
+        Color overlapTextAlpha = overlapText.GetComponent<Text>().color;
+        overlapTextAlpha.a = 1f;
+        overlapText.GetComponent<Text>().color = overlapTextAlpha;
+        yield return new WaitForSecondsRealtime(visableTime);
+        while (currentTime <= disappearTime)
+        {
+            currentTime += Time.deltaTime;
+            float t = Mathf.SmoothStep(0, 1, currentTime / disappearTime);
+            overlapTextAlpha.a = 1-t;
+            overlapText.GetComponent<Text>().color = overlapTextAlpha;
+            yield return null;
+        }
+        currentCoroutine = null;
+    }
+
     public void ChangeKey(int num) //OnClick에 연결할 메서드 생성
     //int 매개변수를 추가하고 key를 초기화.
     {
-        key = num;
+        KeyAction keyAction = (KeyAction)num;
+        StartCoroutine(ChageKeyIE(keyAction));
     }
 }

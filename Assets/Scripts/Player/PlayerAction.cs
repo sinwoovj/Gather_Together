@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
 
-    [SerializeField] 
+    [SerializeField]
     public float moveSpeed = 1f;
     public float runSpeed = 1.5f;
 
@@ -15,11 +15,13 @@ public class PlayerAction : MonoBehaviour
     PlayData playData;
 
     [Inject]
-    GameManager Manager;
+    GameManager gameManager;
+
+    [Inject]
+    SettingData settingData;
 
     Rigidbody2D rb;
     Animator anim;
-    SaveSettingValues saveSettingValues;
 
     public float h, v; //수직, 수평
     bool isHorizonMove; //수평이동인지 아닌지 플래그
@@ -33,39 +35,28 @@ public class PlayerAction : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        if(StartGame.isSaving)
-            saveSettingValues = GameObject.Find("SaveSettingValues").GetComponent<SaveSettingValues>();
+        //if(StartGame.isSaving)
+        //    saveSettingValues = GameObject.Find("SaveSettingValues").GetComponent<SaveSettingValues>();
     }
 
     private void Start()
     {
-        DIContainer.Inject(this);   
+        DIContainer.Inject(this);
     }
 
     void Update()
     {
+        //# Move Value
+        h = playData.isAction ? 0 : (Input.GetKey(settingData.RightKeySettingValue) ? 1 : Input.GetKey(settingData.LeftKeySettingValue) ? -1 : 0);
+        v = playData.isAction ? 0 : (Input.GetKey(settingData.UpKeySettingValue) ? 1 : Input.GetKey(settingData.DownKeySettingValue) ? -1 : 0);
 
-        //#Move Setting Value
-        //Main Scene에서 받아온 Setting 값
-
-        if (StartGame.isSaving){
-            string Up = saveSettingValues.UpKeySettingValue;
-            string Down = saveSettingValues.DownKeySettingValue;
-            string Left = saveSettingValues.LeftKeySettingValue;
-            string Right = saveSettingValues.RightKeySettingValue;
-            string Interaction = saveSettingValues.interactionKeySettingValue;
-        }
-        //#Move Value
-
-        h = playData.isAction ? 0 : Input.GetAxisRaw("Horizontal"); //isAction이라는 플래그 값을 활용함.
-        v = playData.isAction ? 0 : Input.GetAxisRaw("Vertical");
         // KeySettingValue.keys[1]
         //#수평, 수직 이동 버튼이벤트를 변수로 저장
         //상태 변수를 사용하여 플레이어 이동을 제한함. 
-        bool hDown = playData.isAction ? false : Input.GetButtonDown("Horizontal"); 
-        bool vDown = playData.isAction ? false : Input.GetButtonDown("Vertical");
-        bool hUp = playData.isAction ? false : Input.GetButtonUp("Horizontal");
-        bool vUp = playData.isAction ? false : Input.GetButtonUp("Vertical");
+        bool hDown = playData.isAction ? false : Input.GetKeyDown(settingData.RightKeySettingValue) || Input.GetKeyDown(settingData.LeftKeySettingValue);
+        bool vDown = playData.isAction ? false : Input.GetKeyDown(settingData.UpKeySettingValue) || Input.GetKeyDown(settingData.DownKeySettingValue);
+        bool hUp = playData.isAction ? false : Input.GetKeyUp(settingData.RightKeySettingValue) || Input.GetKeyUp(settingData.LeftKeySettingValue);
+        bool vUp = playData.isAction ? false : Input.GetKeyUp(settingData.UpKeySettingValue) || Input.GetKeyUp(settingData.DownKeySettingValue);
 
         //#수평 이동 체크
 
@@ -103,9 +94,9 @@ public class PlayerAction : MonoBehaviour
             dirVec = Vector2.left;  
 
         //Scan Object
-        if ((Input.GetButtonUp("Interaction") && scanObject != null && !playData.isAction) || 
+        if ((Input.GetKeyUp(settingData.InteractionKeySettingValue) && scanObject != null && !playData.isAction) || 
             (Input.GetButtonUp("Jump") && scanObject != null && !playData.isAction)){
-            Manager.Action(scanObject);
+            gameManager.Action(scanObject);
         }
             
     }

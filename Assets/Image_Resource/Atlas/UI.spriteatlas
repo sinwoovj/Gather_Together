@@ -46,13 +46,16 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d3c49d1318ac3054db6e5da34cdd4c64, type: 3}
   - {fileID: 21300000, guid: c5e5ed43a1892fc4d94b37e05c78068a, type: 3}
   - {fileID: 21300000, guid: 772a2e73f8ccddc4498d6a137c3b11fe, type: 3}
+  - {fileID: 21300000, guid: a3165855657a2a34a850a37f0c628ea2, type: 3}
   - {fileID: 21300000, guid: 5b0125653c5ddd64bafa8cebd258d21c, type: 3}
+  - {fileID: 21300000, guid: 0c12b1f5b897a794d9788c78fa08369c, type: 3}
   - {fileID: 21300000, guid: 74e2d5f500025424683c7ff670b356ec, type: 3}
   - {fileID: 21300000, guid: 36432ad6a2fdf9c438a0655d6ab10d3c, type: 3}
   - {fileID: 21300000, guid: 65267ef6a8a0d1948991cee9e6727710, type: 3}
   - {fileID: 21300000, guid: 47f46a37493cd994ab0247cbe041326a, type: 3}
   - {fileID: 21300000, guid: 8125edb897ef2d34f96c864eac8c64d6, type: 3}
   - {fileID: 21300000, guid: 8b36b33a60bc0e64daddf53784c81102, type: 3}
+  - {fileID: 21300000, guid: 7b4f11aa9977e3e45ade1b309a0c567f, type: 3}
   - {fileID: 21300000, guid: 91f87eea87acc394f86880104a38e707, type: 3}
   - {fileID: 21300000, guid: 6ae6db4b1933fd7439e6eb2a6ff93df6, type: 3}
   - {fileID: 21300000, guid: c3af2f6b7ece97c488396c79fc0d40fa, type: 3}
@@ -70,13 +73,16 @@ SpriteAtlas:
   - TalkCursor
   - TalkPanel
   - Controller_Button
+  - Save_Button
   - Sound_Button(O)
+  - Button_Background
   - Data_Button
   - X_Close_Button
   - Check_Sign
   - Quest_Button
   - CheckBox(X)
   - CheckBox(O)
+  - Import_Buttons
   - GoBack_Button
   - Setting_Button
   - Button_Field

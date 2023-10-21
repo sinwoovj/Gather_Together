@@ -1,6 +1,7 @@
 using UnityEngine.Tilemaps;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using System;
 
 public interface IFillFromStr
 {
@@ -164,4 +165,18 @@ public enum ItemActionType
     Grow, // 나무 베기
     Fishing // 낚시 하기
     
+}
+
+
+
+
+public class NPCSchedule
+{
+    public int charaCode;
+    public int year;
+    public int month;
+    public int day;
+    public int hour;
+    public int minute;
+    public float x, y;
 }

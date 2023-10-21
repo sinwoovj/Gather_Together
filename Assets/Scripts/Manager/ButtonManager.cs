@@ -11,9 +11,12 @@ public class ButtonManager : DIMono
     [Inject]
     DataManager dataManager;
 
+    [Inject]
+    SceneChanger sceneChanger;
+
     public void GoMain()
     {
-        SceneManager.LoadScene("Main");
+        sceneChanger.ChangeScene("Main", SceneChanger.LoadingScene.FadeInOut);
     }
     public void SaveGame()
     {
@@ -30,9 +33,5 @@ public class ButtonManager : DIMono
             EventSystem.current.currentSelectedGameObject;
         playData.selectNumber = int.Parse(clickObject.name[9].ToString());
         Debug.Log(playData.selectNumber);
-    }
-    public void OpenQuestList()
-    {
-
     }
 }

@@ -84,6 +84,11 @@ public class DataConverter
                     Debug.LogError($"{itemType.Name}에 {Fieldname}이(가) 없습니다.");
                 }
                 var value = table.Rows[row][col];
+                if(value is DBNull)
+                {
+                    continue;
+                }
+
                 var fieldType = fi.FieldType;
 
                 if (fieldType.GetInterface("IFillFromStr") != null)

@@ -62,7 +62,6 @@ public class InventoryManager : DIMono
 
     private void LoadItems()
     {
-        Debug.Log("LoadItems " + userData.Inventory.Count);
         foreach (var inven in userData.Inventory)
         {
             GameObject LoadItem = Instantiate(inventoryItemPrefab, inventorySlots[inven.index].transform);
