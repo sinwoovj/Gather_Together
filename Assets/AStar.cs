@@ -1,6 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Node
 {
@@ -9,10 +11,11 @@ public class Node
     public List<Node> Neighbors { get; } = new List<Node>(); // 이웃 노드
     public bool IsWalkable { get; set; } // 지나갈 수 있는 노드인지 여부
 
-    public double GScore, FScore;
+    public bool IsWalkableChecked = false;
+
 
     public int ix, iy;
-    public Node(float x, float y,int ix,int iy)
+    public Node(float x, float y, int ix, int iy)
     {
         X = x;
         Y = y;
@@ -20,6 +23,23 @@ public class Node
         this.iy = iy;
     }
 }
+
+public class IterNode 
+{
+    public Node node;
+
+    public double GScore;
+    public double FScore;
+}
+
+public class NodeComparer : IComparer<IterNode>
+{
+    public int Compare(IterNode x, IterNode y)
+    {
+        return x.FScore.CompareTo(y.FScore);
+    }
+}
+
 
 public class AStarGrid
 {
@@ -81,7 +101,8 @@ public class AStarGrid
         }
     }
 
-    public IEnumerable<Node> FindNeighborsIE(Node node)
+
+    public IEnumerable<Node> FindNeighborsIE(Node node,GameObject exceptObj)
     {
         int[] dx = { 1, 0, -1, 0 };
         int[] dy = { 0, 1, 0, -1 };
@@ -96,6 +117,19 @@ public class AStarGrid
             {
                 Node neighbor = Nodes[newX, newY];
 
+                if (neighbor.IsWalkableChecked == false) 
+                {
+                    var pos = new Vector2(neighbor.X, neighbor.Y);
+                    var c = Physics2D.OverlapBox(pos, new Vector2(cellSize, cellSize), 0, ObjectLayer);
+                    if(c!=null &&c.gameObject== exceptObj)
+                    {
+                        c = null;
+                    }
+                    neighbor.IsWalkable = c == null;
+                    neighbor.IsWalkableChecked = true;
+
+                }
+
                 // 이웃 노드가 지나갈 수 있는 노드라면 추가
                 if (neighbor.IsWalkable)
                 {
@@ -104,9 +138,18 @@ public class AStarGrid
             }
         }
     }
+
+    public void Reset()
+    {
+        foreach (var n in Nodes)
+            n.IsWalkableChecked = false;
+    }
 }
 
-public class AStar : MonoBehaviour
+
+
+
+public class AStar : DIMono
 {
     private AStarGrid grid;
 
@@ -114,11 +157,37 @@ public class AStar : MonoBehaviour
     public float cellSize;
     public Vector2 offset;
 
+    public Transform endTf;
+
     public LayerMask ObjectLayer;
-    private void Start()
+
+
+    public IEnumerator TraceIE()
+    {
+        float duration = 30f;
+
+        float interval = 0.5f;
+        float leftTime = interval;
+        float t = 0;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            leftTime -= Time.deltaTime;
+            if(leftTime < 0)
+            {   
+                needExcute = true;
+                leftTime += interval;
+            }
+            yield return null;
+
+        }
+
+    }
+
+    protected override void Initialize()
     {
 
-
+        StartCoroutine(TraceIE());
         grid = new AStarGrid(width, height, cellSize,offset,ObjectLayer);
 
         // 이웃 노드 찾기
@@ -131,17 +200,44 @@ public class AStar : MonoBehaviour
         }
     }
 
-    public Vector2 startPos, endPos;
+
+    
     public bool needExcute;
+    public float speed=3;
 
-    List<Node> pathes;
+    List<Node> pathes=null;
 
+    
     public void Update()
     {
+        if (pathes != null && pathes.Count >0)
+        {
+            Vector3 destination = new Vector3(pathes[0].X,pathes[0].Y);
+
+            Vector3 dir = destination - this.transform.position;
+            var leftDist= dir.magnitude;
+            var dirNorm = dir.normalized;
+            Debug.Log($"X:{dirNorm.x} Y:{dirNorm.y}");
+            var moveDist = speed * Time.deltaTime;
+            if (leftDist <= moveDist)
+            {
+                moveDist = leftDist;
+                pathes.RemoveAt(0);              
+
+            }
+
+            this.transform.position += dir.normalized * moveDist;
+            
+        }
+
+
         if (needExcute)
         {
 
             needExcute = false;
+            var startPos = this.transform.position;
+            var endPos = endTf.transform.position;  
+
             pathes =FindPath(startPos, endPos);
             if (pathes == null)
             {
@@ -150,7 +246,7 @@ public class AStar : MonoBehaviour
             }
             foreach(var p in pathes)
             {
-                Debug.Log($"path {p.X},{p.Y}");
+                //Debug.Log($"path {p.X},{p.Y}");
             }
         }
        
@@ -186,7 +282,7 @@ public class AStar : MonoBehaviour
         //각 path에 원을 그려준다
         foreach (Node node in pathes)
         {
-            Gizmos.DrawSphere(new Vector3(node.X, node.Y), 1);
+            Gizmos.DrawSphere(new Vector3(node.X, node.Y), 0.1f);
         }
     }
 
@@ -197,44 +293,76 @@ public class AStar : MonoBehaviour
         Node startNode = NodeFromWorldPoint(startPosition);
         Node goalNode = NodeFromWorldPoint(goalPosition);
 
-        List<Node> openSet = new List<Node> { startNode };
+        SortedSet<IterNode> openSet = new SortedSet<IterNode>(new NodeComparer());
         var cameFrom = new Dictionary<Node, Node>();
-        startNode.GScore = 0;
-        startNode.FScore = HeuristicCostEstimate(startNode, goalNode);
-
-        while (openSet.Count > 0)
+        HashSet<Node> closeSet = new HashSet<Node>();
+        IterNode iterNode = new IterNode()
         {
-            Node current = openSet[0];
-            foreach (var node in openSet)
+            node = startNode,
+
+        };
+
+        grid.Reset();
+
+
+        iterNode.FScore = HeuristicCostEstimate(startNode, goalNode);
+
+        openSet.Add(iterNode);
+
+        Debug.Log("goalNode.node" + goalNode.X + " " + goalNode.Y);
+        int loopCnt = 0;
+        while (openSet.Count != 0)
+        {
+            loopCnt++;
+            if (loopCnt > 200)
             {
-                if (node.FScore < current.FScore)
-                {
-                    current = node;
-                }
+                Debug.Log("LoopCnt >1000");
+                return null;
             }
 
-            if (current == goalNode)
-            {
-                return ReconstructPath(cameFrom, current);
-            }
-
+            IterNode current = openSet.Min;
             openSet.Remove(current);
-            foreach (var neighbor in grid.FindNeighborsIE(current))
-            {
-                double tentativeGScore = current.GScore + Vector2.Distance(
-                    new Vector2(current.X, current.Y),
-                    new Vector2(neighbor.X, neighbor.Y));
+            closeSet.Add(current.node);
+            Debug.Log("current.node" + current.node.X + " " + current.node.Y + " " + current.node.ix + " " + current.node.iy);
 
-                if (tentativeGScore < neighbor.GScore)
+
+            if (current.node == goalNode)
+            {
+                cameFrom.Remove(startNode);
+
+                return ReconstructPath(cameFrom, current.node);
+            }
+
+
+            foreach (var neighbor in grid.FindNeighborsIE(current.node,endTf.gameObject))
+            {
+                if (closeSet.Contains(neighbor))
                 {
-                    cameFrom[neighbor] = current;
-                    neighbor.GScore = tentativeGScore;
-                    neighbor.FScore = neighbor.GScore + HeuristicCostEstimate(neighbor, goalNode);
-                    if (!openSet.Contains(neighbor))
-                    {
-                        openSet.Add(neighbor);
-                    }
+                    continue;
                 }
+
+                double tentativeGScore = current.GScore + Vector2.Distance(
+                    new Vector2(current.node.X, current.node.Y),
+                new Vector2(neighbor.X, neighbor.Y));
+
+                cameFrom[neighbor] = current.node;
+                IterNode iternode = new IterNode()
+                {
+                    node = neighbor,
+                    GScore = tentativeGScore,
+                    FScore = tentativeGScore + HeuristicCostEstimate(neighbor, goalNode),
+                };
+
+
+                var one = openSet.FirstOrDefault(l => l.node == neighbor);
+                if (one != null && one.GScore > tentativeGScore)
+                {
+                    continue;
+                }
+
+
+                openSet.Add(iternode);
+
             }
         }
 
@@ -244,8 +372,15 @@ public class AStar : MonoBehaviour
     private List<Node> ReconstructPath(Dictionary<Node, Node> cameFrom, Node current)
     {
         var path = new List<Node> { current };
+        var loopCnt = 0;
         while (cameFrom.ContainsKey(current))
         {
+            loopCnt++;
+            if (loopCnt > 1000)
+            {
+                Debug.Log("ReconstructPath LoopCnt >1000");
+                return null;
+            }
             current = cameFrom[current];
             path.Insert(0, current);
         }
@@ -275,4 +410,13 @@ public class AStar : MonoBehaviour
 
         return null;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("충돌함");
+        needExcute = true;
+    }
 }
+
+// 특정 NPC를 원하는 목적지로 보내는 코드 작성
+// 이동할 때 애니메이션 포함 (AStar의 dirNorm을 참고해서 상하좌우를 판별하고[방향] 애니메이션을 실행한다.)
