@@ -14,6 +14,10 @@ public class Node
     public bool IsWalkableChecked = false;
 
 
+    public double GScore;
+
+    public double FScore;
+
     public int ix, iy;
     public Node(float x, float y, int ix, int iy)
     {
@@ -23,18 +27,18 @@ public class Node
         this.iy = iy;
     }
 }
-
+/*
 public class IterNode 
 {
     public Node node;
 
     public double GScore;
     public double FScore;
-}
+}*/
 
-public class NodeComparer : IComparer<IterNode>
+public class NodeComparer : IComparer<Node>
 {
-    public int Compare(IterNode x, IterNode y)
+    public int Compare(Node x, Node y)
     {
         return x.FScore.CompareTo(y.FScore);
     }
@@ -70,8 +74,6 @@ public class AStarGrid
                 var pos= new Vector2(node.X,node.Y);
                 var c = Physics2D.OverlapBox(pos, new Vector2(cellSize, cellSize), 0, ObjectLayer);
                 node.IsWalkable =c  == null;
-
-
             }
         }
     }
@@ -142,7 +144,11 @@ public class AStarGrid
     public void Reset()
     {
         foreach (var n in Nodes)
+        {
             n.IsWalkableChecked = false;
+            n.GScore = 0;
+
+        }
     }
 }
 
@@ -286,6 +292,9 @@ public class AStar : DIMono
         }
     }
 
+    SortedSet<Node> openSet = new SortedSet<Node>(new NodeComparer());
+    Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
+    HashSet<Node> closeSet = new HashSet<Node>();
 
     // A* 알고리즘을 사용하여 최단 경로 찾기
     public List<Node> FindPath(Vector2 startPosition, Vector2 goalPosition)
@@ -293,14 +302,11 @@ public class AStar : DIMono
         Node startNode = NodeFromWorldPoint(startPosition);
         Node goalNode = NodeFromWorldPoint(goalPosition);
 
-        SortedSet<IterNode> openSet = new SortedSet<IterNode>(new NodeComparer());
-        var cameFrom = new Dictionary<Node, Node>();
-        HashSet<Node> closeSet = new HashSet<Node>();
-        IterNode iterNode = new IterNode()
-        {
-            node = startNode,
+        openSet.Clear();
+        cameFrom.Clear();
+        closeSet.Clear();
 
-        };
+        Node iterNode = startNode;
 
         grid.Reset();
 
@@ -320,21 +326,21 @@ public class AStar : DIMono
                 return null;
             }
 
-            IterNode current = openSet.Min;
+            Node current = openSet.Min;
             openSet.Remove(current);
-            closeSet.Add(current.node);
-            Debug.Log("current.node" + current.node.X + " " + current.node.Y + " " + current.node.ix + " " + current.node.iy);
+            closeSet.Add(current);
+            Debug.Log("current.node" + current.X + " " + current.Y + " " + current.ix + " " + current.iy);
 
 
-            if (current.node == goalNode)
+            if (current == goalNode)
             {
                 cameFrom.Remove(startNode);
 
-                return ReconstructPath(cameFrom, current.node);
+                return ReconstructPath(cameFrom, current);
             }
 
 
-            foreach (var neighbor in grid.FindNeighborsIE(current.node,endTf.gameObject))
+            foreach (var neighbor in grid.FindNeighborsIE(current,endTf.gameObject))
             {
                 if (closeSet.Contains(neighbor))
                 {
@@ -342,26 +348,24 @@ public class AStar : DIMono
                 }
 
                 double tentativeGScore = current.GScore + Vector2.Distance(
-                    new Vector2(current.node.X, current.node.Y),
+                    new Vector2(current.X, current.Y),
                 new Vector2(neighbor.X, neighbor.Y));
 
-                cameFrom[neighbor] = current.node;
-                IterNode iternode = new IterNode()
-                {
-                    node = neighbor,
-                    GScore = tentativeGScore,
-                    FScore = tentativeGScore + HeuristicCostEstimate(neighbor, goalNode),
-                };
+                cameFrom[neighbor] = current;
+        
 
+              
 
-                var one = openSet.FirstOrDefault(l => l.node == neighbor);
-                if (one != null && one.GScore > tentativeGScore)
+                if ( neighbor.GScore > tentativeGScore)
                 {
                     continue;
                 }
+                neighbor.GScore = tentativeGScore;
+                neighbor.FScore = tentativeGScore + HeuristicCostEstimate(neighbor, goalNode);
 
 
-                openSet.Add(iternode);
+
+                openSet.Add(neighbor);
 
             }
         }

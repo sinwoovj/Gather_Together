@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SoundSetting : MonoBehaviour
 {
     GameObject ActiveSoundSet;
     public bool SdSetSi; //Sound Setting Situation << 사운드 설정이 기본값
 
-    ScreenSetting screenSetting;
     KeySetting keySetting;
+    DataSetting dataSetting;
+    ScreenSetting screenSetting;
+    LocationSetting locationSetting;
     void Awake()
     {
-        SdSetSi = true;
-        screenSetting = GameObject.Find("ScreenSetting").GetComponent<ScreenSetting>();
+        SdSetSi = false;
+        dataSetting = GameObject.Find("DataSetting").GetComponent<DataSetting>();
         keySetting = GameObject.Find("KeySetting").GetComponent<KeySetting>();
+        locationSetting = GameObject.Find("LocationSetting").GetComponent<LocationSetting>();
+        screenSetting = GameObject.Find("ScreenSetting").GetComponent<ScreenSetting>();
     }
     void Start()
     {
@@ -35,8 +36,9 @@ public class SoundSetting : MonoBehaviour
     public void OpenSoundSetting()
     {
         SdSetSi = true;
-        screenSetting.ScSetSi = false; //ScreenSetting 화면을 꺼준다.
         keySetting.KySetSi = false;
-        print("Open Sound Setting");
+        screenSetting.ScSetSi = false;
+        locationSetting.LcSetSi = false;
+        dataSetting.DtSetSi = false;
     }
 }

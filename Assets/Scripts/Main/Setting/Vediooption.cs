@@ -9,7 +9,6 @@ public class Vediooption : MonoBehaviour
     public Dropdown resolutionDropdown;
     public Toggle fullscreenBtn;
     List<Resolution> resolutions = new List<Resolution>();
-    public int resolutionNum;
     private void Start()
     {
         InitUi();
@@ -38,17 +37,11 @@ public class Vediooption : MonoBehaviour
 
     public void DropboxOptionChange(int x)
     {
-        resolutionNum = x;
+        Screen.SetResolution(resolutions[x].width, resolutions[x].height, screenMode);
     }
 
     public void FullScreenBtn(bool isFull)
     {
         screenMode = isFull ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
-    }
-
-    public void OkBtnClick()
-    {
-        Screen.SetResolution(resolutions[resolutionNum].width,
-            resolutions[resolutionNum].height, screenMode);
     }
 }

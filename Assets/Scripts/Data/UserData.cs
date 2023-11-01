@@ -19,17 +19,19 @@ public class UserData
     public int MainQuestId;
     public int SubQuestId;
     public int gold;
-    public int stmina;
+    public int stamina;
+    public string cityName = "";
     public DateTime currentTime;
     public List<InvenSlot> Inventory = new List<InvenSlot>();
-
+ 
     internal void CopyFrom(UserData userData)
     {
         PlayerLoc = userData.PlayerLoc;
         MainQuestId = userData.MainQuestId;
         SubQuestId = userData.SubQuestId;
         gold = userData.gold;
-        stmina = userData.stmina;
+        stamina = userData.stamina;
+        cityName = userData.cityName;
         Inventory= userData.Inventory;
 
     }
@@ -38,7 +40,7 @@ public class UserData
         userData.MainQuestId = 0;
         userData.SubQuestId = 0;
         userData.gold = 0;
-        userData.stmina = 0;
+        userData.stamina = 0;
     }
 
     internal void FillUserPostion(Transform transform)

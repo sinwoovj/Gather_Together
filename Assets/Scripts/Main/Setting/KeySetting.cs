@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class KeySetting : MonoBehaviour
 {
     private GameObject ActiveKeySet;
     public bool KySetSi; //Key Setting Situation
 
     SoundSetting soundSetting;
+    DataSetting dataSetting;
     ScreenSetting screenSetting;
+    LocationSetting locationSetting;
     void Awake()
     {
         KySetSi = false;
+        dataSetting = GameObject.Find("DataSetting").GetComponent<DataSetting>();
         soundSetting = GameObject.Find("SoundSetting").GetComponent<SoundSetting>();
+        locationSetting = GameObject.Find("LocationSetting").GetComponent<LocationSetting>();
         screenSetting = GameObject.Find("ScreenSetting").GetComponent<ScreenSetting>();
     }
 
@@ -38,6 +38,7 @@ public class KeySetting : MonoBehaviour
         KySetSi = true;
         soundSetting.SdSetSi = false; //SoundSetting 화면을 꺼준다.
         screenSetting.ScSetSi = false;
-        print("Open Key Setting");
+        locationSetting.LcSetSi = false;
+        dataSetting.DtSetSi = false;
     }
 }

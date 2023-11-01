@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScreenSetting : MonoBehaviour
 {
@@ -10,11 +7,15 @@ public class ScreenSetting : MonoBehaviour
 
     SoundSetting soundSetting;
     KeySetting keySetting;
+    DataSetting dataSetting;
+    LocationSetting locationSetting;
     void Awake()
     {
         ScSetSi = false;
+        dataSetting = GameObject.Find("DataSetting").GetComponent<DataSetting>();
         soundSetting = GameObject.Find("SoundSetting").GetComponent<SoundSetting>();
         keySetting = GameObject.Find("KeySetting").GetComponent<KeySetting>();
+        locationSetting = GameObject.Find("LocationSetting").GetComponent<LocationSetting>();
     }
 
     void Start()
@@ -38,6 +39,7 @@ public class ScreenSetting : MonoBehaviour
         ScSetSi = true;
         soundSetting.SdSetSi = false; //SoundSetting 화면을 꺼준다.
         keySetting.KySetSi = false;
-        print("Open Screen Setting");
+        locationSetting.LcSetSi = false;
+        dataSetting.DtSetSi = false;
     }
 }

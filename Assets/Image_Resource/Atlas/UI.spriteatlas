@@ -20,22 +20,31 @@ SpriteAtlas:
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
-      enableTightPacking: 1
+      enableRotation: 0
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: ab453b83a0f24d745867a5c5591217b8, type: 3}
-    - {fileID: 102900000, guid: 20c324398c3223e458327e06abd326fc, type: 3}
-    - {fileID: 102900000, guid: 7a23fcb3513f9f64cbe9b8fa2de45ce6, type: 3}
-    - {fileID: 102900000, guid: 00a6a811061190b4eb4f452f059596d3, type: 3}
+    - {fileID: 102900000, guid: 2a3965e08d61a5e429092f736d60ae66, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -43,57 +52,113 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 12547f10e0349ac41b862c15c7e251c4, type: 3}
   - {fileID: 21300000, guid: 5c693c9010269b841a80bbf8c2fcc679, type: 3}
+  - {fileID: 21300000, guid: db3d4b6193cbe5b49b692cb017946174, type: 3}
+  - {fileID: 21300000, guid: 4fddb881dc56a42cda0912425a4fec0b, type: 3}
+  - {fileID: 21300000, guid: 46093b91a973d034aa9cd662870b4fad, type: 3}
   - {fileID: 21300000, guid: d3c49d1318ac3054db6e5da34cdd4c64, type: 3}
   - {fileID: 21300000, guid: c5e5ed43a1892fc4d94b37e05c78068a, type: 3}
+  - {fileID: 21300000, guid: 96d2927362ffa9c47bb772167abdb38f, type: 3}
   - {fileID: 21300000, guid: 772a2e73f8ccddc4498d6a137c3b11fe, type: 3}
+  - {fileID: 21300000, guid: 628eecb3348ae8f4b8fc22e379df76b5, type: 3}
+  - {fileID: 21300000, guid: 40e471c337c69e14e8a9a513ccbe2d76, type: 3}
+  - {fileID: 21300000, guid: fc2c10f4991553f439f0bde24a779c50, type: 3}
+  - {fileID: 21300000, guid: 63459305683a5f549949baa603460dcd, type: 3}
+  - {fileID: 21300000, guid: 48e6db05f7951f042934d92f6011b374, type: 3}
   - {fileID: 21300000, guid: a3165855657a2a34a850a37f0c628ea2, type: 3}
   - {fileID: 21300000, guid: 5b0125653c5ddd64bafa8cebd258d21c, type: 3}
   - {fileID: 21300000, guid: 0c12b1f5b897a794d9788c78fa08369c, type: 3}
   - {fileID: 21300000, guid: 74e2d5f500025424683c7ff670b356ec, type: 3}
+  - {fileID: 21300000, guid: 9d49173687a22db4c996dc1559948fe8, type: 3}
+  - {fileID: 21300000, guid: 1fa24646bf4eef8459c1522417b53107, type: 3}
+  - {fileID: 21300000, guid: b3a67fc6bd9f6405ba5785b99c7d830a, type: 3}
   - {fileID: 21300000, guid: 36432ad6a2fdf9c438a0655d6ab10d3c, type: 3}
   - {fileID: 21300000, guid: 65267ef6a8a0d1948991cee9e6727710, type: 3}
   - {fileID: 21300000, guid: 47f46a37493cd994ab0247cbe041326a, type: 3}
+  - {fileID: 21300000, guid: 4683e64797a364ad1adde74cc69b1ec9, type: 3}
+  - {fileID: 21300000, guid: 2a7f00d7668b5d4499f5d45d577bcf8f, type: 3}
+  - {fileID: 21300000, guid: def95458ad0216d479a11b0b9f995ad5, type: 3}
+  - {fileID: 21300000, guid: ccc82898767e50a48918b70d82e4719e, type: 3}
   - {fileID: 21300000, guid: 8125edb897ef2d34f96c864eac8c64d6, type: 3}
   - {fileID: 21300000, guid: 8b36b33a60bc0e64daddf53784c81102, type: 3}
+  - {fileID: 21300000, guid: a19c006aa89cdf94eaf49185651d9f30, type: 3}
   - {fileID: 21300000, guid: 7b4f11aa9977e3e45ade1b309a0c567f, type: 3}
+  - {fileID: 21300000, guid: 94816dca04d5c2743aa3a8c52fb7e7d8, type: 3}
   - {fileID: 21300000, guid: 91f87eea87acc394f86880104a38e707, type: 3}
+  - {fileID: 21300000, guid: 5f01a42b858ed9c4da2ff6a21fdf416e, type: 3}
   - {fileID: 21300000, guid: 6ae6db4b1933fd7439e6eb2a6ff93df6, type: 3}
   - {fileID: 21300000, guid: c3af2f6b7ece97c488396c79fc0d40fa, type: 3}
+  - {fileID: 21300000, guid: 99aef17b02350f042b2832fc6b63d9c1, type: 3}
+  - {fileID: 21300000, guid: 8dc8a47bc286940f0aee4b5f21851bf0, type: 3}
+  - {fileID: 21300000, guid: 0f737e8b2438bf44daef2b4a026619b9, type: 3}
   - {fileID: 21300000, guid: 614525fb62f26854b802a87a524a1c78, type: 3}
   - {fileID: 21300000, guid: 9c86646c7496dd54b9ebfe77f593d5aa, type: 3}
   - {fileID: 21300000, guid: ed65d66ce88bc004e9d6ff8b8584769c, type: 3}
+  - {fileID: 21300000, guid: 0da2a21d4c1c54e67bcf82b1835aa87f, type: 3}
   - {fileID: 21300000, guid: fd46ea3d6e3b24e49ac89d7d39492f5d, type: 3}
   - {fileID: 21300000, guid: d13cbb4d285f3bf439452ee4d4f4ecf7, type: 3}
   - {fileID: 21300000, guid: 3255e0cda425a63469b35d16c3005db8, type: 3}
   - {fileID: 21300000, guid: 0cc17acd4cc944542bd1419364a3d228, type: 3}
+  - {fileID: 21300000, guid: 6605220fad9adba4891aeb4b1f32bcff, type: 3}
+  - {fileID: 21300000, guid: dbb3d53ff4144d54ead0b32946b3681b, type: 3}
+  - {fileID: 21300000, guid: 4eea674f5287c3b4da754661cc1f1134, type: 3}
+  - {fileID: 21300000, guid: e827365fffbbeda4f888c95e5d010647, type: 3}
   - {fileID: 21300000, guid: d7b2849f6b8a2a34781ac36742d65a0a, type: 3}
+  - {fileID: 21300000, guid: 59b9ffaff015c430b8bd282fe433b1cc, type: 3}
   m_PackedSpriteNamesToIndex:
   - Mashmello2
   - Setting_Background
+  - Drobdown_Background
+  - UI Chest
+  - TimeAndGoldWindow_Fall_evening
   - TalkCursor
   - TalkPanel
+  - TimeAndGoldWindow
   - Controller_Button
+  - Roulette_start
+  - TimeAndGoldWindow_Summer_night
+  - TimeAndGoldWindow_spring_daytime
+  - TimeAndGoldWindow_spring_night
+  - TimeAndGoldWindow_spring_evening
   - Save_Button
   - Sound_Button(O)
   - Button_Background
   - Data_Button
+  - Drobdown_Content
+  - Cloudy
+  - Shovel
   - X_Close_Button
   - Check_Sign
   - Quest_Button
+  - Pickaxe
+  - TimeAndGoldWindow_Winter_night
+  - Tent
+  - Saw
   - CheckBox(X)
   - CheckBox(O)
+  - TimeAndGoldWindow_Summer_evening
   - Import_Buttons
+  - TimeAndGoldWindow_Winter_evening
   - GoBack_Button
+  - Snow
   - Setting_Button
   - Button_Field
+  - TimeAndGoldWindow_Fall_Daytime
+  - DemoButton
+  - Drobdown_Background
   - Mashmello3
   - Encyclopedia_Button
   - Sound_Button(X)
+  - InventoryBackground
   - Default_Button
   - Mashmello1
   - Mashmello_Branch
   - Inventory_Button
+  - TimeAndGoldWindow_Winter_Daytime
+  - TimeAndGoldWindow_Summer_Daytime
+  - TimeAndGoldWindow_Fall_night
+  - Location_Button
   - Graphic_Button
+  - InventorySlot
   m_RenderDataMap: {}
   m_Tag: UI
   m_IsVariant: 0
