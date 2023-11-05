@@ -52,15 +52,18 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 12547f10e0349ac41b862c15c7e251c4, type: 3}
   - {fileID: 21300000, guid: 5c693c9010269b841a80bbf8c2fcc679, type: 3}
+  - {fileID: 21300000, guid: 7d2f15d0928fe65439629f5a0f7a3ddc, type: 3}
   - {fileID: 21300000, guid: db3d4b6193cbe5b49b692cb017946174, type: 3}
   - {fileID: 21300000, guid: 4fddb881dc56a42cda0912425a4fec0b, type: 3}
   - {fileID: 21300000, guid: 46093b91a973d034aa9cd662870b4fad, type: 3}
+  - {fileID: 21300000, guid: 0a72b532a68ce8248aba76217cedd952, type: 3}
   - {fileID: 21300000, guid: d3c49d1318ac3054db6e5da34cdd4c64, type: 3}
   - {fileID: 21300000, guid: c5e5ed43a1892fc4d94b37e05c78068a, type: 3}
   - {fileID: 21300000, guid: 96d2927362ffa9c47bb772167abdb38f, type: 3}
   - {fileID: 21300000, guid: 772a2e73f8ccddc4498d6a137c3b11fe, type: 3}
   - {fileID: 21300000, guid: 628eecb3348ae8f4b8fc22e379df76b5, type: 3}
   - {fileID: 21300000, guid: 40e471c337c69e14e8a9a513ccbe2d76, type: 3}
+  - {fileID: 21300000, guid: 9f4cbdd40fe2ee740b02d0d4986707d7, type: 3}
   - {fileID: 21300000, guid: fc2c10f4991553f439f0bde24a779c50, type: 3}
   - {fileID: 21300000, guid: 63459305683a5f549949baa603460dcd, type: 3}
   - {fileID: 21300000, guid: 48e6db05f7951f042934d92f6011b374, type: 3}
@@ -75,6 +78,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 65267ef6a8a0d1948991cee9e6727710, type: 3}
   - {fileID: 21300000, guid: 47f46a37493cd994ab0247cbe041326a, type: 3}
   - {fileID: 21300000, guid: 4683e64797a364ad1adde74cc69b1ec9, type: 3}
+  - {fileID: 21300000, guid: 65725f87db92a234ba6c40510b707b38, type: 3}
   - {fileID: 21300000, guid: 2a7f00d7668b5d4499f5d45d577bcf8f, type: 3}
   - {fileID: 21300000, guid: def95458ad0216d479a11b0b9f995ad5, type: 3}
   - {fileID: 21300000, guid: ccc82898767e50a48918b70d82e4719e, type: 3}
@@ -107,15 +111,18 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Mashmello2
   - Setting_Background
+  - Rain
   - Drobdown_Background
   - UI Chest
   - TimeAndGoldWindow_Fall_evening
+  - Heart_Gauge
   - TalkCursor
   - TalkPanel
   - TimeAndGoldWindow
   - Controller_Button
   - Roulette_start
   - TimeAndGoldWindow_Summer_night
+  - Stamina_Gauge
   - TimeAndGoldWindow_spring_daytime
   - TimeAndGoldWindow_spring_night
   - TimeAndGoldWindow_spring_evening
@@ -130,6 +137,7 @@ SpriteAtlas:
   - Check_Sign
   - Quest_Button
   - Pickaxe
+  - Energy_Gauge
   - TimeAndGoldWindow_Winter_night
   - Tent
   - Saw
