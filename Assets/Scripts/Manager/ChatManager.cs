@@ -17,9 +17,9 @@ public class ChatManager : DIMono
 
     public void Chat(IEnumerable<SceneLine> sceneLines, SceneLine line)
     {
-        // Ã¤ÆÃ È­¸é¿¡º¸¿©ÁÖ±â
+        // ì±„íŒ… í™”ë©´ì—ë³´ì—¬ì£¼ê¸°
         TalkPanel.GetComponent<Animator>().SetBool("isShow", true);
-        // ÃÊ»óÈ­ ¼³Á¤
+        // ì´ˆìƒí™” ì„¤ì •
         Transform TalkPanel_Portrait = TalkPanel.transform.Find("Portrait");
 
 
@@ -34,7 +34,7 @@ public class ChatManager : DIMono
 
 
         rawImage.texture = portait;
-        // ÀÌ¸§ ¼³Á¤
+        // ì´ë¦„ ì„¤ì •
         Transform TalkPanel_Name = TalkPanel.transform.Find("Name");
         Member interlocutor = gameData.Member.FirstOrDefault(l => l.Id == line.hostCode);
 
@@ -42,7 +42,7 @@ public class ChatManager : DIMono
         {
             TalkPanel_Name.GetComponent<Text>().text = interlocutor.Name;
         }
-        // ´ëÈ­ ¼³Á¤ (Type Effect Ãß°¡)
+        // ëŒ€í™” ì„¤ì • (Type Effect ì¶”ê°€)
         //Transform TalkPanel_Script = TalkPanel.transform.Find("Script");
         //TalkPanel_Script.GetComponent<Text>().text = line.content;
         talk.SetMsg(line.content);

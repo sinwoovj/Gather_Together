@@ -13,12 +13,12 @@ public class SelectManager : DIMono
 
     public GameObject SelectGameObject;
 
-    //°¹¼ö Åä´ë·Î ¹öÆ° È°¼ºÈ­ ½ÃÅ°°í content¿Í SceneLinecode ³Ñ±â±â
-    //´©¸¥ ¹öÆ°ÀÇ SceneLineCode¸¦ ¹ÙÅÁÀ¸·Î ÁøÇà
+    //ê°¯ìˆ˜ í† ëŒ€ë¡œ ë²„íŠ¼ í™œì„±í™” ì‹œí‚¤ê³  contentì™€ SceneLinecode ë„˜ê¸°ê¸°
+    //ëˆ„ë¥¸ ë²„íŠ¼ì˜ SceneLineCodeë¥¼ ë°”íƒ•ìœ¼ë¡œ ì§„í–‰
     public void Select(IntArr intValues)
     {
         Transform SelectButtonLayOut = SelectGameObject.transform.GetChild(1);
-        // Selection °¹¼ö¿¡ µû¸¥ ¹öÆ° °¹¼ö ¶ç¿ì´Â ºÎºĞ
+        // Selection ê°¯ìˆ˜ì— ë”°ë¥¸ ë²„íŠ¼ ê°¯ìˆ˜ ë„ìš°ëŠ” ë¶€ë¶„
         for (int i = 0; i < intValues.SelectCount(); i++)
         {
             Transform BeActiveObject = SelectButtonLayOut.transform.GetChild(i);

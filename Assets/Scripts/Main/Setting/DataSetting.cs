@@ -37,7 +37,7 @@ public class DataSetting : MonoBehaviour
     public void OpenDataSetting()
     {
         DtSetSi = true;
-        soundSetting.SdSetSi = false; //SoundSetting È­¸éÀ» ²¨ÁØ´Ù.
+        soundSetting.SdSetSi = false; //SoundSetting í™”ë©´ì„ êº¼ì¤€ë‹¤.
         keySetting.KySetSi = false;
         screenSetting.ScSetSi = false;
         locationSetting.LcSetSi = false;

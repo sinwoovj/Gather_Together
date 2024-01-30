@@ -121,7 +121,7 @@ public class Item
     }
     public ItemType type;
     public ItemActionType actionType;
-    public int maxStackedItems;  // ÃÖ´ë ½×À» ¼ö ÀÖ´Â ¾ÆÀÌÅÛ ¼ö
+    public int maxStackedItems;  // ìµœëŒ€ ìŒ“ì„ ìˆ˜ ìˆëŠ” ì•„ì´í…œ ìˆ˜
     //public Vector2Int range = new Vector2Int(5, 4);
 
     [Header("Only UI")]
@@ -148,22 +148,22 @@ public class Item
 
 public enum ItemType
 {
-    Block, // ºí·°
-    Tool, // µµ±¸
-    Food, // À½½Ä
-    Furniture, // °¡±¸
-    Cloth, // ¿Ê
-    Resources, // ÀÚ¿ø
-    Object // ÀÌ»ó¿¡ ÇØ´çµÇÁö ¾Ê´Â ¸ğµç ¹°°Ç
+    Block, // ë¸”ëŸ­
+    Tool, // ë„êµ¬
+    Food, // ìŒì‹
+    Furniture, // ê°€êµ¬
+    Cloth, // ì˜·
+    Resources, // ìì›
+    Object // ì´ìƒì— í•´ë‹¹ë˜ì§€ ì•ŠëŠ” ëª¨ë“  ë¬¼ê±´
 
 }
 
 public enum ItemActionType
 {
-    Dig, // ¶¥ÆÄ±â
-    Mine, // ±¤Áú
-    Grow, // ³ª¹« º£±â
-    Fishing // ³¬½Ã ÇÏ±â
+    Dig, // ë•…íŒŒê¸°
+    Mine, // ê´‘ì§ˆ
+    Grow, // ë‚˜ë¬´ ë² ê¸°
+    Fishing // ë‚šì‹œ í•˜ê¸°
     
 }
 

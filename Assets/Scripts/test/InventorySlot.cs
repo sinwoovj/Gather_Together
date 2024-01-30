@@ -7,34 +7,34 @@ using System;
 
 public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
-    public Image image;  // ½½·Ô ÀÌ¹ÌÁö
-    public Color selectedColor, notSelectedColor;  // ¼±ÅÃ ¹× ºñ¼±ÅÃ ½ÃÀÇ »ö»ó
+    public Image image;  // ìŠ¬ë¡¯ ì´ë¯¸ì§€
+    public Color selectedColor, notSelectedColor;  // ì„ íƒ ë° ë¹„ì„ íƒ ì‹œì˜ ìƒ‰ìƒ
 
 
-    private InventoryManager inventoryManager;  // ÀÎº¥Åä¸® ¸Å´ÏÀú ÀÎ½ºÅÏ½º
+    private InventoryManager inventoryManager;  // ì¸ë²¤í† ë¦¬ ë§¤ë‹ˆì € ì¸ìŠ¤í„´ìŠ¤
     public int index;
 
     private void Awake()
     {
-        Deselect();  // Ã³À½¿¡´Â ¼±ÅÃµÇÁö ¾ÊÀº »óÅÂ·Î ÃÊ±âÈ­
-        inventoryManager = FindObjectOfType<InventoryManager>();  // ÀÎº¥Åä¸® ¸Å´ÏÀú ÀÎ½ºÅÏ½º Ã£±â
+        Deselect();  // ì²˜ìŒì—ëŠ” ì„ íƒë˜ì§€ ì•Šì€ ìƒíƒœë¡œ ì´ˆê¸°í™”
+        inventoryManager = FindObjectOfType<InventoryManager>();  // ì¸ë²¤í† ë¦¬ ë§¤ë‹ˆì € ì¸ìŠ¤í„´ìŠ¤ ì°¾ê¸°
     }
 
     public void Select()
     {
-        image.color = selectedColor;  // ½½·Ô ¼±ÅÃ ½Ã »ö»ó º¯°æ
+        image.color = selectedColor;  // ìŠ¬ë¡¯ ì„ íƒ ì‹œ ìƒ‰ìƒ ë³€ê²½
     }
 
     public void Deselect()
     {
-        image.color = notSelectedColor;  // ½½·Ô ¼±ÅÃ ÇØÁ¦ ½Ã »ö»ó º¯°æ
+        image.color = notSelectedColor;  // ìŠ¬ë¡¯ ì„ íƒ í•´ì œ ì‹œ ìƒ‰ìƒ ë³€ê²½
     }
 
-    // Drag and drop ¸Ş¼­µå
+    // Drag and drop ë©”ì„œë“œ
     public void OnDrop(PointerEventData eventData)
     {
         InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
-        // ½½·ÔÀÌ ºñ¾î ÀÖÀ¸¸é µå·¡±×µÈ ¾ÆÀÌÅÛÀ» ½½·Ô¿¡ ³ÖÀ½
+        // ìŠ¬ë¡¯ì´ ë¹„ì–´ ìˆìœ¼ë©´ ë“œë˜ê·¸ëœ ì•„ì´í…œì„ ìŠ¬ë¡¯ì— ë„£ìŒ
         if (transform.childCount != 0)
         {
             InventoryItem itemInSlot = GetComponentInChildren<InventoryItem>();
@@ -52,17 +52,17 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         inventoryItem.parentAfterDrag = transform;
     }
 
-    // ¸¶¿ì½º ¿ìÅ¬¸¯ ¸Ş¼­µå
+    // ë§ˆìš°ìŠ¤ ìš°í´ë¦­ ë©”ì„œë“œ
     public void OnPointerClick(PointerEventData eventData)
     {
-        // ¿ìÅ¬¸¯ ½Ã
+        // ìš°í´ë¦­ ì‹œ
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            // ½½·Ô¿¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ¸¸é
+            // ìŠ¬ë¡¯ì— ì•„ì´í…œì´ ìˆìœ¼ë©´
             InventoryItem itemInSlot = GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null)
             {
-                // ¿ìÅ¬¸¯ÇÑ À§Ä¡¿¡ ÀÌ¹ÌÁö Ç¥½Ã
+                // ìš°í´ë¦­í•œ ìœ„ì¹˜ì— ì´ë¯¸ì§€ í‘œì‹œ
                 inventoryManager.ShowImageAtClickPosition(eventData);
                 Debug.Log("Image displayed");
             }

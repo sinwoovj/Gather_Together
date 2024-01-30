@@ -52,7 +52,7 @@ public class IntArr : IEnumerable<int>, IFillFromStr
 {
     public List<int> values;
 
-    // ÀÎµ¦¼­¸¦ Á¤ÀÇÇÕ´Ï´Ù.
+    // ì¸ë±ì„œë¥¼ ì •ì˜í•©ë‹ˆë‹¤.
     public int this[int index]
     {
         get { return values[index]; }
@@ -70,7 +70,7 @@ public class IntArr : IEnumerable<int>, IFillFromStr
         values = str.Split(';').Select(l => int.Parse(l)).ToList();
     }
 
-    // IEnumerable<int>ÀÇ GetEnumerator() ¸Ş¼­µå¸¦ ±¸ÇöÇÕ´Ï´Ù.
+    // IEnumerable<int>ì˜ GetEnumerator() ë©”ì„œë“œë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
     public IEnumerator<int> GetEnumerator()
     {
         foreach (var value in values)
@@ -112,7 +112,7 @@ public class SceneLine
     public lineType LineType;
 
 
-    public int hostCode; // 1. ÁÖÀÎ°ø 2~6. ¸â¹ö ... ±âÅ¸
+    public int hostCode; // 1. ì£¼ì¸ê³µ 2~6. ë©¤ë²„ ... ê¸°íƒ€
     public int clothCode;
     public int hostEmotion;
 
@@ -138,12 +138,12 @@ public class ScenarioData
     public int Id;
 
     public enum scenarioActionType
-    { //¾î¶² Çàµ¿À» ÇÒ°ÍÀÎ°¡?
+    { //ì–´ë–¤ í–‰ë™ì„ í• ê²ƒì¸ê°€?
         /*
-        ToUnityScne À¯´ÏÆ¼ÀÇ ¾ÀÀ» ÀÌµ¿ (ActionValStr)
-        ToStartScne °ÔÀÓ¾ÀÀ» ½ÃÀÛ SceneLineÀ¸·Î Ç¥±âµÈ ¾À
-        SetLikeability ÇöÀç Æ¯Á¤ Member/NPC¿¡ ´ëÇÑ È£°¨µµ¸¦ ¼³Á¤ÇÔ.
-        SetStat ÇöÀç ½ºÅÈÀ» ¹Ù²Ş
+        ToUnityScne ìœ ë‹ˆí‹°ì˜ ì”¬ì„ ì´ë™ (ActionValStr)
+        ToStartScne ê²Œì„ì”¬ì„ ì‹œì‘ SceneLineìœ¼ë¡œ í‘œê¸°ëœ ì”¬
+        SetLikeability í˜„ì¬ íŠ¹ì • Member/NPCì— ëŒ€í•œ í˜¸ê°ë„ë¥¼ ì„¤ì •í•¨.
+        SetStat í˜„ì¬ ìŠ¤íƒ¯ì„ ë°”ê¿ˆ
          */
         Talk,
         ToUnityScene,

@@ -68,7 +68,7 @@ public class DataConverter
         var table = FindTable(dataset, tableName);
         if (table == null)
         {
-            throw new Exception($"{tableName}ÀÌ ¾ø½À´Ï´Ù.");
+            throw new Exception($"{tableName}ì´ ì—†ìŠµë‹ˆë‹¤.");
         }
         var itemType = typeof(T);
         for (int row = 1; row < table.Rows.Count; row++)
@@ -81,7 +81,7 @@ public class DataConverter
                 var fi = itemType.GetField(Fieldname);
                 if (fi == null)
                 {
-                    Debug.LogError($"{itemType.Name}¿¡ {Fieldname}ÀÌ(°¡) ¾ø½À´Ï´Ù.");
+                    Debug.LogError($"{itemType.Name}ì— {Fieldname}ì´(ê°€) ì—†ìŠµë‹ˆë‹¤.");
                 }
                 var value = table.Rows[row][col];
                 if(value is DBNull)

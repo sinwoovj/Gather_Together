@@ -56,7 +56,7 @@ public class QuestClearChecker
 
     public bool HaveGold(int gold) {
 
-        return userData.gold >= gold;
+        return userData.money >= gold;
 
 
     }

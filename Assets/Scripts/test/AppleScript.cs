@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class AppleScript : MonoBehaviour
 {
-    private applemanager appleManager; // applemanager ÂüÁ¶
+    private applemanager appleManager; // applemanager ì°¸ì¡°
 
     private void Start()
     {
-        appleManager = FindObjectOfType<applemanager>(); // applemanager ÀÎ½ºÅÏ½º Ã£±â
+        appleManager = FindObjectOfType<applemanager>(); // applemanager ì¸ìŠ¤í„´ìŠ¤ ì°¾ê¸°
     }
 
     void Update()
     {
-        if (transform.position.y <= -6) // y ÁÂÇ¥°¡ -6 ÀÌÇÏÀÌ¸é »ç°ú »èÁ¦
+        if (transform.position.y <= -6) // y ì¢Œí‘œê°€ -6 ì´í•˜ì´ë©´ ì‚¬ê³¼ ì‚­ì œ
         {
             Destroy(gameObject);
             appleManager.MissScore();
@@ -21,7 +21,7 @@ public class AppleScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Basket")) // ¹Ù±¸´Ï¿¡ ´êÀ¸¸é Á¡¼ö Áõ°¡
+        if (collision.gameObject.CompareTag("Basket")) // ë°”êµ¬ë‹ˆì— ë‹¿ìœ¼ë©´ ì ìˆ˜ ì¦ê°€
         {
             appleManager.IncreaseScore();
             appleManager.DestroyApple(gameObject);

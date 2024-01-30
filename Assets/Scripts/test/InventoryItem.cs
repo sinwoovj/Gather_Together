@@ -9,10 +9,10 @@ public class InventoryItem : DIMono, IBeginDragHandler, IDragHandler, IEndDragHa
 {
 
     [Header("UI")]
-    public Image image;  // ¾ÆÀÌÅÛ ÀÌ¹ÌÁö
-    public Text countText;  // ¾ÆÀÌÅÛ °³¼ö ÅØ½ºÆ®
+    public Image image;  // ì•„ì´í…œ ì´ë¯¸ì§€
+    public Text countText;  // ì•„ì´í…œ ê°œìˆ˜ í…ìŠ¤íŠ¸
 
-    [HideInInspector] public Item item;  // ¾ÆÀÌÅÛ
+    [HideInInspector] public Item item;  // ì•„ì´í…œ
     [HideInInspector] public int Count {
         get {
             if (invenSlot == null)
@@ -23,7 +23,7 @@ public class InventoryItem : DIMono, IBeginDragHandler, IDragHandler, IEndDragHa
         }
         set { invenSlot.count = value; }
     }
-    [HideInInspector] public Transform parentAfterDrag;  // µå·¡±× ÈÄ ºÎ¸ğ
+    [HideInInspector] public Transform parentAfterDrag;  // ë“œë˜ê·¸ í›„ ë¶€ëª¨
 
 
     [Inject]
@@ -31,12 +31,12 @@ public class InventoryItem : DIMono, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public InvenSlot invenSlot;
     /*
-    // ¾ÆÀÌÅÛ ÃÊ±âÈ­
+    // ì•„ì´í…œ ì´ˆê¸°í™”
     public void InitialiseItem(Item newItem)
     {
         item = newItem;
-        image.sprite = newItem.Image;  // ¾ÆÀÌÅÛ ÀÌ¹ÌÁö ¼³Á¤
-        RefreshCount();  // ¾ÆÀÌÅÛ °³¼ö °»½Å
+        image.sprite = newItem.Image;  // ì•„ì´í…œ ì´ë¯¸ì§€ ì„¤ì •
+        RefreshCount();  // ì•„ì´í…œ ê°œìˆ˜ ê°±ì‹ 
     }
     */
     public void InitialiseItem(InvenSlot invenSlot)
@@ -46,42 +46,42 @@ public class InventoryItem : DIMono, IBeginDragHandler, IDragHandler, IEndDragHa
         this.invenSlot = invenSlot;
         item = gameData.Item.Find(l=>l.id== invenSlot.itemCode);
    
-        image.sprite = item.Image;  // ¾ÆÀÌÅÛ ÀÌ¹ÌÁö ¼³Á¤
-        RefreshCount();  // ¾ÆÀÌÅÛ °³¼ö °»½Å
+        image.sprite = item.Image;  // ì•„ì´í…œ ì´ë¯¸ì§€ ì„¤ì •
+        RefreshCount();  // ì•„ì´í…œ ê°œìˆ˜ ê°±ì‹ 
     }
 
-    // ¾ÆÀÌÅÛ °³¼ö °»½Å
+    // ì•„ì´í…œ ê°œìˆ˜ ê°±ì‹ 
     public void RefreshCount()
     {
-        countText.text = Count.ToString();  // °³¼ö¸¦ ¹®ÀÚ¿­·Î º¯È¯
-        bool textActive = Count > 1;  // °³¼ö°¡ 1º¸´Ù Å«Áö È®ÀÎ
-        countText.gameObject.SetActive(textActive);  // °³¼ö°¡ 1º¸´Ù Å©¸é ÅØ½ºÆ® È°¼ºÈ­
+        countText.text = Count.ToString();  // ê°œìˆ˜ë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜
+        bool textActive = Count > 1;  // ê°œìˆ˜ê°€ 1ë³´ë‹¤ í°ì§€ í™•ì¸
+        countText.gameObject.SetActive(textActive);  // ê°œìˆ˜ê°€ 1ë³´ë‹¤ í¬ë©´ í…ìŠ¤íŠ¸ í™œì„±í™”
     }
 
-    // µå·¡±× ½ÃÀÛ
+    // ë“œë˜ê·¸ ì‹œì‘
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;  // ÀÌ¹ÌÁö¿¡ ´ëÇÑ ·¹ÀÌÄ³½ºÆÃ ºñÈ°¼ºÈ­
-        parentAfterDrag = transform.parent;  // µå·¡±× ÈÄÀÇ ºÎ¸ğ¸¦ ÇöÀç ºÎ¸ğ·Î ¼³Á¤
-        transform.SetParent(transform.root);  // µå·¡±× µµÁß¿¡´Â ¾ÆÀÌÅÛÀÌ ÃÖ»óÀ§ ºÎ¸ğ¸¦ °¡Áü
+        image.raycastTarget = false;  // ì´ë¯¸ì§€ì— ëŒ€í•œ ë ˆì´ìºìŠ¤íŒ… ë¹„í™œì„±í™”
+        parentAfterDrag = transform.parent;  // ë“œë˜ê·¸ í›„ì˜ ë¶€ëª¨ë¥¼ í˜„ì¬ ë¶€ëª¨ë¡œ ì„¤ì •
+        transform.SetParent(transform.root);  // ë“œë˜ê·¸ ë„ì¤‘ì—ëŠ” ì•„ì´í…œì´ ìµœìƒìœ„ ë¶€ëª¨ë¥¼ ê°€ì§
     }
 
-    // µå·¡±× Áß
+    // ë“œë˜ê·¸ ì¤‘
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;  // ¾ÆÀÌÅÛÀÇ À§Ä¡¸¦ ¸¶¿ì½º À§Ä¡·Î ¼³Á¤
+        transform.position = Input.mousePosition;  // ì•„ì´í…œì˜ ìœ„ì¹˜ë¥¼ ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¡œ ì„¤ì •
     }
 
-    // µå·¡±× Á¾·á
+    // ë“œë˜ê·¸ ì¢…ë£Œ
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = true;  // ÀÌ¹ÌÁö¿¡ ´ëÇÑ ·¹ÀÌÄ³½ºÆÃ È°¼ºÈ­
-        transform.SetParent(parentAfterDrag);  // µå·¡±× Á¾·á ÈÄ ºÎ¸ğ¸¦ ¿ø·¡ÀÇ ºÎ¸ğ·Î º¹±Í
+        image.raycastTarget = true;  // ì´ë¯¸ì§€ì— ëŒ€í•œ ë ˆì´ìºìŠ¤íŒ… í™œì„±í™”
+        transform.SetParent(parentAfterDrag);  // ë“œë˜ê·¸ ì¢…ë£Œ í›„ ë¶€ëª¨ë¥¼ ì›ë˜ì˜ ë¶€ëª¨ë¡œ ë³µê·€
         invenSlot.index = parentAfterDrag.GetComponent<InventorySlot>().index;
         Debug.Log(invenSlot.index);
-        // InventoryManager °¡Á®¿À±â
+        // InventoryManager ê°€ì ¸ì˜¤ê¸°
         InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
-        // ¸¶Áö¸· ½½·ÔÀÇ ¾ÆÀÌÅÛ È®ÀÎ ¹× Á¦°Å
+        // ë§ˆì§€ë§‰ ìŠ¬ë¡¯ì˜ ì•„ì´í…œ í™•ì¸ ë° ì œê±°
         inventoryManager.CheckAndRemoveItemAtEndSlot();
 
     }

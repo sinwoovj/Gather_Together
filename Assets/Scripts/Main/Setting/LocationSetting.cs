@@ -37,7 +37,7 @@ public class LocationSetting : MonoBehaviour
     public void OpenLocationSetting()
     {
         LcSetSi = true;
-        soundSetting.SdSetSi = false; //SoundSetting È­¸éÀ» ²¨ÁØ´Ù.
+        soundSetting.SdSetSi = false; //SoundSetting í™”ë©´ì„ êº¼ì¤€ë‹¤.
         keySetting.KySetSi = false;
         screenSetting.ScSetSi = false;
         dataSetting.DtSetSi = false;

@@ -24,20 +24,20 @@ public class QuestManager : DIMono
     // userData 안에 있는 현재 QuestId로 퀘스트 이름과 내용을 알아낸다.
     public MainQuest CheckMainQuestData()
     {
-        MainQuest temp = gameData.MainQuest.Single(l => l.MainQuestId == userData.MainQuestId) as MainQuest;
+        MainQuest temp = gameData.MainQuest.Single(l => l.MainQuestId == userData.mainQuestId) as MainQuest;
         if (temp == null)
         {
-            Debug.LogError($"{userData.MainQuestId}에 해당하는 메인 퀘스트 데이터가 없다.");
+            Debug.LogError($"{userData.mainQuestId}에 해당하는 메인 퀘스트 데이터가 없다.");
             return null;
         }
         return temp;
     }
     public SubQuest CheckSubQuestData()
     {
-        SubQuest temp = gameData.SubQuest.Single(l => l.SubQuestId == userData.SubQuestId) as SubQuest;
+        SubQuest temp = gameData.SubQuest.Single(l => l.SubQuestId == userData.subQuestId) as SubQuest;
         if (temp == null)
         {
-            Debug.LogError($"{userData.SubQuestId}에 해당하는 서브 퀘스트 데이터가 없다.");
+            Debug.LogError($"{userData.subQuestId}에 해당하는 서브 퀘스트 데이터가 없다.");
             return null;
         }
         return temp;
@@ -49,12 +49,12 @@ public class QuestManager : DIMono
     }
     public void SetMainQuest(int id)
     {
-        userData.MainQuestId = id;
+        userData.mainQuestId = id;
         playData.questDetective = true;
     }
     public void SetSubQuest(int id)
     {
-        userData.SubQuestId = id;
+        userData.subQuestId = id;
         playData.questDetective = true;
     }
 }

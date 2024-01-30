@@ -34,22 +34,22 @@ public class CharacterManager : DIMono
         }
 
         Debug.Log($"{playData.presentChar} : {CharacterNum} : {gameData.Member.Single(l => l.Id == CharacterNum).Name}");
-        // ¼±ÅÃÇÑ Ä³¸¯ÅÍ Transform
+        // ì„ íƒí•œ ìºë¦­í„° Transform
         Transform PresentChar = Member.transform.GetChild(CharacterNum);
-        VCam.GetComponent<CinemachineVirtualCamera>().Follow = PresentChar.transform;        // Ä«¸Ş¶ó ÀüÈ¯
-        PresentChar.GetComponent<PlayerAction>().enabled = true;        // ÄÁÆ®·Ñ È°¼ºÈ­
+        VCam.GetComponent<CinemachineVirtualCamera>().Follow = PresentChar.transform;        // ì¹´ë©”ë¼ ì „í™˜
+        PresentChar.GetComponent<PlayerAction>().enabled = true;        // ì»¨íŠ¸ë¡¤ í™œì„±í™”
         PresentChar.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;         // Rigidbody Static -> Dynamic
-        PresentChar.gameObject.layer = 7;        // Object Layer 'NPC & Object'¿¡¼­ 'Player'·Î º¯°æ
-        PresentChar.GetComponent<Animator>().enabled = true;       // Animator ÄÑ±â
+        PresentChar.gameObject.layer = 7;        // Object Layer 'NPC & Object'ì—ì„œ 'Player'ë¡œ ë³€ê²½
+        PresentChar.GetComponent<Animator>().enabled = true;       // Animator ì¼œê¸°
 
-        // ÀÌÀü Ä³¸¯ÅÍ Transform
+        // ì´ì „ ìºë¦­í„° Transform
         Transform PrevChar = Member.transform.GetChild(playData.presentChar);
-        PrevChar.GetComponent<PlayerAction>().enabled = false;        // ÀÌÀü Ä³¸¯ÅÍ ÄÁÆ®·Ñ ºñÈ°¼ºÈ­
+        PrevChar.GetComponent<PlayerAction>().enabled = false;        // ì´ì „ ìºë¦­í„° ì»¨íŠ¸ë¡¤ ë¹„í™œì„±í™”
         PrevChar.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;         // Rigidbody Static -> Dynamic
-        PrevChar.gameObject.layer = 6;        // Object Layer 'NPC & Object'¿¡¼­ 'Player'·Î º¯°æ
-        PrevChar.GetComponent<Animator>().enabled = false;       // Animator ²ô±â
+        PrevChar.gameObject.layer = 6;        // Object Layer 'NPC & Object'ì—ì„œ 'Player'ë¡œ ë³€ê²½
+        PrevChar.GetComponent<Animator>().enabled = false;       // Animator ë„ê¸°
 
-        // ÇöÀç Ä³¸¯ÅÍ »óÅÂ ¹øÈ£¿¡ ¸Â°Ô º¯È¯
+        // í˜„ì¬ ìºë¦­í„° ìƒíƒœ ë²ˆí˜¸ì— ë§ê²Œ ë³€í™˜
         playData.presentChar = CharacterNum;
     }
 }

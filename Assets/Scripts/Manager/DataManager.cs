@@ -11,21 +11,21 @@ public class DataManager : DIMono
     [Inject]
     GameObject player;
 
-    public void GameSave() //ÀúÀå ÇÔ¼ö
+    public void GameSave() //ì €ì¥ í•¨ìˆ˜
     {
-        //PlayerPrefs : °£´ÜÇÑ µ¥ÀÌÅÍ ÀúÀå ±â´ÉÀ» Áö¿øÇÏ´Â Å¬·¡½º // µ¥ÀÌÅÍ Å¸ÀÔ¿¡ ¸Â°Ô Set ÇÔ¼ö »ç¿ë (SetInt/float/string)
-        userData.FillUserPostion(player.transform);
+        //PlayerPrefs : ê°„ë‹¨í•œ ë°ì´í„° ì €ì¥ ê¸°ëŠ¥ì„ ì§€ì›í•˜ëŠ” í´ë˜ìŠ¤ // ë°ì´í„° íƒ€ì…ì— ë§ê²Œ Set í•¨ìˆ˜ ì‚¬ìš© (SetInt/float/string)
+        userData.FillUserPosition(player.transform);
         var json = JsonUtility.ToJson(userData);
 
 
         PlayerPrefs.SetString("UserDataJSON", json);
-        //ÀúÀå
+        //ì €ì¥
         PlayerPrefs.Save();
     }
 
-    public void GameLoad() //ºÒ·¯¿À±â ÇÔ¼ö
+    public void GameLoad() //ë¶ˆëŸ¬ì˜¤ê¸° í•¨ìˆ˜
     {
-        //ÃÖÃÊ °ÔÀÓ ½ÇÇàÇßÀ» ¶© µ¥ÀÌÅÍ°¡ ¾øÀ¸¹Ç·Î ¿¹¿ÜÃ³¸® ·ÎÁ÷ ÀÛ¼º
+        //ìµœì´ˆ ê²Œì„ ì‹¤í–‰í–ˆì„ ë• ë°ì´í„°ê°€ ì—†ìœ¼ë¯€ë¡œ ì˜ˆì™¸ì²˜ë¦¬ ë¡œì§ ì‘ì„±
         if (!PlayerPrefs.HasKey("UserDataJSON"))
         {
             this.userData.InitialValue(userData);
@@ -35,7 +35,7 @@ public class DataManager : DIMono
         var userData1 = JsonUtility.FromJson<UserData>(json);
         userData.CopyFrom(userData1);
 
-        //¼¼ÆÃ : ºÒ·¯¿Â µ¥ÀÌÅÍ¸¦ °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Àû¿ë
-        player.transform.position = userData1.PlayerLoc;
+        //ì„¸íŒ… : ë¶ˆëŸ¬ì˜¨ ë°ì´í„°ë¥¼ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì— ì ìš©
+        player.transform.position = userData1.playerLoc;
     }
 }

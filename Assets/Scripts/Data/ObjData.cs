@@ -1,8 +1,5 @@
 using DI;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class ObjData : DIMono
 {
@@ -22,13 +19,13 @@ public class ObjData : DIMono
     {
         var scenarioData= gameData.ScenarioData.Where(l => l.Id == id && l.HostType == hostType);
 
-        var currentSD= scenarioData.FirstOrDefault(l => l.MainQuestId == userData.MainQuestId && l.SubQuestId == userData.SubQuestId);
+        var currentSD= scenarioData.FirstOrDefault(l => l.MainQuestId == userData.mainQuestId && l.SubQuestId == userData.subQuestId);
 
         if(currentSD != null)
         {
             return currentSD;
         }
-        currentSD = scenarioData.FirstOrDefault(l => l.MainQuestId == userData.MainQuestId );
+        currentSD = scenarioData.FirstOrDefault(l => l.MainQuestId == userData.mainQuestId );
 
         if (currentSD != null)
         {

@@ -6,18 +6,18 @@ using TMPro;
 
 public class applemanager : MonoBehaviour
 {
-    [SerializeField] private GameObject applePrefab; // »ç°ú ÇÁ¸®ÆÕ
-    [SerializeField] private GameObject basket; // ¹Ù±¸´Ï
-    [SerializeField] private float score; // Á¡¼ö
-    [SerializeField] private float missscore; // ³õÄ£ Á¡¼ö
-    [SerializeField] private TextMeshProUGUI score_text; // Á¡¼ö
-    [SerializeField] private TextMeshProUGUI miss_text; //³õÄ£ Á¡¼ö
-    [SerializeField] private TextMeshProUGUI accuracy; //Á¤È®µµ
-    [SerializeField] private TextMeshProUGUI applecount; // ³²Àº »ç°ú ¼ö
-    [SerializeField] private Slider timerSlider; //³²Àº ½Ã°£
+    [SerializeField] private GameObject applePrefab; // ì‚¬ê³¼ í”„ë¦¬íŒ¹
+    [SerializeField] private GameObject basket; // ë°”êµ¬ë‹ˆ
+    [SerializeField] private float score; // ì ìˆ˜
+    [SerializeField] private float missscore; // ë†“ì¹œ ì ìˆ˜
+    [SerializeField] private TextMeshProUGUI score_text; // ì ìˆ˜
+    [SerializeField] private TextMeshProUGUI miss_text; //ë†“ì¹œ ì ìˆ˜
+    [SerializeField] private TextMeshProUGUI accuracy; //ì •í™•ë„
+    [SerializeField] private TextMeshProUGUI applecount; // ë‚¨ì€ ì‚¬ê³¼ ìˆ˜
+    [SerializeField] private Slider timerSlider; //ë‚¨ì€ ì‹œê°„
 
-    [SerializeField] private float duration = 60f; // »ç°ú »ı¼º ½Ã°£
-    [SerializeField] private int totalApples = 100; // »ı¼ºÇÒ »ç°úÀÇ ÃÑ °³¼ö
+    [SerializeField] private float duration = 60f; // ì‚¬ê³¼ ìƒì„± ì‹œê°„
+    [SerializeField] private int totalApples = 100; // ìƒì„±í•  ì‚¬ê³¼ì˜ ì´ ê°œìˆ˜
     List<GameObject> apples = new List<GameObject>();
 
     void Start()
@@ -38,39 +38,39 @@ public class applemanager : MonoBehaviour
 
     IEnumerator SpawnApples()
     {
-        // ·£´ı °£°İÀ» »ı¼º
+        // ëœë¤ ê°„ê²©ì„ ìƒì„±
         List<float> intervals = new List<float>();
         for (int i = 0; i < totalApples; i++)
         {
             intervals.Add(Random.Range(-0.2f, 0.2f));
         }
-        // ·£´ı °£°İÀÇ ÇÕ °è»ê
+        // ëœë¤ ê°„ê²©ì˜ í•© ê³„ì‚°
         float totalRandom = 0;
         foreach (float val in intervals)
         {
             totalRandom += val;
         }
 
-        // ·£´ı °£°İ°ú ÇÔ²² Æò±Õ °£°İÀ» °è»ê
+        // ëœë¤ ê°„ê²©ê³¼ í•¨ê»˜ í‰ê·  ê°„ê²©ì„ ê³„ì‚°
         float averageInterval = (duration - totalRandom) / totalApples;
 
-        // ½½¶óÀÌ´õÀÇ ÃÖ´ë °ª ¼³Á¤
+        // ìŠ¬ë¼ì´ë”ì˜ ìµœëŒ€ ê°’ ì„¤ì •
         timerSlider.maxValue = duration;
         timerSlider.value = duration;
 
-        float elapsed = 0; // °æ°ú ½Ã°£
+        float elapsed = 0; // ê²½ê³¼ ì‹œê°„
 
         for (int i = 0; i < totalApples; i++)
         {
-            yield return new WaitForSeconds(averageInterval + intervals[i]); // ¹«ÀÛÀ§ °£°İ + Æò±Õ °£°İ
+            yield return new WaitForSeconds(averageInterval + intervals[i]); // ë¬´ì‘ìœ„ ê°„ê²© + í‰ê·  ê°„ê²©
 
             GameObject apple = Instantiate(applePrefab);
-            apple.transform.position = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(5.5f, 7f)); // ·£´ı À§Ä¡
+            apple.transform.position = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(5.5f, 7f)); // ëœë¤ ìœ„ì¹˜
 
-            Rigidbody2D appleRb = apple.AddComponent<Rigidbody2D>(); // Rigidbody2D ÄÄÆ÷³ÍÆ® Ãß°¡
-            appleRb.gravityScale = Random.Range(2f, 4f); // ·£´ı ¼Óµµ
+            Rigidbody2D appleRb = apple.AddComponent<Rigidbody2D>(); // Rigidbody2D ì»´í¬ë„ŒíŠ¸ ì¶”ê°€
+            appleRb.gravityScale = Random.Range(2f, 4f); // ëœë¤ ì†ë„
 
-            // xÃà ¹æÇâÀ¸·Î ¹«ÀÛÀ§ Èû Ãß°¡
+            // xì¶• ë°©í–¥ìœ¼ë¡œ ë¬´ì‘ìœ„ í˜ ì¶”ê°€
             appleRb.AddForce(new Vector2(Random.Range(-1f, 1f), 0), ForceMode2D.Impulse);
 
             foreach (var existingApple in apples)
@@ -83,9 +83,9 @@ public class applemanager : MonoBehaviour
 
             apples.Add(apple);
 
-            // °æ°ú ½Ã°£ ¾÷µ¥ÀÌÆ®
+            // ê²½ê³¼ ì‹œê°„ ì—…ë°ì´íŠ¸
             elapsed += averageInterval + intervals[i];
-            // ½½¶óÀÌ´õ °ª ¾÷µ¥ÀÌÆ®
+            // ìŠ¬ë¼ì´ë” ê°’ ì—…ë°ì´íŠ¸
             timerSlider.value = duration - elapsed;
         }
 
@@ -94,22 +94,22 @@ public class applemanager : MonoBehaviour
 
     public void DestroyApple(GameObject apple)
     {
-        apples.Remove(apple); // »ç°ú¸¦ ¸®½ºÆ®¿¡¼­ Á¦°Å
-        Destroy(apple); // »ç°ú¸¦ ÆÄ±«
-        applecount.text = "³²Àº »ç°ú ¼ö: " + (totalApples - (score + missscore)).ToString();
+        apples.Remove(apple); // ì‚¬ê³¼ë¥¼ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì œê±°
+        Destroy(apple); // ì‚¬ê³¼ë¥¼ íŒŒê´´
+        applecount.text = "ë‚¨ì€ ì‚¬ê³¼ ìˆ˜: " + (totalApples - (score + missscore)).ToString();
     }
 
     public void IncreaseScore()
     {
         score++;
-        score_text.text = "¹ŞÀº »ç°ú ¼ö: " + score.ToString();
-        accuracy.text = "Á¤È®µµ: " + (((score / (score + missscore)) * 100).ToString("F2")) + "%";
+        score_text.text = "ë°›ì€ ì‚¬ê³¼ ìˆ˜: " + score.ToString();
+        accuracy.text = "ì •í™•ë„: " + (((score / (score + missscore)) * 100).ToString("F2")) + "%";
 
     }
 
     public void MissScore()
     {
         missscore++;
-        miss_text.text = "³õÄ£ »ç°ú ¼ö: " + missscore.ToString();
+        miss_text.text = "ë†“ì¹œ ì‚¬ê³¼ ìˆ˜: " + missscore.ToString();
     }
 }

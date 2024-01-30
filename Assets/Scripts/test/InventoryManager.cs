@@ -9,14 +9,14 @@ using Unity.VisualScripting;
 public class InventoryManager : DIMono
 {
     [Header("UI")]
-    public GameObject imagePrefab;  // ÀÌ¹ÌÁö ÇÁ¸®ÆÕ
-    public InventorySlot[] inventorySlots;  // ÀÎº¥Åä¸® ½½·Ô ¹è¿­
-    public GameObject inventoryItemPrefab;  // ÀÎº¥Åä¸® ¾ÆÀÌÅÛ ÇÁ¸®ÆÕ
-    public GameObject currentContextMenu;  // ¾ÆÀÌÅÛ ¸Ş´º on È®ÀÎ
-    public GraphicRaycaster m_Raycaster;  // ·¹ÀÌÄ³½ºÅÍ
-    public EventSystem m_EventSystem;  // ÀÌº¥Æ® ½Ã½ºÅÛ
+    public GameObject imagePrefab;  // ì´ë¯¸ì§€ í”„ë¦¬íŒ¹
+    public InventorySlot[] inventorySlots;  // ì¸ë²¤í† ë¦¬ ìŠ¬ë¡¯ ë°°ì—´
+    public GameObject inventoryItemPrefab;  // ì¸ë²¤í† ë¦¬ ì•„ì´í…œ í”„ë¦¬íŒ¹
+    public GameObject currentContextMenu;  // ì•„ì´í…œ ë©”ë‰´ on í™•ì¸
+    public GraphicRaycaster m_Raycaster;  // ë ˆì´ìºìŠ¤í„°
+    public EventSystem m_EventSystem;  // ì´ë²¤íŠ¸ ì‹œìŠ¤í…œ
 
-    int selectedSlot = -1;  // ¼±ÅÃµÈ ½½·Ô (±âº»°ª: -1)
+    int selectedSlot = -1;  // ì„ íƒëœ ìŠ¬ë¡¯ (ê¸°ë³¸ê°’: -1)
     int value = 0;
     int minValue = 0;
     int maxValue = 9;
@@ -28,20 +28,20 @@ public class InventoryManager : DIMono
 
     void SettingUserData()
     {
-        userData.Inventory.Clear();
-        userData.Inventory.Add(new InvenSlot()
+        userData.inventory.Clear();
+        userData.inventory.Add(new InvenSlot()
         {
             index = 0,
             itemCode = 1,
             count = 1
         });
-        userData.Inventory.Add(new InvenSlot()
+        userData.inventory.Add(new InvenSlot()
         {
             index = 1,
             itemCode = 2,
             count = 1
         });
-        userData.Inventory.Add(new InvenSlot()
+        userData.inventory.Add(new InvenSlot()
         {
             index = 2,
             itemCode = 3,
@@ -54,15 +54,15 @@ public class InventoryManager : DIMono
     {
         SettingUserData();
         LoadItems();
-        //UserData¸¦ ¹ÙÅÁÀ¸·Î ÀÎº¥Åä¸®¸¦ ¿­ ¶§ UI ¾÷µ¥ÀÌÆ®
-        ChangeSelectedSlot(value);  // ½ÃÀÛ ½Ã Ã¹ ¹øÂ° ½½·ÔÀ» ¼±ÅÃÇÕ´Ï´Ù.
+        //UserDataë¥¼ ë°”íƒ•ìœ¼ë¡œ ì¸ë²¤í† ë¦¬ë¥¼ ì—´ ë•Œ UI ì—…ë°ì´íŠ¸
+        ChangeSelectedSlot(value);  // ì‹œì‘ ì‹œ ì²« ë²ˆì§¸ ìŠ¬ë¡¯ì„ ì„ íƒí•©ë‹ˆë‹¤.
 
 
     }
 
     private void LoadItems()
     {
-        foreach (var inven in userData.Inventory)
+        foreach (var inven in userData.inventory)
         {
             GameObject LoadItem = Instantiate(inventoryItemPrefab, inventorySlots[inven.index].transform);
             InventoryItem inventoryitem = LoadItem.GetComponent<InventoryItem>();
@@ -72,7 +72,7 @@ public class InventoryManager : DIMono
 
     private void Update()
     {
-        // ¸¶¿ì½º ÈÙÀ» ÅëÇÑ ½½·Ô ¼±ÅÃ ±¸Çö
+        // ë§ˆìš°ìŠ¤ íœ ì„ í†µí•œ ìŠ¬ë¡¯ ì„ íƒ êµ¬í˜„
         float mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
         if(mouseWheelInput != 0)
         {
@@ -98,7 +98,7 @@ public class InventoryManager : DIMono
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerData, results);
 
-            // °á°ú°¡ ¾ø°Å³ª ¶Ç´Â °á°ú¿¡ ÀÌ¹ÌÁö ÇÁ¸®ÆÕÀÌ ¾øÀ¸¸é ÀÌ¹ÌÁö¸¦ »èÁ¦ÇÕ´Ï´Ù.
+            // ê²°ê³¼ê°€ ì—†ê±°ë‚˜ ë˜ëŠ” ê²°ê³¼ì— ì´ë¯¸ì§€ í”„ë¦¬íŒ¹ì´ ì—†ìœ¼ë©´ ì´ë¯¸ì§€ë¥¼ ì‚­ì œí•©ë‹ˆë‹¤.
             if (results.Count == 0 || !results.Exists((r) => r.gameObject == currentContextMenu))
             {
                 Destroy(currentContextMenu);
@@ -107,47 +107,47 @@ public class InventoryManager : DIMono
         }
     }
 
-    // Å¬¸¯ À§Ä¡¿¡ ÀÌ¹ÌÁö Ç¥½Ã
+    // í´ë¦­ ìœ„ì¹˜ì— ì´ë¯¸ì§€ í‘œì‹œ
     public void ShowImageAtClickPosition(PointerEventData eventData)
     {
-        // ÀÌ¹ÌÁö »ı¼º Àü¿¡ ±âÁ¸ ÀÌ¹ÌÁö°¡ ÀÖÀ¸¸é »èÁ¦ÇÕ´Ï´Ù.
+        // ì´ë¯¸ì§€ ìƒì„± ì „ì— ê¸°ì¡´ ì´ë¯¸ì§€ê°€ ìˆìœ¼ë©´ ì‚­ì œí•©ë‹ˆë‹¤.
         if (currentContextMenu != null)
         {
             Destroy(currentContextMenu);
         }
 
-        // ÀÌ¹ÌÁö ÇÁ¸®ÆÕÀÇ ¿ø·¡ Å©±â¸¦ »ç¿ëÇÏµµ·Ï ¼³Á¤ÇÕ´Ï´Ù.
+        // ì´ë¯¸ì§€ í”„ë¦¬íŒ¹ì˜ ì›ë˜ í¬ê¸°ë¥¼ ì‚¬ìš©í•˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤.
         RectTransform imagePrefabRect = imagePrefab.GetComponent<RectTransform>();
         Vector2 originalSize = imagePrefabRect.sizeDelta;
 
-        // Äµ¹ö½ºÀÇ TransformÀ» ÀÌ¹ÌÁöÀÇ ºÎ¸ğ·Î ¼³Á¤ÇÏ¿© ÀÎº¥Åä¸® ½½·Ô À§¿¡ ÀÌ¹ÌÁö°¡ ·»´õ¸µµÇµµ·Ï ÇÕ´Ï´Ù.
+        // ìº”ë²„ìŠ¤ì˜ Transformì„ ì´ë¯¸ì§€ì˜ ë¶€ëª¨ë¡œ ì„¤ì •í•˜ì—¬ ì¸ë²¤í† ë¦¬ ìŠ¬ë¡¯ ìœ„ì— ì´ë¯¸ì§€ê°€ ë Œë”ë§ë˜ë„ë¡ í•©ë‹ˆë‹¤.
         currentContextMenu = Instantiate(imagePrefab, GameObject.Find("Canvas").transform);
         RectTransform rectTransform = currentContextMenu.GetComponent<RectTransform>();
 
         rectTransform.sizeDelta = originalSize;
 
-        // Å¬¸¯ÇÑ ¸¶¿ì½º À§Ä¡¸¦ °¡Á®¿É´Ï´Ù.
+        // í´ë¦­í•œ ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").GetComponent<RectTransform>(), eventData.position, null, out localPoint);
         rectTransform.anchoredPosition = new Vector2(localPoint.x + originalSize.x / 2, localPoint.y + originalSize.y / 2);
     }
 
-    // ¼±ÅÃµÈ ½½·Ô º¯°æ
+    // ì„ íƒëœ ìŠ¬ë¡¯ ë³€ê²½
     void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)
         {
-            inventorySlots[selectedSlot].Deselect();  // ÀÌÀü ½½·ÔÀÇ ¼±ÅÃ ÇØÁ¦
+            inventorySlots[selectedSlot].Deselect();  // ì´ì „ ìŠ¬ë¡¯ì˜ ì„ íƒ í•´ì œ
         }
-        inventorySlots[newValue].Select();  // »õ·Î¿î ½½·Ô ¼±ÅÃ
+        inventorySlots[newValue].Select();  // ìƒˆë¡œìš´ ìŠ¬ë¡¯ ì„ íƒ
         selectedSlot = newValue;
     }
 
-    // ¾ÆÀÌÅÛ Ãß°¡
+    // ì•„ì´í…œ ì¶”ê°€
     public bool AddItem(Item item)
     {
 
-        // µ¿ÀÏÇÑ ¾ÆÀÌÅÛÀÌ ÀÖ°í, ¾ÆÀÌÅÛ ¼ö°¡ ÃÖ´ë°ªº¸´Ù ÀÛ´Ù¸é ¾ÆÀÌÅÛ ¼ö¸¦ Áõ°¡
+        // ë™ì¼í•œ ì•„ì´í…œì´ ìˆê³ , ì•„ì´í…œ ìˆ˜ê°€ ìµœëŒ€ê°’ë³´ë‹¤ ì‘ë‹¤ë©´ ì•„ì´í…œ ìˆ˜ë¥¼ ì¦ê°€
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -164,7 +164,7 @@ public class InventoryManager : DIMono
             }
         }
 
-        // ºñ¾îÀÖ´Â ½½·Ô Ã£±â
+        // ë¹„ì–´ìˆëŠ” ìŠ¬ë¡¯ ì°¾ê¸°
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -172,16 +172,16 @@ public class InventoryManager : DIMono
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                SpawnNewItem(item, slot);  // »õ ¾ÆÀÌÅÛÀ» ½½·Ô¿¡ Ãß°¡ÇÕ´Ï´Ù.
+                SpawnNewItem(item, slot);  // ìƒˆ ì•„ì´í…œì„ ìŠ¬ë¡¯ì— ì¶”ê°€í•©ë‹ˆë‹¤.
                 return true;
             }
         }
 
-        return false;  // ½½·Ô¿¡ Ãß°¡ÇÒ ¼ö ¾øÀ¸¸é false¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+        return false;  // ìŠ¬ë¡¯ì— ì¶”ê°€í•  ìˆ˜ ì—†ìœ¼ë©´ falseë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
     }
 
  
-    // »õ ¾ÆÀÌÅÛ »ı¼º
+    // ìƒˆ ì•„ì´í…œ ìƒì„±
     void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
@@ -193,12 +193,12 @@ public class InventoryManager : DIMono
             count=1,
             index=slot.index
         };
-        userData.Inventory.Add(invenSlot);
+        userData.inventory.Add(invenSlot);
 
-        inventoryItem.InitialiseItem(invenSlot);  // ¾ÆÀÌÅÛ ÃÊ±âÈ­
+        inventoryItem.InitialiseItem(invenSlot);  // ì•„ì´í…œ ì´ˆê¸°í™”
     }
 
-    // ¼±ÅÃµÈ ¾ÆÀÌÅÛ ¾ò±â
+    // ì„ íƒëœ ì•„ì´í…œ ì–»ê¸°
     public Item GetSelectedItem(bool use)
     {
         InventorySlot slot = inventorySlots[selectedSlot];
@@ -208,37 +208,37 @@ public class InventoryManager : DIMono
             Item item = itemInSlot.item;
             if (use == true)
             {
-                itemInSlot.Count--;  // ¾ÆÀÌÅÛÀ» »ç¿ëÇÏ¸é Ä«¿îÆ®¸¦ ÁÙÀÔ´Ï´Ù.
+                itemInSlot.Count--;  // ì•„ì´í…œì„ ì‚¬ìš©í•˜ë©´ ì¹´ìš´íŠ¸ë¥¼ ì¤„ì…ë‹ˆë‹¤.
                 if (itemInSlot.Count <= 0)
                 {
-                    userData.Inventory.Remove(itemInSlot.invenSlot);
+                    userData.inventory.Remove(itemInSlot.invenSlot);
 
-                    Destroy(itemInSlot.gameObject);  // ¾ÆÀÌÅÛÀÌ ´õ ÀÌ»ó ¾øÀ¸¸é ¾ÆÀÌÅÛÀ» ÆÄ±«ÇÕ´Ï´Ù.
+                    Destroy(itemInSlot.gameObject);  // ì•„ì´í…œì´ ë” ì´ìƒ ì—†ìœ¼ë©´ ì•„ì´í…œì„ íŒŒê´´í•©ë‹ˆë‹¤.
                 }
                 else
                 {
-                    itemInSlot.RefreshCount();  // ¾ÆÀÌÅÛ ¼ö¸¦ ¾÷µ¥ÀÌÆ®ÇÕ´Ï´Ù.
+                    itemInSlot.RefreshCount();  // ì•„ì´í…œ ìˆ˜ë¥¼ ì—…ë°ì´íŠ¸í•©ë‹ˆë‹¤.
                 }
             }
 
-            return item;  // ¼±ÅÃµÈ ¾ÆÀÌÅÛÀ» ¹İÈ¯ÇÕ´Ï´Ù.
+            return item;  // ì„ íƒëœ ì•„ì´í…œì„ ë°˜í™˜í•©ë‹ˆë‹¤.
         }
 
-        return null;  // ¼±ÅÃµÈ ¾ÆÀÌÅÛÀÌ ¾øÀ¸¸é nullÀ» ¹İÈ¯ÇÕ´Ï´Ù.
+        return null;  // ì„ íƒëœ ì•„ì´í…œì´ ì—†ìœ¼ë©´ nullì„ ë°˜í™˜í•©ë‹ˆë‹¤.
     }
 
-    // ¸¶Áö¸· ½½·ÔÀÇ ¾ÆÀÌÅÛ È®ÀÎ ¹× Á¦°Å
+    // ë§ˆì§€ë§‰ ìŠ¬ë¡¯ì˜ ì•„ì´í…œ í™•ì¸ ë° ì œê±°
     public void CheckAndRemoveItemAtEndSlot()
     {
         int lastSlotIndex = inventorySlots.Length - 1;
         InventorySlot endSlot = inventorySlots[lastSlotIndex];
         InventoryItem itemInEndSlot = endSlot.GetComponentInChildren<InventoryItem>();
-        Debug.Log($"Before Count {userData.Inventory.Count}");
+        Debug.Log($"Before Count {userData.inventory.Count}");
         if (itemInEndSlot != null)
         {         
-            Destroy(itemInEndSlot.gameObject);  // ¸¶Áö¸· ½½·Ô¿¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ¸¸é Á¦°ÅÇÕ´Ï´Ù.
+            Destroy(itemInEndSlot.gameObject);  // ë§ˆì§€ë§‰ ìŠ¬ë¡¯ì— ì•„ì´í…œì´ ìˆìœ¼ë©´ ì œê±°í•©ë‹ˆë‹¤.
         }
-        foreach (var inven in userData.Inventory)
+        foreach (var inven in userData.inventory)
         {
             Debug.Log($"{inven.index} : {inven.itemCode} : {inven.count}");
         }

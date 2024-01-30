@@ -53,6 +53,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 12547f10e0349ac41b862c15c7e251c4, type: 3}
   - {fileID: 21300000, guid: 5c693c9010269b841a80bbf8c2fcc679, type: 3}
   - {fileID: 21300000, guid: 7d2f15d0928fe65439629f5a0f7a3ddc, type: 3}
+  - {fileID: 21300000, guid: 5f4d9ce01530b964b87e04d193f3a9ad, type: 3}
   - {fileID: 21300000, guid: db3d4b6193cbe5b49b692cb017946174, type: 3}
   - {fileID: 21300000, guid: 4fddb881dc56a42cda0912425a4fec0b, type: 3}
   - {fileID: 21300000, guid: 46093b91a973d034aa9cd662870b4fad, type: 3}
@@ -94,6 +95,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 99aef17b02350f042b2832fc6b63d9c1, type: 3}
   - {fileID: 21300000, guid: 8dc8a47bc286940f0aee4b5f21851bf0, type: 3}
   - {fileID: 21300000, guid: 0f737e8b2438bf44daef2b4a026619b9, type: 3}
+  - {fileID: 21300000, guid: 0d988bbbcf0ed6a41a5533ae49626a8a, type: 3}
   - {fileID: 21300000, guid: 614525fb62f26854b802a87a524a1c78, type: 3}
   - {fileID: 21300000, guid: 9c86646c7496dd54b9ebfe77f593d5aa, type: 3}
   - {fileID: 21300000, guid: ed65d66ce88bc004e9d6ff8b8584769c, type: 3}
@@ -112,6 +114,7 @@ SpriteAtlas:
   - Mashmello2
   - Setting_Background
   - Rain
+  - close
   - Drobdown_Background
   - UI Chest
   - TimeAndGoldWindow_Fall_evening
@@ -153,6 +156,7 @@ SpriteAtlas:
   - TimeAndGoldWindow_Fall_Daytime
   - DemoButton
   - Drobdown_Background
+  - Initialization_Button
   - Mashmello3
   - Encyclopedia_Button
   - Sound_Button(X)

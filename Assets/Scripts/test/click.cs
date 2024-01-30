@@ -27,7 +27,7 @@ public class click : MonoBehaviour
             sli.value = bcc;
         else if(success == false)
         {
-            Debug.Log("¼º°ø");
+            Debug.Log("Â¼ÂºÂ°Ã¸");
             success = true;
         }
         timefloat += Time.deltaTime;
